@@ -9,14 +9,26 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet var profileDescriptionLabel: [UILabel]!
     @IBOutlet var nicknameTextField: UITextField!
     @IBOutlet var heightTextField: UITextField!
     @IBOutlet var weightTextField: UITextField!
+    @IBOutlet var profileImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setNavigationBar()
+        setProfileDescriptionLabel()
+        profileImage.image = UIImage(named: "1-6")
+    }
+    
+    private func setProfileDescriptionLabel() {
+        for i in profileDescriptionLabel {
+            i.textColor = .white
+            i.font = .preferredFont(forTextStyle: .body)
+            i.adjustsFontSizeToFitWidth = true
+        }
     }
     
     private func setNavigationBar() {
@@ -41,6 +53,8 @@ class ProfileViewController: UIViewController {
         
         let profileModel = ProfileModel(nickname: nickname, height: height, weight: weight)
         UserDefaults.standard.set(try? PropertyListEncoder().encode(profileModel), forKey: "profileModel")
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
