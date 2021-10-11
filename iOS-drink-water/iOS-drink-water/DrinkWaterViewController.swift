@@ -11,6 +11,8 @@ class DrinkWaterViewController: UIViewController {
 
     @IBOutlet var currentWaterAmountTextField: UITextField!
     @IBOutlet var totalWaterAmountLabel: UILabel!
+    @IBOutlet var recommendWaterAmountLabel: UILabel!
+    
     var totalWaterAmount: Int = UserDefaults.standard.integer(forKey: "totalWaterAmount")
     
     override func viewDidLoad() {
@@ -18,6 +20,13 @@ class DrinkWaterViewController: UIViewController {
         
         setNavigationBar()
         totalWaterAmountLabel.text = String(totalWaterAmount)
+        getProfileData()
+    }
+    
+    private func getProfileData() {
+        guard let data = UserDefaults.standard.value(forKey: "profileModel") as? Data else { return }
+        let profileModel = try? PropertyListDecoder().decode(ProfileModel.self, from: data)
+        recommendWaterAmountLabel.text = "\(profileModel?.recommendWaterAmount())"
     }
     
     private func setNavigationBar() {
