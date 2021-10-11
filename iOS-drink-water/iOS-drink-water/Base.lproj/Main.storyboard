@@ -77,6 +77,7 @@
                     <navigationItem key="navigationItem" id="V3x-4y-fXf"/>
                     <connections>
                         <outlet property="currentWaterAmountTextField" destination="nul-Z1-qBN" id="kfr-GN-Fjs"/>
+                        <outlet property="recommendWaterAmountLabel" destination="HDa-Vw-TDG" id="S4J-fN-fQM"/>
                         <outlet property="totalWaterAmountLabel" destination="c4M-V5-Kpb" id="oW0-Hv-f7D"/>
                     </connections>
                 </viewController>
@@ -139,6 +140,11 @@
                         <viewLayoutGuide key="safeArea" id="9oh-ao-Acq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="heightTextField" destination="Gmu-MF-hZK" id="G08-7a-OtY"/>
+                        <outlet property="nicknameTextField" destination="xuo-lu-dbi" id="fGZ-aU-ab5"/>
+                        <outlet property="weightTextField" destination="Vxs-wC-mZL" id="RUR-wu-m8S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Mh-8c-GgR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
