@@ -12,21 +12,25 @@ class DrinkWaterViewController: UIViewController {
     @IBOutlet var currentWaterAmountTextField: UITextField!
     @IBOutlet var totalWaterAmountLabel: UILabel!
     @IBOutlet var recommendWaterAmountLabel: UILabel!
+    @IBOutlet var goalWaterAmountLabel: UILabel!
     
     var totalWaterAmount: Int = UserDefaults.standard.integer(forKey: "totalWaterAmount")
-    
+    var recommendWaterAmount: Double?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNavigationBar()
         totalWaterAmountLabel.text = String(totalWaterAmount)
         getProfileData()
+        refreshGoalWaterAmount(totalWaterAmount, recommendWaterAmount)
     }
     
     private func getProfileData() {
         guard let data = UserDefaults.standard.value(forKey: "profileModel") as? Data else { return }
         let profileModel = try? PropertyListDecoder().decode(ProfileModel.self, from: data)
-        recommendWaterAmountLabel.text = "\(profileModel?.recommendWaterAmount())"
+        recommendWaterAmount = profileModel?.recommendWaterAmount()
+        recommendWaterAmountLabel.text = "\(recommendWaterAmount)"
     }
     
     private func setNavigationBar() {
@@ -43,6 +47,8 @@ class DrinkWaterViewController: UIViewController {
         totalWaterAmount += currentAmount
         UserDefaults.standard.set(totalWaterAmount, forKey: "totalWaterAmount")
         totalWaterAmountLabel.text = String(totalWaterAmount)
+        
+        refreshGoalWaterAmount(totalWaterAmount, recommendWaterAmount)
     }
     
     @objc func presentProfileViewController() {
@@ -54,6 +60,16 @@ class DrinkWaterViewController: UIViewController {
         totalWaterAmount = 0
         UserDefaults.standard.set(totalWaterAmount, forKey: "totalWaterAmount")
         totalWaterAmountLabel.text = String(totalWaterAmount)
+        
+        refreshGoalWaterAmount(totalWaterAmount, recommendWaterAmount)
+    }
+    
+    private func refreshGoalWaterAmount(_ totalWaterAmount: Int, _ recommendWaterAmount: Double?) {
+        guard let recommendWaterAmount = recommendWaterAmount else { return }
+        
+        let literRecommendWaterAmount = recommendWaterAmount * 1000
+        let goalWaterAmount = Double(totalWaterAmount) / literRecommendWaterAmount
+        goalWaterAmountLabel.text = "목표의 \(Int(round(goalWaterAmount * 100)))%"
     }
     
 }
