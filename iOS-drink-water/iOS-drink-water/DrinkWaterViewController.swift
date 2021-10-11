@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DrinkWaterViewController.swift
 //  iOS-drink-water
 //
 //  Created by sookim on 2021/10/11.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DrinkWaterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
