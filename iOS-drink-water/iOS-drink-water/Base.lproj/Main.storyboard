@@ -21,6 +21,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="drinkWater:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ffN-Uq-TlY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDa-Vw-TDG">
                                 <rect key="frame" x="186" y="785" width="42" height="21"/>
@@ -72,6 +75,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="V3x-4y-fXf"/>
+                    <connections>
+                        <outlet property="currentWaterAmountTextField" destination="nul-Z1-qBN" id="kfr-GN-Fjs"/>
+                        <outlet property="totalWaterAmountLabel" destination="c4M-V5-Kpb" id="oW0-Hv-f7D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
