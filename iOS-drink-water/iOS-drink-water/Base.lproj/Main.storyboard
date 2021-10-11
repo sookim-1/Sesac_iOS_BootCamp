@@ -76,6 +76,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="V3x-4y-fXf"/>
                     <connections>
+                        <outlet property="characterImageView" destination="yTj-R0-7gZ" id="ZAf-kt-mg7"/>
                         <outlet property="currentWaterAmountTextField" destination="nul-Z1-qBN" id="kfr-GN-Fjs"/>
                         <outlet property="goalWaterAmountLabel" destination="cLe-6m-Myd" id="FLJ-8Z-qz2"/>
                         <outlet property="recommendWaterAmountLabel" destination="HDa-Vw-TDG" id="S4J-fN-fQM"/>
