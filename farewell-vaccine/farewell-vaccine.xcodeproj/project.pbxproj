@@ -20,6 +20,10 @@
 		766F479D274A955400992499 /* FVTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F479C274A955400992499 /* FVTestVC.swift */; };
 		766F479F274A98B700992499 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F479E274A98B700992499 /* Profile.storyboard */; };
 		766F47A1274A98CD00992499 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F47A0274A98CD00992499 /* ProfileVC.swift */; };
+		766F47A3274A9BBF00992499 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F47A2274A9BBF00992499 /* Setting.storyboard */; };
+		766F47A5274A9BCF00992499 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F47A4274A9BCF00992499 /* SettingVC.swift */; };
+		766F47A7274A9C3F00992499 /* Proverb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F47A6274A9C3F00992499 /* Proverb.storyboard */; };
+		766F47A9274A9C4E00992499 /* ProverbVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F47A8274A9C4E00992499 /* ProverbVC.swift */; };
 		76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63427462BFE00802232 /* AppDelegate.swift */; };
 		76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63627462BFE00802232 /* SceneDelegate.swift */; };
 		76C6F63927462BFE00802232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63827462BFE00802232 /* ViewController.swift */; };
@@ -41,6 +45,10 @@
 		766F479C274A955400992499 /* FVTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FVTestVC.swift; sourceTree = "<group>"; };
 		766F479E274A98B700992499 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		766F47A0274A98CD00992499 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		766F47A2274A9BBF00992499 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		766F47A4274A9BCF00992499 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		766F47A6274A9C3F00992499 /* Proverb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Proverb.storyboard; sourceTree = "<group>"; };
+		766F47A8274A9C4E00992499 /* ProverbVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProverbVC.swift; sourceTree = "<group>"; };
 		76C6F63127462BFE00802232 /* farewell-vaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farewell-vaccine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C6F63427462BFE00802232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C6F63627462BFE00802232 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +88,8 @@
 				766F4782274A64BD00992499 /* Onboarding */,
 				766F479C274A955400992499 /* FVTestVC.swift */,
 				766F47A0274A98CD00992499 /* ProfileVC.swift */,
+				766F47A4274A9BCF00992499 /* SettingVC.swift */,
+				766F47A8274A9C4E00992499 /* ProverbVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -102,6 +112,8 @@
 				76C6F63A27462BFE00802232 /* Onboarding.storyboard */,
 				766F479A274A951800992499 /* FVTest.storyboard */,
 				766F479E274A98B700992499 /* Profile.storyboard */,
+				766F47A2274A9BBF00992499 /* Setting.storyboard */,
+				766F47A6274A9C3F00992499 /* Proverb.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -223,7 +235,9 @@
 				76C6F63E27462C0000802232 /* Assets.xcassets in Resources */,
 				766F479B274A951800992499 /* FVTest.storyboard in Resources */,
 				766F479F274A98B700992499 /* Profile.storyboard in Resources */,
+				766F47A7274A9C3F00992499 /* Proverb.storyboard in Resources */,
 				76C6F63C27462BFE00802232 /* Onboarding.storyboard in Resources */,
+				766F47A3274A9BBF00992499 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,12 +249,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				766F479D274A955400992499 /* FVTestVC.swift in Sources */,
+				766F47A5274A9BCF00992499 /* SettingVC.swift in Sources */,
 				766F4787274A689B00992499 /* OnboardingSlide.swift in Sources */,
 				766F478E274A782A00992499 /* FirstLaunch.swift in Sources */,
 				76C6F63927462BFE00802232 /* ViewController.swift in Sources */,
 				766F4784274A64DC00992499 /* OnboardingVC.swift in Sources */,
 				76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */,
 				766F4798274A7EB000992499 /* SideMenuVC.swift in Sources */,
+				766F47A9274A9C4E00992499 /* ProverbVC.swift in Sources */,
 				76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */,
 				766F4796274A7E8900992499 /* SideMenuNC.swift in Sources */,
 				766F47A1274A98CD00992499 /* ProfileVC.swift in Sources */,
