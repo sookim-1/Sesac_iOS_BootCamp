@@ -86,8 +86,10 @@
 		766F478A274A74A600992499 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				76C6F63F27462C0000802232 /* LaunchScreen.storyboard */,
 				766F478B274A74B600992499 /* Main.storyboard */,
 				766F4792274A7E5300992499 /* SideMenu.storyboard */,
+				76C6F63A27462BFE00802232 /* Onboarding.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -99,6 +101,16 @@
 				766F4797274A7EB000992499 /* SideMenuVC.swift */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		766F4799274A8D4700992499 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				76C6F63427462BFE00802232 /* AppDelegate.swift */,
+				76C6F63627462BFE00802232 /* SceneDelegate.swift */,
+				76C6F63D27462C0000802232 /* Assets.xcassets */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		76C6F62827462BFE00802232 = {
@@ -120,14 +132,10 @@
 		76C6F63327462BFE00802232 /* farewell-vaccine */ = {
 			isa = PBXGroup;
 			children = (
+				766F4799274A8D4700992499 /* Support */,
 				766F478A274A74A600992499 /* Storyboards */,
 				766F4780274A649C00992499 /* Views */,
 				766F477F274A649400992499 /* Models */,
-				76C6F63427462BFE00802232 /* AppDelegate.swift */,
-				76C6F63627462BFE00802232 /* SceneDelegate.swift */,
-				76C6F63A27462BFE00802232 /* Onboarding.storyboard */,
-				76C6F63D27462C0000802232 /* Assets.xcassets */,
-				76C6F63F27462C0000802232 /* LaunchScreen.storyboard */,
 				76C6F64227462C0000802232 /* Info.plist */,
 			);
 			path = "farewell-vaccine";

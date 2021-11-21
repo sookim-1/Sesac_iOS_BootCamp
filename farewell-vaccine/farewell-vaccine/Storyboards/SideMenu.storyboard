@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="09g-hX-tTx">
-                                <rect key="frame" x="132" y="108" width="150" height="467"/>
+                                <rect key="frame" x="132" y="88" width="150" height="467"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlN-TG-S58">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="39.5"/>
@@ -62,8 +62,8 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="09g-hX-tTx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="S6T-Cv-q0f"/>
                             <constraint firstItem="09g-hX-tTx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dcL-BB-18s"/>
+                            <constraint firstItem="09g-hX-tTx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="kOf-nz-8ip"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GMK-4S-P2Q"/>
