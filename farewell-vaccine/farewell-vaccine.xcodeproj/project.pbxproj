@@ -11,6 +11,7 @@
 		766F4787274A689B00992499 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4786274A689B00992499 /* OnboardingSlide.swift */; };
 		766F4789274A6A9A00992499 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */; };
 		766F478C274A74B600992499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F478B274A74B600992499 /* Main.storyboard */; };
+		766F478E274A782A00992499 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F478D274A782A00992499 /* FirstLaunch.swift */; };
 		76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63427462BFE00802232 /* AppDelegate.swift */; };
 		76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63627462BFE00802232 /* SceneDelegate.swift */; };
 		76C6F63927462BFE00802232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63827462BFE00802232 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		766F4786274A689B00992499 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		766F478B274A74B600992499 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		766F478D274A782A00992499 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		76C6F63127462BFE00802232 /* farewell-vaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farewell-vaccine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C6F63427462BFE00802232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C6F63627462BFE00802232 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				766F4786274A689B00992499 /* OnboardingSlide.swift */,
+				766F478D274A782A00992499 /* FirstLaunch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -56,6 +59,7 @@
 		766F4780274A649C00992499 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76C6F63827462BFE00802232 /* ViewController.swift */,
 				766F4782274A64BD00992499 /* Onboarding */,
 			);
 			path = Views;
@@ -102,7 +106,6 @@
 				766F477F274A649400992499 /* Models */,
 				76C6F63427462BFE00802232 /* AppDelegate.swift */,
 				76C6F63627462BFE00802232 /* SceneDelegate.swift */,
-				76C6F63827462BFE00802232 /* ViewController.swift */,
 				76C6F63A27462BFE00802232 /* Onboarding.storyboard */,
 				76C6F63D27462C0000802232 /* Assets.xcassets */,
 				76C6F63F27462C0000802232 /* LaunchScreen.storyboard */,
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				766F4787274A689B00992499 /* OnboardingSlide.swift in Sources */,
+				766F478E274A782A00992499 /* FirstLaunch.swift in Sources */,
 				76C6F63927462BFE00802232 /* ViewController.swift in Sources */,
 				766F4784274A64DC00992499 /* OnboardingVC.swift in Sources */,
 				76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */,
