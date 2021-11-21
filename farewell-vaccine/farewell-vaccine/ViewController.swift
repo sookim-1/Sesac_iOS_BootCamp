@@ -11,9 +11,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard let onboardingVC = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") as? OnboardingVC else { return }
+        
+        onboardingVC.modalTransitionStyle = .flipHorizontal
+        onboardingVC.modalPresentationStyle = .fullScreen
+        
+        self.present(onboardingVC, animated: true)
+    }
+    
 }
 

@@ -7,20 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		766F4784274A64DC00992499 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4783274A64DC00992499 /* OnboardingVC.swift */; };
+		766F4787274A689B00992499 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4786274A689B00992499 /* OnboardingSlide.swift */; };
+		766F4789274A6A9A00992499 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */; };
+		766F478C274A74B600992499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F478B274A74B600992499 /* Main.storyboard */; };
 		76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63427462BFE00802232 /* AppDelegate.swift */; };
 		76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63627462BFE00802232 /* SceneDelegate.swift */; };
 		76C6F63927462BFE00802232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63827462BFE00802232 /* ViewController.swift */; };
-		76C6F63C27462BFE00802232 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C6F63A27462BFE00802232 /* Main.storyboard */; };
+		76C6F63C27462BFE00802232 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C6F63A27462BFE00802232 /* Onboarding.storyboard */; };
 		76C6F63E27462C0000802232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76C6F63D27462C0000802232 /* Assets.xcassets */; };
 		76C6F64127462C0000802232 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C6F63F27462C0000802232 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		766F4783274A64DC00992499 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		766F4786274A689B00992499 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		766F478B274A74B600992499 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		76C6F63127462BFE00802232 /* farewell-vaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farewell-vaccine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C6F63427462BFE00802232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C6F63627462BFE00802232 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		76C6F63827462BFE00802232 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		76C6F63B27462BFE00802232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		76C6F63B27462BFE00802232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
 		76C6F63D27462C0000802232 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76C6F64027462C0000802232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76C6F64227462C0000802232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +45,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		766F477F274A649400992499 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				766F4786274A689B00992499 /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		766F4780274A649C00992499 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				766F4782274A64BD00992499 /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		766F4782274A64BD00992499 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				766F4783274A64DC00992499 /* OnboardingVC.swift */,
+				766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		766F478A274A74A600992499 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				766F478B274A74B600992499 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		76C6F62827462BFE00802232 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +97,13 @@
 		76C6F63327462BFE00802232 /* farewell-vaccine */ = {
 			isa = PBXGroup;
 			children = (
+				766F478A274A74A600992499 /* Storyboards */,
+				766F4780274A649C00992499 /* Views */,
+				766F477F274A649400992499 /* Models */,
 				76C6F63427462BFE00802232 /* AppDelegate.swift */,
 				76C6F63627462BFE00802232 /* SceneDelegate.swift */,
 				76C6F63827462BFE00802232 /* ViewController.swift */,
-				76C6F63A27462BFE00802232 /* Main.storyboard */,
+				76C6F63A27462BFE00802232 /* Onboarding.storyboard */,
 				76C6F63D27462C0000802232 /* Assets.xcassets */,
 				76C6F63F27462C0000802232 /* LaunchScreen.storyboard */,
 				76C6F64227462C0000802232 /* Info.plist */,
@@ -126,8 +170,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				76C6F64127462C0000802232 /* LaunchScreen.storyboard in Resources */,
+				766F478C274A74B600992499 /* Main.storyboard in Resources */,
 				76C6F63E27462C0000802232 /* Assets.xcassets in Resources */,
-				76C6F63C27462BFE00802232 /* Main.storyboard in Resources */,
+				76C6F63C27462BFE00802232 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,21 +183,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				766F4787274A689B00992499 /* OnboardingSlide.swift in Sources */,
 				76C6F63927462BFE00802232 /* ViewController.swift in Sources */,
+				766F4784274A64DC00992499 /* OnboardingVC.swift in Sources */,
 				76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */,
 				76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */,
+				766F4789274A6A9A00992499 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		76C6F63A27462BFE00802232 /* Main.storyboard */ = {
+		76C6F63A27462BFE00802232 /* Onboarding.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				76C6F63B27462BFE00802232 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Onboarding.storyboard;
 			sourceTree = "<group>";
 		};
 		76C6F63F27462C0000802232 /* LaunchScreen.storyboard */ = {
