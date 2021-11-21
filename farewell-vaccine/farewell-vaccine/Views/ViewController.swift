@@ -32,5 +32,10 @@ class ViewController: UIViewController {
         self.present(onboardingVC, animated: true)
     }
     
+    @IBAction func presentSideMenu(_ sender: UIButton) {
+        guard let sideMenuNC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNC") as? SideMenuNC else { return }
+        
+        self.present(sideMenuNC, animated: true)
+    }
 }
 

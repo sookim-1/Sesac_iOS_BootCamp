@@ -12,6 +12,10 @@
 		766F4789274A6A9A00992499 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */; };
 		766F478C274A74B600992499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F478B274A74B600992499 /* Main.storyboard */; };
 		766F478E274A782A00992499 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F478D274A782A00992499 /* FirstLaunch.swift */; };
+		766F4791274A7DA800992499 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 766F4790274A7DA800992499 /* SideMenu */; };
+		766F4793274A7E5300992499 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F4792274A7E5300992499 /* SideMenu.storyboard */; };
+		766F4796274A7E8900992499 /* SideMenuNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4795274A7E8900992499 /* SideMenuNC.swift */; };
+		766F4798274A7EB000992499 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4797274A7EB000992499 /* SideMenuVC.swift */; };
 		76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63427462BFE00802232 /* AppDelegate.swift */; };
 		76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63627462BFE00802232 /* SceneDelegate.swift */; };
 		76C6F63927462BFE00802232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63827462BFE00802232 /* ViewController.swift */; };
@@ -26,6 +30,9 @@
 		766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		766F478B274A74B600992499 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		766F478D274A782A00992499 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		766F4792274A7E5300992499 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		766F4795274A7E8900992499 /* SideMenuNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNC.swift; sourceTree = "<group>"; };
+		766F4797274A7EB000992499 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		76C6F63127462BFE00802232 /* farewell-vaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farewell-vaccine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C6F63427462BFE00802232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C6F63627462BFE00802232 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				766F4791274A7DA800992499 /* SideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +67,7 @@
 		766F4780274A649C00992499 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				766F4794274A7E6C00992499 /* SideMenu */,
 				76C6F63827462BFE00802232 /* ViewController.swift */,
 				766F4782274A64BD00992499 /* Onboarding */,
 			);
@@ -78,8 +87,18 @@
 			isa = PBXGroup;
 			children = (
 				766F478B274A74B600992499 /* Main.storyboard */,
+				766F4792274A7E5300992499 /* SideMenu.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		766F4794274A7E6C00992499 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				766F4795274A7E8900992499 /* SideMenuNC.swift */,
+				766F4797274A7EB000992499 /* SideMenuVC.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		76C6F62827462BFE00802232 = {
@@ -130,6 +149,9 @@
 			dependencies = (
 			);
 			name = "farewell-vaccine";
+			packageProductDependencies = (
+				766F4790274A7DA800992499 /* SideMenu */,
+			);
 			productName = "farewell-vaccine";
 			productReference = 76C6F63127462BFE00802232 /* farewell-vaccine.app */;
 			productType = "com.apple.product-type.application";
@@ -158,6 +180,9 @@
 				Base,
 			);
 			mainGroup = 76C6F62827462BFE00802232;
+			packageReferences = (
+				766F478F274A7DA800992499 /* XCRemoteSwiftPackageReference "SideMenu" */,
+			);
 			productRefGroup = 76C6F63227462BFE00802232 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -173,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76C6F64127462C0000802232 /* LaunchScreen.storyboard in Resources */,
+				766F4793274A7E5300992499 /* SideMenu.storyboard in Resources */,
 				766F478C274A74B600992499 /* Main.storyboard in Resources */,
 				76C6F63E27462C0000802232 /* Assets.xcassets in Resources */,
 				76C6F63C27462BFE00802232 /* Onboarding.storyboard in Resources */,
@@ -191,7 +217,9 @@
 				76C6F63927462BFE00802232 /* ViewController.swift in Sources */,
 				766F4784274A64DC00992499 /* OnboardingVC.swift in Sources */,
 				76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */,
+				766F4798274A7EB000992499 /* SideMenuVC.swift in Sources */,
 				76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */,
+				766F4796274A7E8900992499 /* SideMenuNC.swift in Sources */,
 				766F4789274A6A9A00992499 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +442,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		766F478F274A7DA800992499 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		766F4790274A7DA800992499 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 766F478F274A7DA800992499 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 76C6F62927462BFE00802232 /* Project object */;
 }
