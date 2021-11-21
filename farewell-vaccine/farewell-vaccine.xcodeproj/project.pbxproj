@@ -18,6 +18,8 @@
 		766F4798274A7EB000992499 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4797274A7EB000992499 /* SideMenuVC.swift */; };
 		766F479B274A951800992499 /* FVTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F479A274A951800992499 /* FVTest.storyboard */; };
 		766F479D274A955400992499 /* FVTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F479C274A955400992499 /* FVTestVC.swift */; };
+		766F479F274A98B700992499 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F479E274A98B700992499 /* Profile.storyboard */; };
+		766F47A1274A98CD00992499 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F47A0274A98CD00992499 /* ProfileVC.swift */; };
 		76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63427462BFE00802232 /* AppDelegate.swift */; };
 		76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63627462BFE00802232 /* SceneDelegate.swift */; };
 		76C6F63927462BFE00802232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63827462BFE00802232 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		766F4797274A7EB000992499 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		766F479A274A951800992499 /* FVTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FVTest.storyboard; sourceTree = "<group>"; };
 		766F479C274A955400992499 /* FVTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FVTestVC.swift; sourceTree = "<group>"; };
+		766F479E274A98B700992499 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		766F47A0274A98CD00992499 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		76C6F63127462BFE00802232 /* farewell-vaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farewell-vaccine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C6F63427462BFE00802232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C6F63627462BFE00802232 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 				76C6F63827462BFE00802232 /* ViewController.swift */,
 				766F4782274A64BD00992499 /* Onboarding */,
 				766F479C274A955400992499 /* FVTestVC.swift */,
+				766F47A0274A98CD00992499 /* ProfileVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 				766F4792274A7E5300992499 /* SideMenu.storyboard */,
 				76C6F63A27462BFE00802232 /* Onboarding.storyboard */,
 				766F479A274A951800992499 /* FVTest.storyboard */,
+				766F479E274A98B700992499 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 				766F478C274A74B600992499 /* Main.storyboard in Resources */,
 				76C6F63E27462C0000802232 /* Assets.xcassets in Resources */,
 				766F479B274A951800992499 /* FVTest.storyboard in Resources */,
+				766F479F274A98B700992499 /* Profile.storyboard in Resources */,
 				76C6F63C27462BFE00802232 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +243,7 @@
 				766F4798274A7EB000992499 /* SideMenuVC.swift in Sources */,
 				76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */,
 				766F4796274A7E8900992499 /* SideMenuNC.swift in Sources */,
+				766F47A1274A98CD00992499 /* ProfileVC.swift in Sources */,
 				766F4789274A6A9A00992499 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
