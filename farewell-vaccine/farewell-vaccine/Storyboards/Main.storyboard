@@ -111,7 +111,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LgU-G2-UKi">
                                                 <rect key="frame" x="0.0" y="28.5" width="200" height="35.5"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -150,7 +150,7 @@
         <!--Navigation Controller-->
         <scene sceneID="f3f-zq-FPH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v9J-mz-hIm" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNC" automaticallyAdjustsScrollViewInsets="NO" id="v9J-mz-hIm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rqf-5W-kuN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

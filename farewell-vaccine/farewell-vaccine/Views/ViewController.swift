@@ -30,20 +30,12 @@ class ViewController: UIViewController {
         
     }
     
-    func configureNavigationBar() {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-
-//        let barAppearance = UINavigationBarAppearance()
-//
-//        barAppearance.backgroundColor = .white
-//        self.navigationItem.standardAppearance = barAppearance
-//        self.navigationItem.scrollEdgeAppearance = barAppearance
-        
+    func configureNavigationBar() {        
         self.title = "이별백신"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
-        self.navigationController?.navigationBar.tintColor = .systemBlue
-
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.red]
+        let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
+        menuButton.tintColor = UIColor(red: 254/255, green: 107/255, blue: 160/255, alpha: 1)
+        self.navigationItem.leftBarButtonItem = menuButton
     }
     
     func presentOnboardingVC() {
