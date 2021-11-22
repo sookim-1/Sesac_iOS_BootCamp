@@ -139,4 +139,15 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+## Server
+Packages
+.build
+xcuserdata
+*.xcodeproj
+DerivedData/
+.DS_Store
+db.sqlite
+.swiftpm
+
 # End of https://www.toptal.com/developers/gitignore/api/swift,macos,xcode,cocoapods
+
