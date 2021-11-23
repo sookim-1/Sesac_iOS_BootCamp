@@ -6,18 +6,29 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var settingButton: UIButton!
+    let localRealm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureSettingBtn()
         configureNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let halfProfile = localRealm.objects(HalfProfile.self)
+        
+        nameLabel.text = halfProfile.last?.name
+        mainImageView.image = loadImageFromDocumentDirectory(imageName: "1.png")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,7 +38,6 @@ class ViewController: UIViewController {
         if firstLaunch.isFirstLaunch {
             presentOnboardingVC()
         }
-        
     }
     
     func configureNavigationBar() {        
@@ -58,6 +68,23 @@ class ViewController: UIViewController {
         guard let sideMenuNC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNC") as? SideMenuNC else { return }
         
         self.present(sideMenuNC, animated: true)
+    }
+    
+    func loadImageFromDocumentDirectory(imageName: String) -> UIImage? {
+        
+        // 1. 도큐먼트 폴더 경로가져오기
+        let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        let path = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
+        
+        if let directoryPath = path.first {
+        // 2. 이미지 URL 찾기
+            let imageURL = URL(fileURLWithPath: directoryPath).appendingPathComponent(imageName)
+            // 3. UIImage로 불러오기
+            return UIImage(contentsOfFile: imageURL.path)
+        }
+        
+        return nil
     }
 }
 
