@@ -30,6 +30,8 @@
 		76861AC5274C67FE00564D82 /* HalfProfileAssignmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861AC4274C67FE00564D82 /* HalfProfileAssignmentVC.swift */; };
 		76861AC8274CF72300564D82 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861AC7274CF72300564D82 /* UIColor+Ext.swift */; };
 		76861ACB274CF8FB00564D82 /* CustomPinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861ACA274CF8FB00564D82 /* CustomPinkButton.swift */; };
+		76861ACD274CFB6F00564D82 /* Introduce.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76861ACC274CFB6F00564D82 /* Introduce.storyboard */; };
+		76861ACF274CFB8200564D82 /* IntroduceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861ACE274CFB8200564D82 /* IntroduceVC.swift */; };
 		76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63427462BFE00802232 /* AppDelegate.swift */; };
 		76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63627462BFE00802232 /* SceneDelegate.swift */; };
 		76C6F63927462BFE00802232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63827462BFE00802232 /* ViewController.swift */; };
@@ -59,6 +61,8 @@
 		76861AC4274C67FE00564D82 /* HalfProfileAssignmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfProfileAssignmentVC.swift; sourceTree = "<group>"; };
 		76861AC7274CF72300564D82 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		76861ACA274CF8FB00564D82 /* CustomPinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPinkButton.swift; sourceTree = "<group>"; };
+		76861ACC274CFB6F00564D82 /* Introduce.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduce.storyboard; sourceTree = "<group>"; };
+		76861ACE274CFB8200564D82 /* IntroduceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceVC.swift; sourceTree = "<group>"; };
 		76C6F63127462BFE00802232 /* farewell-vaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farewell-vaccine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C6F63427462BFE00802232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C6F63627462BFE00802232 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 				766F47A4274A9BCF00992499 /* SettingVC.swift */,
 				766F47A8274A9C4E00992499 /* ProverbVC.swift */,
 				76861AC4274C67FE00564D82 /* HalfProfileAssignmentVC.swift */,
+				76861ACE274CFB8200564D82 /* IntroduceVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 				766F479E274A98B700992499 /* Profile.storyboard */,
 				766F47A2274A9BBF00992499 /* Setting.storyboard */,
 				766F47A6274A9C3F00992499 /* Proverb.storyboard */,
+				76861ACC274CFB6F00564D82 /* Introduce.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 				76C6F63E27462C0000802232 /* Assets.xcassets in Resources */,
 				766F479B274A951800992499 /* FVTest.storyboard in Resources */,
 				766F479F274A98B700992499 /* Profile.storyboard in Resources */,
+				76861ACD274CFB6F00564D82 /* Introduce.storyboard in Resources */,
 				766F47A7274A9C3F00992499 /* Proverb.storyboard in Resources */,
 				76C6F63C27462BFE00802232 /* Onboarding.storyboard in Resources */,
 				766F47A3274A9BBF00992499 /* Setting.storyboard in Resources */,
@@ -285,6 +292,7 @@
 			files = (
 				76861ACB274CF8FB00564D82 /* CustomPinkButton.swift in Sources */,
 				766F479D274A955400992499 /* FVTestVC.swift in Sources */,
+				76861ACF274CFB8200564D82 /* IntroduceVC.swift in Sources */,
 				766F47A5274A9BCF00992499 /* SettingVC.swift in Sources */,
 				766F4787274A689B00992499 /* OnboardingSlide.swift in Sources */,
 				766F478E274A782A00992499 /* FirstLaunch.swift in Sources */,
