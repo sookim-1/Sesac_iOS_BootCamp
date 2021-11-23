@@ -85,7 +85,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyk-pb-TQQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyk-pb-TQQ" customClass="CustomPinkButton" customModule="farewell_vaccine" customModuleProvider="target">
                                 <rect key="frame" x="132" y="772" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="DtP-nb-cZH"/>

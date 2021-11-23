@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureSettingBtn()
         configureNavigationBar()
     }
     
@@ -44,7 +43,7 @@ class ViewController: UIViewController {
         self.title = "이별백신"
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.red]
         let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
-        menuButton.tintColor = UIColor(red: 254/255, green: 107/255, blue: 160/255, alpha: 1)
+        menuButton.tintColor = .customPink
         self.navigationItem.leftBarButtonItem = menuButton
     }
     
@@ -55,13 +54,6 @@ class ViewController: UIViewController {
         onboardingVC.modalPresentationStyle = .fullScreen
         
         self.present(onboardingVC, animated: true)
-    }
-    
-    func configureSettingBtn() {
-        settingButton.backgroundColor = UIColor(red: 254/255, green: 107/255, blue: 160/255, alpha: 1)
-        settingButton.setTitleColor(.white, for: .normal)
-        settingButton.setTitle("지정하기", for: .normal)
-        settingButton.layer.cornerRadius = 10
     }
             
     @objc func presentSideMenu() {

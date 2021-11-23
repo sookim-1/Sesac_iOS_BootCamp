@@ -40,14 +40,14 @@
                                             <constraint firstAttribute="width" constant="200" id="lcY-fJ-bS3"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcY-W3-ESf">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcY-W3-ESf" customClass="CustomPinkButton" customModule="farewell_vaccine" customModuleProvider="target">
                                         <rect key="frame" x="132" y="678" width="150" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="5Uz-Vy-5hE"/>
                                             <constraint firstAttribute="height" constant="50" id="Zoh-K7-be7"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="테스트하기"/>
                                         <connections>
                                             <segue destination="Hxk-UK-QXD" kind="show" id="ZhH-Jl-pev"/>
                                         </connections>
@@ -93,11 +93,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-PK-0AU">
-                                <rect key="frame" x="174" y="772" width="67" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-PK-0AU" customClass="CustomPinkButton" customModule="farewell_vaccine" customModuleProvider="target">
+                                <rect key="frame" x="171" y="772" width="73" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="결과보기"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PSv-Y0-jD5"/>

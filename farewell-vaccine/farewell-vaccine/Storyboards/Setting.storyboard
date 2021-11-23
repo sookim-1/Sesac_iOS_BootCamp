@@ -20,32 +20,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="mrm-yI-u4H">
                                 <rect key="frame" x="132" y="320" width="150" height="256"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdW-uf-FQx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdW-uf-FQx" customClass="CustomPinkButton" customModule="farewell_vaccine" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Kox-dl-VlN"/>
                                             <constraint firstAttribute="width" constant="150" id="eK1-UU-DRz"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyT-am-vVZ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyT-am-vVZ" customClass="CustomPinkButton" customModule="farewell_vaccine" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="103" width="150" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ah1-JZ-IKj"/>
                                             <constraint firstAttribute="width" constant="150" id="iGe-St-kpy"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="오픈소스"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHn-YD-EFH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHn-YD-EFH" customClass="CustomPinkButton" customModule="farewell_vaccine" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="206" width="150" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0qG-dH-KSq"/>
                                             <constraint firstAttribute="width" constant="150" id="MmN-o4-2S1"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="문의하기"/>
                                     </button>
                                 </subviews>
                             </stackView>
