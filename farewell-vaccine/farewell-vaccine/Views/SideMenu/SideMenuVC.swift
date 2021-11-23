@@ -15,4 +15,29 @@ class SideMenuVC: UIViewController {
         view.backgroundColor = .customPink
     }
     
+    @IBAction func presentHomeNC() {
+        presentModalFullstyle(storyboardName: "Main", storyboardIdentifier: "HomeNC")
+    }
+    
+    @IBAction func presentIntroduceNC() {
+        presentModalFullstyle(storyboardName: "Introduce", storyboardIdentifier: "IntroduceNC")
+    }
+    
+    @IBAction func presentFVTestNC() {
+        presentModalFullstyle(storyboardName: "FVTest", storyboardIdentifier: "FVTestNC")
+    }
+    
+    @IBAction func presentProverbNC() {
+        presentModalFullstyle(storyboardName: "Proverb", storyboardIdentifier: "ProverbNC")
+    }
+    
+    @IBAction func presentProfileNC() {
+        presentModalFullstyle(storyboardName: "Profile", storyboardIdentifier: "ProfileNC")
+    }
+    
+    @IBAction func presentSettingNC() {
+        presentModalFullstyle(storyboardName: "Setting", storyboardIdentifier: "SettingNC")
+    }
+    
+    
 }

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ProfileVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="ProfileVC" customModule="farewell_vaccine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
         <!--Navigation Controller-->
         <scene sceneID="v7K-vk-F5N">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FcK-dC-pJE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ProfileNC" automaticallyAdjustsScrollViewInsets="NO" id="FcK-dC-pJE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Chu-g4-Kgl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

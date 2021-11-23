@@ -12,18 +12,21 @@ class SettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configureNavigationBar()
+    }
+
+    func configureNavigationBar() {
+        self.title = "설정"
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.customPink]
+        let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
+        menuButton.tintColor = .customPink
+        self.navigationItem.leftBarButtonItem = menuButton
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func presentSideMenu() {
+        guard let sideMenuNC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNC") as? SideMenuNC else { return }
+        
+        self.present(sideMenuNC, animated: true)
     }
-    */
 
 }
