@@ -29,14 +29,7 @@ class OnboardingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureNextBtn()
         configureCollectionView()
-    }
-    
-    func configureNextBtn() {
-        nextButton.backgroundColor = UIColor(red: 254/255, green: 107/255, blue: 160/255, alpha: 1)
-        nextButton.setTitleColor(.white, for: .normal)
-        nextButton.layer.cornerRadius = 10
     }
     
     func configureCollectionView() {

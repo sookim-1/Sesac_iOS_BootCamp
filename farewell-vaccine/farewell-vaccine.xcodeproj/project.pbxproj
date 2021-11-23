@@ -28,6 +28,8 @@
 		76861AC1274C663A00564D82 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76861AC0274C663A00564D82 /* RealmSwift */; };
 		76861AC3274C66C200564D82 /* HalfProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861AC2274C66C200564D82 /* HalfProfile.swift */; };
 		76861AC5274C67FE00564D82 /* HalfProfileAssignmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861AC4274C67FE00564D82 /* HalfProfileAssignmentVC.swift */; };
+		76861AC8274CF72300564D82 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861AC7274CF72300564D82 /* UIColor+Ext.swift */; };
+		76861ACB274CF8FB00564D82 /* CustomPinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861ACA274CF8FB00564D82 /* CustomPinkButton.swift */; };
 		76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63427462BFE00802232 /* AppDelegate.swift */; };
 		76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63627462BFE00802232 /* SceneDelegate.swift */; };
 		76C6F63927462BFE00802232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63827462BFE00802232 /* ViewController.swift */; };
@@ -55,6 +57,8 @@
 		766F47A8274A9C4E00992499 /* ProverbVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProverbVC.swift; sourceTree = "<group>"; };
 		76861AC2274C66C200564D82 /* HalfProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfProfile.swift; sourceTree = "<group>"; };
 		76861AC4274C67FE00564D82 /* HalfProfileAssignmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfProfileAssignmentVC.swift; sourceTree = "<group>"; };
+		76861AC7274CF72300564D82 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		76861ACA274CF8FB00564D82 /* CustomPinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPinkButton.swift; sourceTree = "<group>"; };
 		76C6F63127462BFE00802232 /* farewell-vaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farewell-vaccine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C6F63427462BFE00802232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C6F63627462BFE00802232 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,22 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		76861AC6274CF70F00564D82 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				76861AC7274CF72300564D82 /* UIColor+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		76861AC9274CF8C300564D82 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				76861ACA274CF8FB00564D82 /* CustomPinkButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		76C6F62827462BFE00802232 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +186,8 @@
 		76C6F63327462BFE00802232 /* farewell-vaccine */ = {
 			isa = PBXGroup;
 			children = (
+				76861AC9274CF8C300564D82 /* CustomViews */,
+				76861AC6274CF70F00564D82 /* Extensions */,
 				766F4799274A8D4700992499 /* Support */,
 				766F478A274A74A600992499 /* Storyboards */,
 				766F4780274A649C00992499 /* Views */,
@@ -261,11 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76861ACB274CF8FB00564D82 /* CustomPinkButton.swift in Sources */,
 				766F479D274A955400992499 /* FVTestVC.swift in Sources */,
 				766F47A5274A9BCF00992499 /* SettingVC.swift in Sources */,
 				766F4787274A689B00992499 /* OnboardingSlide.swift in Sources */,
 				766F478E274A782A00992499 /* FirstLaunch.swift in Sources */,
 				76C6F63927462BFE00802232 /* ViewController.swift in Sources */,
+				76861AC8274CF72300564D82 /* UIColor+Ext.swift in Sources */,
 				76861AC5274C67FE00564D82 /* HalfProfileAssignmentVC.swift in Sources */,
 				766F4784274A64DC00992499 /* OnboardingVC.swift in Sources */,
 				76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */,

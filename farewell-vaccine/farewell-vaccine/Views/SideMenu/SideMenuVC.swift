@@ -12,7 +12,7 @@ class SideMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red: 254/255, green: 107/255, blue: 160/255, alpha: 1)
+        view.backgroundColor = .customPink
     }
     
 }
