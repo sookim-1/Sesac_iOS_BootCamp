@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="992.75362318840587" y="115.84821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Introduce EditVC-->
         <scene sceneID="i0c-J9-65V">
             <objects>
-                <viewController id="hc8-pN-fgu" sceneMemberID="viewController">
+                <viewController id="hc8-pN-fgu" customClass="IntroduceEditVC" customModule="farewell_vaccine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mna-rQ-qYF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,6 +89,9 @@
                             <constraint firstItem="sye-an-Chd" firstAttribute="bottom" secondItem="eOF-I1-xvd" secondAttribute="bottom" id="jpC-Tx-hxh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="editToolbar" destination="sye-an-Chd" id="6WG-M2-LfS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJE-91-BD9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,7 +100,7 @@
         <!--Navigation Controller-->
         <scene sceneID="rGj-eK-rBf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ynd-fd-UD9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="IntroduceNC" automaticallyAdjustsScrollViewInsets="NO" id="ynd-fd-UD9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OlW-3P-CUA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
