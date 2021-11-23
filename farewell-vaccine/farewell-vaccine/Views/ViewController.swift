@@ -18,9 +18,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 테스트
-        let introduceNC = UIStoryboard(name: "Introduce", bundle: nil).instantiateViewController(withIdentifier: "IntroduceNC") 
-        self.present(introduceNC, animated: true)
         configureNavigationBar()
     }
     

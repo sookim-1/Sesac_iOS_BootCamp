@@ -9,21 +9,25 @@ import UIKit
 
 class ProverbVC: UIViewController {
 
+    @IBOutlet weak var adviceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        randomAdvice()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func randomAdvice() {
+        let jsonDecoder = JSONDecoder()
+        guard let adviceItemsData = NSDataAsset(name: "items")
+        else { return }
+        
+        do {
+            let advices: [LoveAdvice] = try jsonDecoder.decode([LoveAdvice].self, from: adviceItemsData.data)
+            guard let advice = advices.randomElement() else { return }
+            adviceLabel.text = "\(advice.advice) - \(advice.author)"
+        } catch  {
+            print("Error")
+        }
     }
-    */
-
 }
