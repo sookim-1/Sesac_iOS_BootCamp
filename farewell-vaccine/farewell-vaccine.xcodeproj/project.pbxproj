@@ -39,6 +39,7 @@
 		76861AD9274D063100564D82 /* UIEdgeInsets+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861AD8274D063100564D82 /* UIEdgeInsets+Ext.swift */; };
 		76861ADB274D2AA300564D82 /* LoveAdvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861ADA274D2AA200564D82 /* LoveAdvice.swift */; };
 		76861ADD274D318A00564D82 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861ADC274D318A00564D82 /* UIViewController+Ext.swift */; };
+		76C2B6F8275217F300E74A17 /* TestCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C2B6F7275217F300E74A17 /* TestCategory.swift */; };
 		76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63427462BFE00802232 /* AppDelegate.swift */; };
 		76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63627462BFE00802232 /* SceneDelegate.swift */; };
 		76C6F63927462BFE00802232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63827462BFE00802232 /* ViewController.swift */; };
@@ -77,6 +78,7 @@
 		76861AD8274D063100564D82 /* UIEdgeInsets+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ext.swift"; sourceTree = "<group>"; };
 		76861ADA274D2AA200564D82 /* LoveAdvice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveAdvice.swift; sourceTree = "<group>"; };
 		76861ADC274D318A00564D82 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		76C2B6F7275217F300E74A17 /* TestCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCategory.swift; sourceTree = "<group>"; };
 		76C6F63127462BFE00802232 /* farewell-vaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farewell-vaccine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C6F63427462BFE00802232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C6F63627462BFE00802232 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				76861AC2274C66C200564D82 /* HalfProfile.swift */,
 				76861AD6274D041000564D82 /* EditCategory.swift */,
 				76861ADA274D2AA200564D82 /* LoveAdvice.swift */,
+				76C2B6F7275217F300E74A17 /* TestCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				76861AC5274C67FE00564D82 /* HalfProfileAssignmentVC.swift in Sources */,
 				76861AD9274D063100564D82 /* UIEdgeInsets+Ext.swift in Sources */,
 				76861AD5274D03DC00564D82 /* ImageListView.swift in Sources */,
+				76C2B6F8275217F300E74A17 /* TestCategory.swift in Sources */,
 				766F4784274A64DC00992499 /* OnboardingVC.swift in Sources */,
 				76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */,
 				766F4798274A7EB000992499 /* SideMenuVC.swift in Sources */,

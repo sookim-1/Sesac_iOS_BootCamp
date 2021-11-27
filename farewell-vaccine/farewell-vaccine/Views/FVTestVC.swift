@@ -8,11 +8,15 @@
 import UIKit
 
 class FVTestVC: UIViewController {
-
+    @IBOutlet weak var testCategoryPickerView: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureNavigationBar()
+        testCategoryPickerView.delegate = self
+        testCategoryPickerView.dataSource = self
+        print(TestCategory.allCases[1].rawValue)
     }
     
     func configureNavigationBar() {
@@ -29,4 +33,23 @@ class FVTestVC: UIViewController {
         self.present(sideMenuNC, animated: true)
     }
 
+    @IBAction func startTestBtn(_ sender: UIButton) {
+        let row = self.testCategoryPickerView.selectedRow(inComponent: 0)
+        self.testCategoryPickerView.selectRow(row, inComponent: 0, animated: false)
+    }
+}
+
+extension FVTestVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return TestCategory.allCases.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(TestCategory.allCases[row].rawValue)"
+    }
+    
 }
