@@ -10,126 +10,78 @@
     </dependencies>
     <scenes>
         <!--TestVC-->
-        <scene sceneID="s0d-6b-0kx">
+        <scene sceneID="gJW-b2-kTq">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="FVTestVC" customModule="farewell_vaccine" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController id="QZz-IL-8dc" customClass="FVTestVC" customModule="farewell_vaccine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RRF-ie-DEG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="saG-Tf-Tgy">
-                                <rect key="frame" x="0.0" y="128" width="414" height="728"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YjV-XP-CmG">
+                                <rect key="frame" x="47" y="317" width="320" height="262.5"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="srr-SH-cU3">
-                                        <rect key="frame" x="165.5" y="0.0" width="83" height="32"/>
-                                        <segments>
-                                            <segment title="남자"/>
-                                            <segment title="여자"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbf-8C-vcq">
-                                        <rect key="frame" x="186.5" y="173" width="41.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원하는 테스트항목을 선택해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vU-p8-Wuk">
+                                        <rect key="frame" x="12.5" y="0.0" width="295" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="KmK-Fp-nvi">
-                                        <rect key="frame" x="107" y="336" width="200" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="KmK-Fp-nvi" secondAttribute="height" multiplier="1:1" id="Qrz-C4-Lun"/>
-                                            <constraint firstAttribute="width" constant="200" id="lcY-fJ-bS3"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcY-W3-ESf" customClass="CustomPinkButton" customModule="farewell_vaccine" customModuleProvider="target">
-                                        <rect key="frame" x="132" y="678" width="150" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="5Uz-Vy-5hE"/>
-                                            <constraint firstAttribute="height" constant="50" id="Zoh-K7-be7"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="테스트하기"/>
-                                        <connections>
-                                            <segue destination="Hxk-UK-QXD" kind="show" id="ZhH-Jl-pev"/>
-                                        </connections>
-                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nrr-pm-lgl">
+                                        <rect key="frame" x="0.0" y="46.5" width="320" height="216"/>
+                                    </pickerView>
                                 </subviews>
                             </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="saG-Tf-Tgy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9sZ-Kv-PA8"/>
-                            <constraint firstItem="saG-Tf-Tgy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="AZp-8n-3Cw"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="saG-Tf-Tgy" secondAttribute="trailing" id="QPT-MZ-cvV"/>
-                            <constraint firstAttribute="bottom" secondItem="saG-Tf-Tgy" secondAttribute="bottom" constant="40" id="XeH-ws-9rQ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="xss-FN-hrE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="115.84821428571428"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="a3S-sa-scv">
-            <objects>
-                <viewController id="Hxk-UK-QXD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7f2-GU-fhJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iPm-8u-sSU">
-                                <rect key="frame" x="0.0" y="44" width="414" height="689"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Jq5-r7-0hh">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jq5-r7-0hh" id="36n-dM-Cwk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-PK-0AU" customClass="CustomPinkButton" customModule="farewell_vaccine" customModuleProvider="target">
-                                <rect key="frame" x="171" y="772" width="73" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nx-LS-fTT" customClass="CustomPinkButton" customModule="farewell_vaccine" customModuleProvider="target">
+                                <rect key="frame" x="132" y="772" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Fle-lR-J8G"/>
+                                    <constraint firstAttribute="height" constant="50" id="btB-8y-R7w"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="결과보기"/>
+                                <buttonConfiguration key="configuration" style="plain" title="시작하기"/>
+                                <connections>
+                                    <action selector="startTestBtn:" destination="QZz-IL-8dc" eventType="touchUpInside" id="CHU-SE-0b1"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="PSv-Y0-jD5"/>
+                        <viewLayoutGuide key="safeArea" id="ahN-iy-wS6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YjV-XP-CmG" firstAttribute="centerY" secondItem="RRF-ie-DEG" secondAttribute="centerY" id="PHn-GX-v2d"/>
+                            <constraint firstItem="YjV-XP-CmG" firstAttribute="centerX" secondItem="RRF-ie-DEG" secondAttribute="centerX" id="Tz6-yT-FLa"/>
+                            <constraint firstItem="3Nx-LS-fTT" firstAttribute="centerX" secondItem="RRF-ie-DEG" secondAttribute="centerX" id="gvm-lT-V19"/>
+                            <constraint firstItem="ahN-iy-wS6" firstAttribute="bottom" secondItem="3Nx-LS-fTT" secondAttribute="bottom" constant="40" id="uJs-tI-dHJ"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="E1t-LZ-GJy"/>
+                    <navigationItem key="navigationItem" id="SaT-eI-p3G"/>
+                    <connections>
+                        <outlet property="testCategoryPickerView" destination="Nrr-pm-lgl" id="XDk-5d-fjf"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qcU-pu-kqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pJD-hO-uWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1875.3623188405797" y="115.84821428571428"/>
+            <point key="canvasLocation" x="1873.913043478261" y="93.75"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="XZA-2x-hQx">
+        <scene sceneID="sbA-19-Uqh">
             <objects>
-                <navigationController storyboardIdentifier="FVTestNC" automaticallyAdjustsScrollViewInsets="NO" id="Rf0-Qr-fow" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FVTestNC" automaticallyAdjustsScrollViewInsets="NO" id="Cwn-iU-DvA" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fxL-oO-GUO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6qU-5A-CDT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="3MK-ky-IrR"/>
+                        <segue destination="QZz-IL-8dc" kind="relationship" relationship="rootViewController" id="O4M-aC-jt5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RK3-a2-y2b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jTa-Tu-cQW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
+            <point key="canvasLocation" x="1171" y="94"/>
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="540" height="540"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
