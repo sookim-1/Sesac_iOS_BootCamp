@@ -17,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7d-mA-6nO">
-                                <rect key="frame" x="186.5" y="438" width="41.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabeLabeLabeLabeLabeLabeLabeLabeLabeLabeLabeLabeLabeLabeLabeLabeLabe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7d-mA-6nO">
+                                <rect key="frame" x="40" y="386" width="334" height="124.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -27,6 +27,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="L7d-mA-6nO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="Z2f-lI-we8"/>
                             <constraint firstItem="L7d-mA-6nO" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="m6A-uE-t8K"/>
                             <constraint firstItem="L7d-mA-6nO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="tjt-o5-3ph"/>
                         </constraints>
