@@ -26,7 +26,7 @@ class ProverbVC: UIViewController {
         do {
             let advices: [LoveAdvice] = try jsonDecoder.decode([LoveAdvice].self, from: adviceItemsData.data)
             guard let advice = advices.randomElement() else { return }
-            adviceLabel.text = "\(advice.advice) - \(advice.author)"
+            adviceLabel.text = "\(advice.advice)\n\n\(advice.author)"
         } catch  {
             print("Error")
         }
