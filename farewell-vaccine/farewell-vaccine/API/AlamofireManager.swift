@@ -6,3 +6,19 @@
 //
 
 import Foundation
+import Alamofire
+
+final class AlamofireManager {
+    
+    static let shared = AlamofireManager()
+    
+    let interceptors = Interceptor(interceptors:[
+                            BaseInterceptor()
+                        ])
+    
+    var session: Session
+    
+    private init() {
+        session = Session(interceptor: interceptors)
+    }
+}

@@ -13,14 +13,18 @@ class FVTestVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureNavigationBar()
         testCategoryPickerView.delegate = self
         testCategoryPickerView.dataSource = self
-        print(TestCategory.allCases[1].rawValue)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar()
     }
     
     func configureNavigationBar() {
         self.title = "테스트하기"
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.customPink]
         let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
         menuButton.tintColor = .customPink
@@ -32,10 +36,13 @@ class FVTestVC: UIViewController {
         
         self.present(sideMenuNC, animated: true)
     }
-
-    @IBAction func startTestBtn(_ sender: UIButton) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let row = self.testCategoryPickerView.selectedRow(inComponent: 0)
-        self.testCategoryPickerView.selectRow(row, inComponent: 0, animated: false)
+
+        guard let testingVC = segue.destination as? TestingVC else { return }
+        
+        testingVC.testCategory = TestCategory.allCases[row]
     }
 }
 

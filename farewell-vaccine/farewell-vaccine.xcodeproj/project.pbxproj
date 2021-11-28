@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		762B409027542B2A00F39A27 /* TestResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B408F27542B2A00F39A27 /* TestResultVC.swift */; };
+		762B40932754376D00F39A27 /* SendDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B40922754376D00F39A27 /* SendDataDelegate.swift */; };
+		7644859D275227A300A009A8 /* TestingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644859C275227A200A009A8 /* TestingVC.swift */; };
+		764485A027522A4C00A009A8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7644859F27522A4C00A009A8 /* Alamofire */; };
+		764485A22752308500A009A8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764485A12752308500A009A8 /* API.swift */; };
+		764485A52752329D00A009A8 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764485A42752329D00A009A8 /* AlamofireManager.swift */; };
+		764485A7275232C700A009A8 /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764485A6275232C700A009A8 /* BaseInterceptor.swift */; };
+		764485AB275238FC00A009A8 /* UnsplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764485AA275238FC00A009A8 /* UnsplashRouter.swift */; };
+		764485AD2752444F00A009A8 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764485AC2752444F00A009A8 /* NetworkModel.swift */; };
+		764485B127524F8100A009A8 /* LoveTestQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764485B027524F8100A009A8 /* LoveTestQuestion.swift */; };
+		764485B3275251D700A009A8 /* LoveTestCollecionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764485B2275251D700A009A8 /* LoveTestCollecionViewCell.swift */; };
 		766F4784274A64DC00992499 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4783274A64DC00992499 /* OnboardingVC.swift */; };
 		766F4787274A689B00992499 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4786274A689B00992499 /* OnboardingSlide.swift */; };
 		766F4789274A6A9A00992499 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */; };
@@ -49,6 +60,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		762B408F27542B2A00F39A27 /* TestResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultVC.swift; sourceTree = "<group>"; };
+		762B40922754376D00F39A27 /* SendDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDataDelegate.swift; sourceTree = "<group>"; };
+		7644859C275227A200A009A8 /* TestingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingVC.swift; sourceTree = "<group>"; };
+		764485A12752308500A009A8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		764485A42752329D00A009A8 /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
+		764485A6275232C700A009A8 /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
+		764485AA275238FC00A009A8 /* UnsplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRouter.swift; sourceTree = "<group>"; };
+		764485AC2752444F00A009A8 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		764485B027524F8100A009A8 /* LoveTestQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveTestQuestion.swift; sourceTree = "<group>"; };
+		764485B2275251D700A009A8 /* LoveTestCollecionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveTestCollecionViewCell.swift; sourceTree = "<group>"; };
 		766F4783274A64DC00992499 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		766F4786274A689B00992499 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -95,6 +116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76861AC1274C663A00564D82 /* RealmSwift in Frameworks */,
+				764485A027522A4C00A009A8 /* Alamofire in Frameworks */,
 				76861ABF274C663A00564D82 /* Realm in Frameworks */,
 				766F4791274A7DA800992499 /* SideMenu in Frameworks */,
 			);
@@ -103,9 +125,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		762B4091275435EC00F39A27 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				762B40922754376D00F39A27 /* SendDataDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		764485A32752328C00A009A8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				764485A42752329D00A009A8 /* AlamofireManager.swift */,
+				764485A6275232C700A009A8 /* BaseInterceptor.swift */,
+				764485A12752308500A009A8 /* API.swift */,
+				764485AA275238FC00A009A8 /* UnsplashRouter.swift */,
+				764485AC2752444F00A009A8 /* NetworkModel.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		764485AE27524BB900A009A8 /* LoveTest */ = {
+			isa = PBXGroup;
+			children = (
+				766F479C274A955400992499 /* FVTestVC.swift */,
+				7644859C275227A200A009A8 /* TestingVC.swift */,
+				764485B2275251D700A009A8 /* LoveTestCollecionViewCell.swift */,
+				762B408F27542B2A00F39A27 /* TestResultVC.swift */,
+			);
+			path = LoveTest;
+			sourceTree = "<group>";
+		};
+		764485AF27524F5B00A009A8 /* LoveTest */ = {
+			isa = PBXGroup;
+			children = (
+				764485B027524F8100A009A8 /* LoveTestQuestion.swift */,
+			);
+			path = LoveTest;
+			sourceTree = "<group>";
+		};
 		766F477F274A649400992499 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				764485AF27524F5B00A009A8 /* LoveTest */,
 				766F4786274A689B00992499 /* OnboardingSlide.swift */,
 				766F478D274A782A00992499 /* FirstLaunch.swift */,
 				76861AC2274C66C200564D82 /* HalfProfile.swift */,
@@ -119,12 +181,12 @@
 		766F4780274A649C00992499 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				764485AE27524BB900A009A8 /* LoveTest */,
 				766F4794274A7E6C00992499 /* SideMenu */,
 				76C6F63827462BFE00802232 /* ViewController.swift */,
 				766F4782274A64BD00992499 /* Onboarding */,
-				766F479C274A955400992499 /* FVTestVC.swift */,
-				766F47A0274A98CD00992499 /* ProfileVC.swift */,
 				766F47A4274A9BCF00992499 /* SettingVC.swift */,
+				766F47A0274A98CD00992499 /* ProfileVC.swift */,
 				766F47A8274A9C4E00992499 /* ProverbVC.swift */,
 				76861AC4274C67FE00564D82 /* HalfProfileAssignmentVC.swift */,
 				76861ACE274CFB8200564D82 /* IntroduceVC.swift */,
@@ -149,11 +211,11 @@
 				76C6F63A27462BFE00802232 /* Onboarding.storyboard */,
 				766F478B274A74B600992499 /* Main.storyboard */,
 				766F4792274A7E5300992499 /* SideMenu.storyboard */,
-				766F479A274A951800992499 /* FVTest.storyboard */,
 				766F479E274A98B700992499 /* Profile.storyboard */,
 				766F47A2274A9BBF00992499 /* Setting.storyboard */,
 				766F47A6274A9C3F00992499 /* Proverb.storyboard */,
 				76861ACC274CFB6F00564D82 /* Introduce.storyboard */,
+				766F479A274A951800992499 /* FVTest.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -216,6 +278,8 @@
 		76C6F63327462BFE00802232 /* farewell-vaccine */ = {
 			isa = PBXGroup;
 			children = (
+				762B4091275435EC00F39A27 /* Protocol */,
+				764485A32752328C00A009A8 /* API */,
 				76861AC9274CF8C300564D82 /* CustomViews */,
 				76861AC6274CF70F00564D82 /* Extensions */,
 				766F4799274A8D4700992499 /* Support */,
@@ -247,6 +311,7 @@
 				766F4790274A7DA800992499 /* SideMenu */,
 				76861ABE274C663A00564D82 /* Realm */,
 				76861AC0274C663A00564D82 /* RealmSwift */,
+				7644859F27522A4C00A009A8 /* Alamofire */,
 			);
 			productName = "farewell-vaccine";
 			productReference = 76C6F63127462BFE00802232 /* farewell-vaccine.app */;
@@ -279,6 +344,7 @@
 			packageReferences = (
 				766F478F274A7DA800992499 /* XCRemoteSwiftPackageReference "SideMenu" */,
 				76861ABD274C663A00564D82 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				7644859E27522A4C00A009A8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 76C6F63227462BFE00802232 /* Products */;
 			projectDirPath = "";
@@ -320,9 +386,13 @@
 				76861ACF274CFB8200564D82 /* IntroduceVC.swift in Sources */,
 				766F47A5274A9BCF00992499 /* SettingVC.swift in Sources */,
 				766F4787274A689B00992499 /* OnboardingSlide.swift in Sources */,
+				764485A22752308500A009A8 /* API.swift in Sources */,
 				766F478E274A782A00992499 /* FirstLaunch.swift in Sources */,
+				764485AD2752444F00A009A8 /* NetworkModel.swift in Sources */,
+				764485B127524F8100A009A8 /* LoveTestQuestion.swift in Sources */,
 				76C6F63927462BFE00802232 /* ViewController.swift in Sources */,
 				76861AD3274D025600564D82 /* EditCell.swift in Sources */,
+				764485AB275238FC00A009A8 /* UnsplashRouter.swift in Sources */,
 				76861AC8274CF72300564D82 /* UIColor+Ext.swift in Sources */,
 				76861AC5274C67FE00564D82 /* HalfProfileAssignmentVC.swift in Sources */,
 				76861AD9274D063100564D82 /* UIEdgeInsets+Ext.swift in Sources */,
@@ -333,11 +403,17 @@
 				766F4798274A7EB000992499 /* SideMenuVC.swift in Sources */,
 				766F47A9274A9C4E00992499 /* ProverbVC.swift in Sources */,
 				76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */,
+				764485B3275251D700A009A8 /* LoveTestCollecionViewCell.swift in Sources */,
+				762B40932754376D00F39A27 /* SendDataDelegate.swift in Sources */,
 				76861AC3274C66C200564D82 /* HalfProfile.swift in Sources */,
 				766F4796274A7E8900992499 /* SideMenuNC.swift in Sources */,
+				762B409027542B2A00F39A27 /* TestResultVC.swift in Sources */,
 				766F47A1274A98CD00992499 /* ProfileVC.swift in Sources */,
+				764485A52752329D00A009A8 /* AlamofireManager.swift in Sources */,
 				76861ADB274D2AA300564D82 /* LoveAdvice.swift in Sources */,
 				76861ADD274D318A00564D82 /* UIViewController+Ext.swift in Sources */,
+				764485A7275232C700A009A8 /* BaseInterceptor.swift in Sources */,
+				7644859D275227A300A009A8 /* TestingVC.swift in Sources */,
 				76861AD1274CFD8600564D82 /* IntroduceEditVC.swift in Sources */,
 				766F4789274A6A9A00992499 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
@@ -563,6 +639,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7644859E27522A4C00A009A8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.4;
+			};
+		};
 		766F478F274A7DA800992499 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
@@ -582,6 +666,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7644859F27522A4C00A009A8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7644859E27522A4C00A009A8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		766F4790274A7DA800992499 /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 766F478F274A7DA800992499 /* XCRemoteSwiftPackageReference "SideMenu" */;
