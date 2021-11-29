@@ -18,17 +18,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureNavigationBar()
         configureImageView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let halfProfile = localRealm.objects(HalfProfile.self)
+        configureNavigationBar()
+        if !localRealm.isEmpty {
+            let halfProfile = localRealm.objects(HalfProfile.self)
+            nameLabel.text = halfProfile[0].name
+        }
         
-        nameLabel.text = halfProfile.last?.name
-        mainImageView.image = loadImageFromDocumentDirectory(imageName: "1.png")
+        if let updateImage = loadImageFromDocumentDirectory(imageName: "profileImage.png") {
+            mainImageView.image = updateImage
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
