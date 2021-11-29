@@ -184,11 +184,11 @@
 				764485AE27524BB900A009A8 /* LoveTest */,
 				766F4794274A7E6C00992499 /* SideMenu */,
 				76C6F63827462BFE00802232 /* ViewController.swift */,
+				76861AC4274C67FE00564D82 /* HalfProfileAssignmentVC.swift */,
 				766F4782274A64BD00992499 /* Onboarding */,
 				766F47A4274A9BCF00992499 /* SettingVC.swift */,
 				766F47A0274A98CD00992499 /* ProfileVC.swift */,
 				766F47A8274A9C4E00992499 /* ProverbVC.swift */,
-				76861AC4274C67FE00564D82 /* HalfProfileAssignmentVC.swift */,
 				76861ACE274CFB8200564D82 /* IntroduceVC.swift */,
 				76861AD0274CFD8600564D82 /* IntroduceEditVC.swift */,
 			);
