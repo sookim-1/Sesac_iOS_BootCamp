@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var settingButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     let localRealm = try! Realm()
     
     override func viewDidLoad() {
@@ -28,10 +30,12 @@ class ViewController: UIViewController {
         if !localRealm.isEmpty {
             let halfProfile = localRealm.objects(HalfProfile.self)
             nameLabel.text = halfProfile[0].name
+            descriptionLabel.text = "❤️"
         }
         
         if let updateImage = loadImageFromDocumentDirectory(imageName: "profileImage.png") {
             mainImageView.image = updateImage
+            descriptionLabel.text = "❤️"
         }
     }
     
@@ -46,7 +50,6 @@ class ViewController: UIViewController {
     
     func configureNavigationBar() {        
         self.title = "이별백신"
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.customPink ?? .systemPink]
         let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
         menuButton.tintColor = .customPink
         self.navigationItem.leftBarButtonItem = menuButton
