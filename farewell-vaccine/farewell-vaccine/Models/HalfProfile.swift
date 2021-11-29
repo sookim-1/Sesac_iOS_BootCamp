@@ -9,6 +9,5 @@ import Foundation
 import RealmSwift
 
 class HalfProfile: Object {
-    @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var name: String = ""
+    @Persisted var name: String?
 }

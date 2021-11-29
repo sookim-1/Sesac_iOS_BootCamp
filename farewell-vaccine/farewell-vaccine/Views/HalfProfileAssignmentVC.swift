@@ -8,19 +8,52 @@
 import UIKit
 import RealmSwift
 
-class HalfProfileAssignmentVC: UIViewController {
-    let localRealm = try! Realm()
+class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
+    
     let picker = UIImagePickerController()
-    let halfProfile = HalfProfile()
-    var profileImage: UIImage!
+    var profileImage: UIImage?
     
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var profileImageButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.navigationBar.topItem?.title = "뒤로"
+        
+        createDismissKeyboardTapGesture()
+        configureTextField()
         picker.delegate = self
+    }
+    
+    func configureTextField() {
+        nameTextField.delegate = self
+        nameTextField.layer.cornerRadius = 10
+        nameTextField.layer.borderWidth = 2
+        nameTextField.layer.borderColor = UIColor.systemGray4.cgColor
+        
+        nameTextField.textColor = .label
+        nameTextField.tintColor = .label
+        nameTextField.textAlignment = .center
+        nameTextField.font = UIFont.preferredFont(forTextStyle: .title2)
+        nameTextField.adjustsFontSizeToFitWidth = true
+        nameTextField.minimumFontSize = 12
+
+        nameTextField.backgroundColor = .tertiarySystemBackground
+        nameTextField.autocorrectionType = .no
+
+        nameTextField.returnKeyType = .done
+        nameTextField.placeholder = "이름을 입력하세요"
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        return true
+    }
+    
+    func createDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func getImageBtnClicked(_ sender: UIButton) {
@@ -44,12 +77,24 @@ class HalfProfileAssignmentVC: UIViewController {
     }
     
     @IBAction func assignmentBtnClicked(_ sender: UIButton) {
+        let localRealm = try! Realm()
+        let halfProfile = HalfProfile()
+        
         halfProfile.name = nameTextField.text!
         
         try! localRealm.write {
-            localRealm.add(halfProfile)
-            saveImageToDocumentDirectory(imageName: "1.png", image: profileImage)
+            if localRealm.isEmpty {
+                localRealm.add(halfProfile)
+            } else {
+                localRealm.objects(HalfProfile.self)[0].name = nameTextField.text!
+            }
         }
+        
+        guard let profileImage = profileImage else {
+            return
+        }
+        
+        saveImageToDocumentDirectory(imageName: "profileImage.png", image: profileImage)
     }
     
 }
@@ -62,6 +107,7 @@ extension HalfProfileAssignmentVC: UIImagePickerControllerDelegate, UINavigation
     }
 
     func openCamera() {
+        // 시뮬레이터 카메라 기능 분기 처리
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.sourceType = .camera
             present(picker, animated: false, completion: nil)
@@ -71,12 +117,18 @@ extension HalfProfileAssignmentVC: UIImagePickerControllerDelegate, UINavigation
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let image = info[.originalImage] as? UIImage {
+            profileImageButton.setImage(image, for: .normal)
             profileImage = image
         } else {
+            profileImage = UIImage(named: "logo")
             print("이미지추출 실패")
         }
         
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
     
@@ -102,7 +154,7 @@ extension HalfProfileAssignmentVC: UIImagePickerControllerDelegate, UINavigation
 
         do {
             try data.write(to: imageURL)
-            print("이미지 저장완료")
+            self.navigationController?.popViewController(animated: true)
         } catch {
             print("이미지를 저장하지 못했습니다.")
         }
