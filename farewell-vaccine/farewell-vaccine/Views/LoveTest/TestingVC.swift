@@ -66,7 +66,6 @@ class TestingVC: UIViewController {
     
     func configureNavigationBar() {
         self.navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.tintColor = .customPink
         navigationController?.navigationBar.topItem?.title = "뒤로"
         
         let musicButton = UIBarButtonItem(image: UIImage(systemName: "speaker.slash"), style: .plain, target: self, action: #selector(musicPause))
@@ -106,7 +105,7 @@ class TestingVC: UIViewController {
     @IBAction func trueBtnClicked(_ sender: UIButton) {
         testResultCount += 1
         if currentPage == questionSlides.count - 1 {
-            //avPlayer.stop()
+            avPlayer.stop()
             guard let storyboard = self.storyboard else { return }
             guard let resultVC =  storyboard.instantiateViewController(withIdentifier: "TestResultVC") as? TestResultVC else { return }
             resultVC.modalTransitionStyle = .coverVertical
@@ -127,7 +126,7 @@ class TestingVC: UIViewController {
     @IBAction func falseBtnClicked(_ sender: UIButton) {
         testResultCount -= 1
         if currentPage == questionSlides.count - 1 {
-            //avPlayer.stop()
+            avPlayer.stop()
             guard let storyboard = self.storyboard else { return }
             guard let resultVC =  storyboard.instantiateViewController(withIdentifier: "TestResultVC") as? TestResultVC else { return }
             resultVC.modalTransitionStyle = .coverVertical

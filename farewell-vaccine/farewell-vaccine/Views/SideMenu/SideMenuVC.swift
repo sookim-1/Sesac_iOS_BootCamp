@@ -28,11 +28,7 @@ class SideMenuVC: UIViewController {
     }
     
     @IBAction func presentProverbNC() {
-        presentModalFullstyle(storyboardName: "Proverb", storyboardIdentifier: "ProverbNC")
-    }
-    
-    @IBAction func presentProfileNC() {
-        presentModalFullstyle(storyboardName: "Profile", storyboardIdentifier: "ProfileNC")
+        presentModalFullstyle(storyboardName: "LoveAdvice", storyboardIdentifier: "LoveAdviceNC")
     }
     
     @IBAction func presentSettingNC() {

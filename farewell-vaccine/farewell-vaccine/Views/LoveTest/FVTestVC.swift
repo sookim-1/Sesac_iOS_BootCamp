@@ -25,7 +25,6 @@ class FVTestVC: UIViewController {
     func configureNavigationBar() {
         self.title = "테스트하기"
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.customPink]
         let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
         menuButton.tintColor = .customPink
         self.navigationItem.leftBarButtonItem = menuButton

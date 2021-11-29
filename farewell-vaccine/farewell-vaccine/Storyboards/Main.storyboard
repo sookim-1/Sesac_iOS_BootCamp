@@ -72,6 +72,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bT6-0Z-v1e"/>
                     <connections>
+                        <outlet property="descriptionLabel" destination="eby-5G-Ekm" id="NdS-5x-Wcp"/>
                         <outlet property="mainImageView" destination="pIo-Jx-8xA" id="vbT-Yf-2U8"/>
                         <outlet property="nameLabel" destination="r8d-zu-AYV" id="qF7-yl-qog"/>
                         <outlet property="settingButton" destination="efg-cu-0wM" id="ffc-df-j8F"/>

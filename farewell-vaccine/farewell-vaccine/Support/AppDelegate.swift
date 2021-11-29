@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for:.default)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().tintColor = UIColor.customPink
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.customPink ?? .systemPink]
         
         return true
     }
