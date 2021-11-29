@@ -19,6 +19,7 @@ class HalfProfileAssignmentVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.topItem?.title = "뒤로"
         picker.delegate = self
     }
     

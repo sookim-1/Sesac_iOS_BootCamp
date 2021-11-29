@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         configureNavigationBar()
+        configureImageView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,16 +42,24 @@ class ViewController: UIViewController {
     
     func configureNavigationBar() {        
         self.title = "이별백신"
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.customPink]
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.customPink ?? .systemPink]
         let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
         menuButton.tintColor = .customPink
         self.navigationItem.leftBarButtonItem = menuButton
     }
     
+    func configureImageView() {
+        mainImageView.contentMode = UIView.ContentMode.scaleAspectFill
+        mainImageView.layer.cornerRadius = 100
+        mainImageView.clipsToBounds = true
+        mainImageView.layer.borderWidth = 10
+        mainImageView.layer.borderColor = UIColor.customPink?.cgColor
+    }
+    
     func presentOnboardingVC() {
         guard let onboardingVC = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") as? OnboardingVC else { return }
         
-        onboardingVC.modalTransitionStyle = .flipHorizontal
+        onboardingVC.modalTransitionStyle = .crossDissolve
         onboardingVC.modalPresentationStyle = .fullScreen
         
         self.present(onboardingVC, animated: true)
