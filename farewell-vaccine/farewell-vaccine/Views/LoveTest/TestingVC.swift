@@ -23,6 +23,7 @@ class TestingVC: UIViewController {
     var avPlayer = AVAudioPlayer()
     var testCategory: TestCategory?
     var delegate: SendDataDelegate?
+    var imageUrlString: String = ""
     var currentPage = 0 {
         didSet {
             pageControl.currentPage = currentPage
@@ -37,7 +38,15 @@ class TestingVC: UIViewController {
         configureTestButton(falseButton, imageName: "xmark", backgroundColor: .systemRed)
 //        initAudio()
 //        avPlayer.play()
+//        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNotification(_:)), name: NSNotification.Name("didRecieveNotification"), object: nil)
+    }
+    
+    @objc func didRecieveNotification(_ notification: Notification) {
+        guard let receiveData = notification.userInfo else { return }
         
+        guard let receiveText: String = receiveData["imagURL"] as? String else { return }
+ 
+        imageUrlString = receiveText
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -146,7 +155,9 @@ class TestingVC: UIViewController {
                 do {
                     let json = try JSONDecoder().decode(NetworkResults.self, from: result)
 
-                    self.getUrlToImage(urlString: json.results[1].urls.small)
+                    print(json.results[1].urls.small)
+                    //NotificationCenter.default.post(name: NSNotification.Name("didRecieveNotification"), object: nil, userInfo: ["imagURL": json.results[1].urls.small])
+                    //self.getUrlToImage(urlString: json.results[1].urls.small)
                     closure()
                 } catch {
                     print("error!\(error)")
@@ -180,6 +191,34 @@ extension TestingVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LoveTestCollecionViewCell.identifier, for: indexPath) as? LoveTestCollecionViewCell else { return UICollectionViewCell() }
         
         cell.setup(questionSlides[indexPath.row])
+        
+        AlamofireManager.shared.session.request(UnsplashRouter.searchPhotos(term: "loves")).validate(statusCode: 200...399).responseJSON { response in
+            switch response.result {
+            case .success:
+                guard let result = response.data else { return }
+
+                do {
+                    let json = try JSONDecoder().decode(NetworkResults.self, from: result)
+                    let url = URL(string: json.results[indexPath.row].urls.small)
+                    do {
+                        let data = try Data(contentsOf: url!)
+                        let image = UIImage(data: data)!
+                        DispatchQueue.main.async {
+                            guard let cellIndex = collectionView.indexPath(for: cell),
+                                  cellIndex == indexPath else { return }
+                            
+                            cell.slideImageView.image = image
+                        }
+                        
+                    } catch {
+                    }
+                } catch {
+                    print("error!\(error)")
+                }
+            case .failure:
+                return
+            }
+        }
         
         return cell
     }
