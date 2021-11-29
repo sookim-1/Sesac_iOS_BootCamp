@@ -36,8 +36,8 @@ class TestingVC: UIViewController {
         configureCollectionView()
         configureTestButton(trueButton, imageName: "circle", backgroundColor: .systemBlue)
         configureTestButton(falseButton, imageName: "xmark", backgroundColor: .systemRed)
-//        initAudio()
-//        avPlayer.play()
+        initAudio()
+        avPlayer.play()
 //        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNotification(_:)), name: NSNotification.Name("didRecieveNotification"), object: nil)
     }
     
