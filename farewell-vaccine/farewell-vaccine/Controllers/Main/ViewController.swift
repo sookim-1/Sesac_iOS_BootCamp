@@ -20,11 +20,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         configureImageView()
-        let localRealm = try! Realm()
-        print(Realm.Configuration.defaultConfiguration)
-//        try! localRealm.write {
-//                localRealm.deleteAll()
-//            }
     }
     
     override func viewWillAppear(_ animated: Bool) {

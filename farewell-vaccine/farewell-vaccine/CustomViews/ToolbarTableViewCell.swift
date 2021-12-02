@@ -10,9 +10,5 @@ import UIKit
 class ToolbarTableViewCell: UITableViewCell {
 
     @IBOutlet weak var itemLabel: UILabel!
-    
-    override func prepareForReuse() {
-        
-    }
 
 }

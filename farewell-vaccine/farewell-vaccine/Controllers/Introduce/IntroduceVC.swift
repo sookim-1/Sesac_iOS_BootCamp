@@ -32,7 +32,6 @@ class IntroduceVC: UIViewController {
         mainTextView.backgroundColor = loadColorFromDocumentDirectory(name: "colors")
         mainTextView.font = loadFontFromDocumentDirectory(fontName: "fonts")
         mainTextView.textColor = loadColorFromDocumentDirectory(name: "textColors")
-        
     }
     
     func configureNavigationBar() {

@@ -107,7 +107,6 @@ extension HalfProfileAssignmentVC: UIImagePickerControllerDelegate, UINavigation
     }
 
     func openCamera() {
-        // 시뮬레이터 카메라 기능 분기 처리
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.sourceType = .camera
             present(picker, animated: false, completion: nil)
@@ -122,7 +121,6 @@ extension HalfProfileAssignmentVC: UIImagePickerControllerDelegate, UINavigation
             profileImage = image
         } else {
             profileImage = UIImage(named: "logo")
-            print("이미지추출 실패")
         }
         
         dismiss(animated: true, completion: nil)
@@ -139,16 +137,14 @@ extension HalfProfileAssignmentVC: UIImagePickerControllerDelegate, UINavigation
         let imageURL = documentDirectory.appendingPathComponent(imageName)
         
         guard let data = image.pngData() else {
-            print("압축이 실패했습니다.")
             return
         }
         
         if FileManager.default.fileExists(atPath: imageURL.path) {
             do {
                 try FileManager.default.removeItem(at: imageURL)
-                print("이미지 삭제 완료")
             } catch {
-                print("이미지를 삭제하지 못했습니다.")
+                print("이미지 삭제 에러")
             }
         }
 
@@ -156,7 +152,7 @@ extension HalfProfileAssignmentVC: UIImagePickerControllerDelegate, UINavigation
             try data.write(to: imageURL)
             self.navigationController?.popViewController(animated: true)
         } catch {
-            print("이미지를 저장하지 못했습니다.")
+            print("이미지 저장 에러")
         }
     }
     

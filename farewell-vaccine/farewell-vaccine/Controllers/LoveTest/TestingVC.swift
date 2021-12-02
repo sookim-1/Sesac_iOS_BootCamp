@@ -38,12 +38,10 @@ class TestingVC: UIViewController {
         configureTestButton(falseButton, imageName: "xmark", backgroundColor: .systemRed)
         initAudio()
         avPlayer.play()
-//        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNotification(_:)), name: NSNotification.Name("didRecieveNotification"), object: nil)
     }
     
     @objc func didRecieveNotification(_ notification: Notification) {
         guard let receiveData = notification.userInfo else { return }
-        
         guard let receiveText: String = receiveData["imagURL"] as? String else { return }
  
         imageUrlString = receiveText
@@ -79,7 +77,7 @@ class TestingVC: UIViewController {
             try avPlayer = AVAudioPlayer(data: sound.data)
             avPlayer.prepareToPlay()
         } catch {
-            print("error")
+            presentErrorAlertOnMainThread(title: "오디오 에러", message: "오디오를 재생할 수 없습니다", buttonTitle: "확인")
         }
     }
     
@@ -144,40 +142,6 @@ class TestingVC: UIViewController {
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
-    
-    func getImage(closure: @escaping () -> Void) {
-        AlamofireManager.shared.session.request(UnsplashRouter.searchPhotos(term: "loves")).validate(statusCode: 200...399).responseJSON { response in
-            switch response.result {
-            case .success:
-                guard let result = response.data else { return }
-
-                do {
-                    let json = try JSONDecoder().decode(NetworkResults.self, from: result)
-
-                    print(json.results[1].urls.small)
-                    //NotificationCenter.default.post(name: NSNotification.Name("didRecieveNotification"), object: nil, userInfo: ["imagURL": json.results[1].urls.small])
-                    //self.getUrlToImage(urlString: json.results[1].urls.small)
-                    closure()
-                } catch {
-                    print("error!\(error)")
-                }
-            case .failure:
-                return
-            }
-        }
-        
-    }
-    
-    func getUrlToImage(urlString: String) -> UIImage {
-        let url = URL(string: urlString)
-        do {
-            let data = try Data(contentsOf: url!)
-            return UIImage(data: data)!
-        } catch {
-            print("error")
-        }
-        return UIImage(named: "logo")!
-    }
 
 }
 
@@ -198,10 +162,10 @@ extension TestingVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 
                 do {
                     let json = try JSONDecoder().decode(NetworkResults.self, from: result)
-                    let url = URL(string: json.results[indexPath.row].urls.small)
+                    guard let url = URL(string: json.results[indexPath.row].urls.small) else { return }
                     do {
-                        let data = try Data(contentsOf: url!)
-                        let image = UIImage(data: data)!
+                        let data = try Data(contentsOf: url)
+                        let image = UIImage(data: data) ?? .actions
                         DispatchQueue.main.async {
                             guard let cellIndex = collectionView.indexPath(for: cell),
                                   cellIndex == indexPath else { return }
@@ -210,9 +174,10 @@ extension TestingVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
                         }
                         
                     } catch {
+                        self.presentErrorAlertOnMainThread(title: "데이터에러", message: "데이터를 가져올 수 없습니다.", buttonTitle: "확인")
                     }
                 } catch {
-                    print("error!\(error)")
+                    self.presentErrorAlertOnMainThread(title: "디코드에러", message: "디코딩을 할 수 없습니다.", buttonTitle: "확인")
                 }
             case .failure:
                 return
@@ -244,7 +209,7 @@ extension TestingVC {
         case .attachment:
             attachmentQuestion()
         case .none:
-            print("error")
+            self.presentErrorAlertOnMainThread(title: "없는 항목", message: "", buttonTitle: "확인")
         }
     }
     
