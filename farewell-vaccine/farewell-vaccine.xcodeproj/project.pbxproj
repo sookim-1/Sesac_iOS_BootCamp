@@ -48,6 +48,8 @@
 		76861AD9274D063100564D82 /* UIEdgeInsets+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861AD8274D063100564D82 /* UIEdgeInsets+Ext.swift */; };
 		76861ADB274D2AA300564D82 /* LoveAdvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861ADA274D2AA200564D82 /* LoveAdvice.swift */; };
 		76861ADD274D318A00564D82 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861ADC274D318A00564D82 /* UIViewController+Ext.swift */; };
+		76A4369027567E9B001F11C7 /* IntroduceText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4368F27567E9B001F11C7 /* IntroduceText.swift */; };
+		76A43692275685E8001F11C7 /* ToolbarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A43691275685E8001F11C7 /* ToolbarTableViewCell.swift */; };
 		76C2B6F8275217F300E74A17 /* TestCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C2B6F7275217F300E74A17 /* TestCategory.swift */; };
 		76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63427462BFE00802232 /* AppDelegate.swift */; };
 		76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63627462BFE00802232 /* SceneDelegate.swift */; };
@@ -55,6 +57,8 @@
 		76C6F63C27462BFE00802232 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C6F63A27462BFE00802232 /* Onboarding.storyboard */; };
 		76C6F63E27462C0000802232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76C6F63D27462C0000802232 /* Assets.xcassets */; };
 		76C6F64127462C0000802232 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C6F63F27462C0000802232 /* LaunchScreen.storyboard */; };
+		76FA025B27584DBC0029A33F /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FA025A27584DBC0029A33F /* UIFont+Ext.swift */; };
+		76FA025D275851990029A33F /* IntroduceTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FA025C275851990029A33F /* IntroduceTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +99,8 @@
 		76861AD8274D063100564D82 /* UIEdgeInsets+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ext.swift"; sourceTree = "<group>"; };
 		76861ADA274D2AA200564D82 /* LoveAdvice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveAdvice.swift; sourceTree = "<group>"; };
 		76861ADC274D318A00564D82 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		76A4368F27567E9B001F11C7 /* IntroduceText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceText.swift; sourceTree = "<group>"; };
+		76A43691275685E8001F11C7 /* ToolbarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarTableViewCell.swift; sourceTree = "<group>"; };
 		76C2B6F7275217F300E74A17 /* TestCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCategory.swift; sourceTree = "<group>"; };
 		76C6F63127462BFE00802232 /* farewell-vaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farewell-vaccine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C6F63427462BFE00802232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,8 @@
 		76C6F63D27462C0000802232 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76C6F64027462C0000802232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76C6F64227462C0000802232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76FA025A27584DBC0029A33F /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
+		76FA025C275851990029A33F /* IntroduceTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +178,8 @@
 				76861AD6274D041000564D82 /* EditCategory.swift */,
 				76861ADA274D2AA200564D82 /* LoveAdvice.swift */,
 				76C2B6F7275217F300E74A17 /* TestCategory.swift */,
+				76A4368F27567E9B001F11C7 /* IntroduceText.swift */,
+				76FA025C275851990029A33F /* IntroduceTextView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,6 +249,7 @@
 				76861AC7274CF72300564D82 /* UIColor+Ext.swift */,
 				76861AD8274D063100564D82 /* UIEdgeInsets+Ext.swift */,
 				76861ADC274D318A00564D82 /* UIViewController+Ext.swift */,
+				76FA025A27584DBC0029A33F /* UIFont+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -249,6 +260,7 @@
 				76861ACA274CF8FB00564D82 /* CustomPinkButton.swift */,
 				76861AD4274D03DC00564D82 /* ImageListView.swift */,
 				76861AD2274D025600564D82 /* EditCell.swift */,
+				76A43691275685E8001F11C7 /* ToolbarTableViewCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -377,17 +389,20 @@
 				76861AD7274D041000564D82 /* EditCategory.swift in Sources */,
 				766F479D274A955400992499 /* FVTestVC.swift in Sources */,
 				76861ACF274CFB8200564D82 /* IntroduceVC.swift in Sources */,
+				76A4369027567E9B001F11C7 /* IntroduceText.swift in Sources */,
 				766F47A5274A9BCF00992499 /* SettingVC.swift in Sources */,
 				766F4787274A689B00992499 /* OnboardingSlide.swift in Sources */,
 				764485A22752308500A009A8 /* API.swift in Sources */,
 				766F478E274A782A00992499 /* FirstLaunch.swift in Sources */,
 				764485AD2752444F00A009A8 /* NetworkModel.swift in Sources */,
+				76FA025B27584DBC0029A33F /* UIFont+Ext.swift in Sources */,
 				764485B127524F8100A009A8 /* LoveTestQuestion.swift in Sources */,
 				76C6F63927462BFE00802232 /* ViewController.swift in Sources */,
 				76861AD3274D025600564D82 /* EditCell.swift in Sources */,
 				764485AB275238FC00A009A8 /* UnsplashRouter.swift in Sources */,
 				76861AC8274CF72300564D82 /* UIColor+Ext.swift in Sources */,
 				76861AC5274C67FE00564D82 /* HalfProfileAssignmentVC.swift in Sources */,
+				76A43692275685E8001F11C7 /* ToolbarTableViewCell.swift in Sources */,
 				76861AD9274D063100564D82 /* UIEdgeInsets+Ext.swift in Sources */,
 				76861AD5274D03DC00564D82 /* ImageListView.swift in Sources */,
 				76C2B6F8275217F300E74A17 /* TestCategory.swift in Sources */,
@@ -399,6 +414,7 @@
 				764485B3275251D700A009A8 /* LoveTestCollecionViewCell.swift in Sources */,
 				762B40932754376D00F39A27 /* SendDataDelegate.swift in Sources */,
 				76861AC3274C66C200564D82 /* HalfProfile.swift in Sources */,
+				76FA025D275851990029A33F /* IntroduceTextView.swift in Sources */,
 				766F4796274A7E8900992499 /* SideMenuNC.swift in Sources */,
 				762B409027542B2A00F39A27 /* TestResultVC.swift in Sources */,
 				764485A52752329D00A009A8 /* AlamofireManager.swift in Sources */,

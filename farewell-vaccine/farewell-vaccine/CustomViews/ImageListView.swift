@@ -36,15 +36,6 @@ class ImageListView: UIImageView {
         layer.cornerRadius = 10
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        
-        switch category {
-        case .font:
-            image = itemImage
-        case .textColor:
-            backgroundColor = itemColor
-        case .background:
-            image = itemImage
-        }
     }
     
 }
