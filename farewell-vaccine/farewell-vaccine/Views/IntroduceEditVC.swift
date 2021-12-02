@@ -17,11 +17,12 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
     var itemArray: [String] = []
     var sizeItemArray: [Int] = []
     var editItemCategory: EditCategory?
-    let localRealm = try! Realm()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(finishEdit))
         configureToolbar()
         configureTableView()
         introduceTextView.delegate = self
@@ -30,36 +31,29 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if !localRealm.isEmpty {
+        let localRealm = try! Realm()
+
+        try! localRealm.write {
             let introduce = localRealm.objects(Introduce.self)
-            introduceTextView.text = introduce[0].text
+            introduceTextView.text = introduce.last?.text
         }
+
         introduceTextView.backgroundColor = loadColorFromDocumentDirectory(name: "colors")
         introduceTextView.font = loadFontFromDocumentDirectory(fontName: "fonts")
         introduceTextView.textColor = loadColorFromDocumentDirectory(name: "textColors")
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        saveIntroduceToDocumentDirectory(fonts: introduceTextView.font!, colors: introduceTextView.backgroundColor!, textColors: introduceTextView.textColor!)
+    @objc func finishEdit() {
+        saveIntroduceToDocumentDirectory(fonts: introduceTextView.font ?? .systemFont(ofSize: 17), colors: introduceTextView.backgroundColor ?? .systemBackground, textColors: introduceTextView.textColor ?? .systemBackground)
         saveText()
     }
     
     func saveText() {
         let localRealm = try! Realm()
-        let introduce = Introduce()
-        
-        introduce.text = introduceTextView.text!
-        
+        let introduce = Introduce(text: introduceTextView.text!)
         try! localRealm.write {
-            if localRealm.isEmpty {
-                localRealm.add(introduce)
-            } else {
-                localRealm.objects(Introduce.self)[0].text = introduceTextView.text!
-            }
+            localRealm.add(introduce)
         }
-
     }
  
     func configureTableView() {

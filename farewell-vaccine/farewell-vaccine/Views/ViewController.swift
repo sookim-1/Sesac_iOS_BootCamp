@@ -15,23 +15,31 @@ class ViewController: UIViewController {
     @IBOutlet weak var settingButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    let localRealm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureImageView()
+        let localRealm = try! Realm()
+        print(Realm.Configuration.defaultConfiguration)
+//        try! localRealm.write {
+//                localRealm.deleteAll()
+//            }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         configureNavigationBar()
-        if !localRealm.isEmpty {
-            let halfProfile = localRealm.objects(HalfProfile.self)
-            nameLabel.text = halfProfile[0].name
-            descriptionLabel.text = "❤️"
+        let localRealm = try! Realm()
+        try! localRealm.write {
+            if !localRealm.isEmpty {
+                let halfProfile = localRealm.objects(HalfProfile.self)
+                nameLabel.text = halfProfile[0].name
+                descriptionLabel.text = "❤️"
+            }
         }
+
         
         if let updateImage = loadImageFromDocumentDirectory(imageName: "profileImage.png") {
             mainImageView.image = updateImage
@@ -79,16 +87,12 @@ class ViewController: UIViewController {
     }
     
     func loadImageFromDocumentDirectory(imageName: String) -> UIImage? {
-        
-        // 1. 도큐먼트 폴더 경로가져오기
         let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
         let path = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
         
         if let directoryPath = path.first {
-        // 2. 이미지 URL 찾기
             let imageURL = URL(fileURLWithPath: directoryPath).appendingPathComponent(imageName)
-            // 3. UIImage로 불러오기
             return UIImage(contentsOfFile: imageURL.path)
         }
         
