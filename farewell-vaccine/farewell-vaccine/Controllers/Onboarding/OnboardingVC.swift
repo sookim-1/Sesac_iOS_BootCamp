@@ -36,9 +36,9 @@ class OnboardingVC: UIViewController {
         collectionView.dataSource = self
         
         slides = [
-            OnboardingSlide(title: "연애 테스트", description: "결혼, 연애능력, 애착유형테스트를 해보세요!😁", image: UIImage(named: "onboarding-3") ?? .actions),
-            OnboardingSlide(title: "추억간직하기", description: "상대방은 나에게 어떤사람인지 기억할 수 있어요🧑🏻‍💻", image: UIImage(named: "onboarding-2") ?? .actions),
-            OnboardingSlide(title: "연애명언", description: "연애명언을 볼 수 있어요😎", image: UIImage(named: "onboarding-1") ?? .actions)
+            OnboardingSlide(title: "연애 테스트", description: "결혼, 연애능력, 애착유형테스트를 해보세요!😁", image: UIImage(named: "onboarding-2") ?? .actions),
+            OnboardingSlide(title: "추억간직하기", description: "상대방은 나에게 어떤사람인지 기억할 수 있어요🧑🏻‍💻", image: UIImage(named: "onboarding-1") ?? .actions),
+            OnboardingSlide(title: "연애명언", description: "연애명언을 볼 수 있어요😎", image: UIImage(named: "onboarding-3") ?? .actions)
         ]
     }
     

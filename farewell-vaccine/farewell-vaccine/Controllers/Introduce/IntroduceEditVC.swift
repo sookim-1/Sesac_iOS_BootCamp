@@ -48,6 +48,14 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
         saveText()
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+      if (text == "\n") {
+        textView.resignFirstResponder()
+      } else {
+      }
+      return true
+    }
+    
     func saveText() {
         let localRealm = try! Realm()
         let introduce = Introduce(text: introduceTextView.text!)
