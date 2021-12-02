@@ -13,10 +13,10 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var editToolbar: UIToolbar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var introduceTextView: UITextView!
-    var uiFontStyle: [UIFont.TextStyle] = []
-    var itemArray: [String] = []
-    var sizeItemArray: [Int] = []
-    var editItemCategory: EditCategory?
+    private var uiFontStyle: [UIFont.TextStyle] = []
+    private var itemArray: [String] = []
+    private var sizeItemArray: [Int] = []
+    private var editItemCategory: EditCategory?
     
     
     override func viewDidLoad() {
@@ -103,7 +103,6 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
               let textColorData = textColors.encode(),
               let fontData = fonts.encode()
         else {
-            print("압축이 실패했습니다.")
             return
         }
         saveFileManager(data: fontData, url: fontURL)
@@ -115,9 +114,8 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
         if FileManager.default.fileExists(atPath: url.path) {
             do {
                 try FileManager.default.removeItem(at: url)
-                print("삭제 완료")
             } catch {
-                print("삭제하지 못했습니다.")
+                print("삭제 에러")
             }
         }
 
@@ -126,7 +124,7 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
 
             self.navigationController?.popViewController(animated: true)
         } catch {
-            print("저장하지 못했습니다.")
+            print("저장에러 발생")
         }
     }
     
