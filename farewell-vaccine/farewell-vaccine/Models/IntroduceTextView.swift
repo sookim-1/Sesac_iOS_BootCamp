@@ -10,4 +10,9 @@ import RealmSwift
 
 class Introduce: Object {
     @Persisted var text: String?
+    
+    convenience init(text: String) {
+        self.init()
+        self.text = text
+    }
 }
