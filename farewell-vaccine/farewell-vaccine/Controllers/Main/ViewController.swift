@@ -37,8 +37,11 @@ class ViewController: UIViewController {
 
         
         if let updateImage = loadImageFromDocumentDirectory(imageName: "profileImage.png") {
+            
             mainImageView.image = updateImage
             descriptionLabel.text = "❤️"
+        } else {
+            mainImageView.image = UIImage(systemName: "photo")
         }
     }
     

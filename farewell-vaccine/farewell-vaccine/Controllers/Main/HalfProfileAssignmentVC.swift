@@ -91,10 +91,36 @@ class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
         }
         
         guard let profileImage = profileImage else {
+            presentErrorAlertOnMainThread(title: "사진을 저장해주세요", message: "", buttonTitle: "확인")
+            guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
+            
+            let imageURL = documentDirectory.appendingPathComponent("profileImage.png")
+            
+            if FileManager.default.fileExists(atPath: imageURL.path) {
+                do {
+                    try FileManager.default.removeItem(at: imageURL)
+                } catch {
+                    print("이미지 삭제 에러")
+                }
+            }
             return
         }
         
-        saveImageToDocumentDirectory(imageName: "profileImage.png", image: profileImage)
+        saveImageToDocumentDirectory(imageName: "profileImage.png", image: fixOrientation(img: profileImage))
+    }
+    
+    func fixOrientation(img: UIImage) -> UIImage {
+        if (img.imageOrientation == .up) {
+            return img
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(img.size, false, img.scale)
+        let rect = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height)
+        img.draw(in: rect)
+        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        return normalizedImage
     }
     
 }
