@@ -29,8 +29,6 @@
 		766F47A5274A9BCF00992499 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F47A4274A9BCF00992499 /* SettingVC.swift */; };
 		766F47A7274A9C3F00992499 /* LoveAdvice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F47A6274A9C3F00992499 /* LoveAdvice.storyboard */; };
 		766F47A9274A9C4E00992499 /* LoveAdviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F47A8274A9C4E00992499 /* LoveAdviceVC.swift */; };
-		76861ABF274C663A00564D82 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 76861ABE274C663A00564D82 /* Realm */; };
-		76861AC1274C663A00564D82 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76861AC0274C663A00564D82 /* RealmSwift */; };
 		76861AC3274C66C200564D82 /* HalfProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861AC2274C66C200564D82 /* HalfProfile.swift */; };
 		76861AC5274C67FE00564D82 /* HalfProfileAssignmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861AC4274C67FE00564D82 /* HalfProfileAssignmentVC.swift */; };
 		76861AC8274CF72300564D82 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861AC7274CF72300564D82 /* UIColor+Ext.swift */; };
@@ -42,6 +40,8 @@
 		76861AD9274D063100564D82 /* UIEdgeInsets+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861AD8274D063100564D82 /* UIEdgeInsets+Ext.swift */; };
 		76861ADB274D2AA300564D82 /* LoveAdvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861ADA274D2AA200564D82 /* LoveAdvice.swift */; };
 		76861ADD274D318A00564D82 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76861ADC274D318A00564D82 /* UIViewController+Ext.swift */; };
+		768B9481275CE14300C32069 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 768B9480275CE14300C32069 /* Realm */; };
+		768B9483275CE14300C32069 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 768B9482275CE14300C32069 /* RealmSwift */; };
 		76A43692275685E8001F11C7 /* ToolbarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A43691275685E8001F11C7 /* ToolbarTableViewCell.swift */; };
 		76C2B6F8275217F300E74A17 /* TestCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C2B6F7275217F300E74A17 /* TestCategory.swift */; };
 		76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6F63427462BFE00802232 /* AppDelegate.swift */; };
@@ -124,9 +124,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76861AC1274C663A00564D82 /* RealmSwift in Frameworks */,
+				768B9483275CE14300C32069 /* RealmSwift in Frameworks */,
+				768B9481275CE14300C32069 /* Realm in Frameworks */,
 				764485A027522A4C00A009A8 /* Alamofire in Frameworks */,
-				76861ABF274C663A00564D82 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,9 +337,9 @@
 			);
 			name = "farewell-vaccine";
 			packageProductDependencies = (
-				76861ABE274C663A00564D82 /* Realm */,
-				76861AC0274C663A00564D82 /* RealmSwift */,
 				7644859F27522A4C00A009A8 /* Alamofire */,
+				768B9480275CE14300C32069 /* Realm */,
+				768B9482275CE14300C32069 /* RealmSwift */,
 			);
 			productName = "farewell-vaccine";
 			productReference = 76C6F63127462BFE00802232 /* farewell-vaccine.app */;
@@ -370,8 +370,8 @@
 			);
 			mainGroup = 76C6F62827462BFE00802232;
 			packageReferences = (
-				76861ABD274C663A00564D82 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				7644859E27522A4C00A009A8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				768B947F275CE14300C32069 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 76C6F63227462BFE00802232 /* Products */;
 			projectDirPath = "";
@@ -601,7 +601,7 @@
 				INFOPLIST_FILE = "farewell-vaccine/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "이별백신";
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 권한을 허용하시겠습니까?";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진앨범 권한을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 접근 권한을 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -635,7 +635,7 @@
 				INFOPLIST_FILE = "farewell-vaccine/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "이별백신";
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 권한을 허용하시겠습니까?";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진앨범 권한을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 접근 권한을 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -689,12 +689,12 @@
 				minimumVersion = 5.4.4;
 			};
 		};
-		76861ABD274C663A00564D82 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+		768B947F275CE14300C32069 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
 			requirement = {
 				kind = exactVersion;
-				version = 10.20.0;
+				version = 10.18.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -705,14 +705,14 @@
 			package = 7644859E27522A4C00A009A8 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		76861ABE274C663A00564D82 /* Realm */ = {
+		768B9480275CE14300C32069 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 76861ABD274C663A00564D82 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			package = 768B947F275CE14300C32069 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = Realm;
 		};
-		76861AC0274C663A00564D82 /* RealmSwift */ = {
+		768B9482275CE14300C32069 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 76861ABD274C663A00564D82 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			package = 768B947F275CE14300C32069 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
