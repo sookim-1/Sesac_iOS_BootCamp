@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet var sideMenuBtn: UIBarButtonItem!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,13 +30,20 @@ class ViewController: UIViewController {
         
         configureNavigationBar()
         let localRealm = try! Realm()
-        try! localRealm.write {
-            if !localRealm.isEmpty {
-                let halfProfile = localRealm.objects(HalfProfile.self)
-                nameLabel.text = halfProfile[0].name
+        
+        let halfProfiles = localRealm.objects(HalfProfile.self)
+        if !halfProfiles.isEmpty {
+            let halfProfileUpdate = halfProfiles[0]
+            
+            try! localRealm.write {
+                nameLabel.text = halfProfileUpdate.name
                 descriptionLabel.text = "❤️"
             }
         }
+
+        print(localRealm.configuration.fileURL!)
+        
+
 
         
         if let updateImage = loadImageFromDocumentDirectory(imageName: "profileImage.png") {

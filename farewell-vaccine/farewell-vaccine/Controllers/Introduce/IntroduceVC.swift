@@ -25,11 +25,15 @@ class IntroduceVC: UIViewController {
         super.viewWillAppear(animated)
         self.revealViewController()?.gestureEnabled = false
         configureTextView()
+        
         let localRealm = try! Realm()
-
-        try! localRealm.write {
-            let introduce = localRealm.objects(Introduce.self)
-            mainTextView.text = introduce.last?.text
+        let introduces = localRealm.objects(Introduce.self)
+        
+        if !introduces.isEmpty {
+            let introduceUpdate = introduces[0]
+            try! localRealm.write {
+                mainTextView.text = introduceUpdate.text
+            }
         }
 
         mainTextView.backgroundColor = loadColorFromDocumentDirectory(name: "colors")

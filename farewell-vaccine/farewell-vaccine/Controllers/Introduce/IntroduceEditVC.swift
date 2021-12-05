@@ -17,7 +17,7 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
     private var itemArray: [String] = []
     private var sizeItemArray: [Int] = []
     private var editItemCategory: EditCategory?
-    
+    let localRealm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,15 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
         
         tableView.allowsSelection = true
         tableView.isUserInteractionEnabled = true
-
+        
+        let introduces = localRealm.objects(Introduce.self)
+        
+        if !introduces.isEmpty {
+            let introduceUpdate = introduces[0]
+            try! localRealm.write {
+                introduceTextView.text = introduceUpdate.text
+            }
+        }
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -40,12 +48,6 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.revealViewController()?.gestureEnabled = false
-        let localRealm = try! Realm()
-
-        try! localRealm.write {
-            let introduce = localRealm.objects(Introduce.self)
-            introduceTextView.text = introduce.last?.text
-        }
 
         introduceTextView.backgroundColor = loadColorFromDocumentDirectory(name: "colors")
         introduceTextView.font = loadFontFromDocumentDirectory(fontName: "fonts")
@@ -58,7 +60,7 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
     }
     
     @objc func finishEdit() {
-        saveIntroduceToDocumentDirectory(fonts: introduceTextView.font ?? .systemFont(ofSize: 17), colors: introduceTextView.backgroundColor ?? .systemBackground, textColors: introduceTextView.textColor ?? .systemBackground)
+        saveIntroduceToDocumentDirectory(fonts: introduceTextView.font ?? .systemFont(ofSize: 17), colors: introduceTextView.backgroundColor ?? .systemBackground, textColors: introduceTextView.textColor ?? .label)
         saveText()
     }
     
@@ -71,10 +73,19 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
     }
     
     func saveText() {
-        let localRealm = try! Realm()
-        let introduce = Introduce(text: introduceTextView.text!)
-        try! localRealm.write {
-            localRealm.add(introduce)
+        let introduce = Introduce(text: introduceTextView.text ?? "")
+        let introduces = localRealm.objects(Introduce.self)
+        
+        if !introduces.isEmpty {
+            let introduceUpdate = introduces[0]
+            try! localRealm.write {
+                introduceUpdate.text = introduceTextView.text ?? ""
+            }
+        }
+        else {
+            try! localRealm.write {
+                 localRealm.add(introduce)
+            }
         }
     }
  

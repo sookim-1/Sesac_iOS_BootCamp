@@ -36,63 +36,65 @@ class SideMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // TableView
+        configureSideMenuView()
+    }
+
+    func configureSideMenuView() {
         self.sideMenuTableView.delegate = self
         self.sideMenuTableView.dataSource = self
-        self.sideMenuTableView.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.1294117647, blue: 0.2941176471, alpha: 1)
+        self.sideMenuTableView.backgroundColor = .customPink ?? .systemPink
         self.sideMenuTableView.separatorStyle = .none
 
-        // Set Highlighted Cell
         DispatchQueue.main.async {
             let defaultRow = IndexPath(row: self.defaultHighlightedCell, section: 0)
             self.sideMenuTableView.selectRow(at: defaultRow, animated: false, scrollPosition: .none)
         }
 
-        // Footer
         self.footerLabel.textColor = UIColor.white
         self.footerLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        self.footerLabel.text = "Developed by John Codeos"
+        self.footerLabel.text = "© 2021. 이별차단 Co. all rights reserved."
 
-        // Register TableView Cell
         self.sideMenuTableView.register(SideMenuCell.nib, forCellReuseIdentifier: SideMenuCell.identifier)
 
-        // Update TableView with the data
         self.sideMenuTableView.reloadData()
     }
 }
 
+
+
 // MARK: - UITableViewDelegate
 
 extension SideMenuVC: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.selectedCell(indexPath.row)
+    }
+    
 }
 
 // MARK: - UITableViewDataSource
 
 extension SideMenuVC: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.menu.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SideMenuCell.identifier, for: indexPath) as? SideMenuCell else { fatalError("xib doesn't exist") }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SideMenuCell.identifier, for: indexPath) as? SideMenuCell else { fatalError("xib 파일 에러") }
 
         cell.iconImageView.image = self.menu[indexPath.row].icon
         cell.titleLabel.text = self.menu[indexPath.row].title
 
-        // Highlighted color
         let myCustomSelectionColorView = UIView()
-        myCustomSelectionColorView.backgroundColor = .systemYellow
-        //myCustomSelectionColorView.backgroundColor = #colorLiteral(red: 0.6196078431, green: 0.1098039216, blue: 0.2509803922, alpha: 1)
+        myCustomSelectionColorView.backgroundColor = .systemPink
         cell.selectedBackgroundView = myCustomSelectionColorView
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate?.selectedCell(indexPath.row)
-    }
-    
 }
 

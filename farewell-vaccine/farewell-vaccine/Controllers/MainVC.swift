@@ -36,18 +36,19 @@ class MainVC: UIViewController {
         }
         self.view.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.1294117647, blue: 0.2941176471, alpha: 1)
 
-        // Shadow Background View
-        self.sideMenuShadowView = UIView(frame: self.view.bounds)
-        self.sideMenuShadowView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.sideMenuShadowView.backgroundColor = .systemYellow
-        self.sideMenuShadowView.alpha = 0.0
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TapGestureRecognizer))
-        tapGestureRecognizer.numberOfTapsRequired = 1
-        tapGestureRecognizer.delegate = self
-        view.addGestureRecognizer(tapGestureRecognizer)
-        if self.revealSideMenuOnTop {
-            view.insertSubview(self.sideMenuShadowView, at: 1)
-        }
+//        // Shadow Background View
+//        self.sideMenuShadowView = UIView(frame: self.view.bounds)
+//        self.sideMenuShadowView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        self.sideMenuShadowView.backgroundColor = .systemYellow
+//        self.sideMenuShadowView.alpha = 0.0
+//        self.sideMenuShadowView.tag = 100
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TapGestureRecognizer))
+//        tapGestureRecognizer.numberOfTapsRequired = 1
+//        tapGestureRecognizer.delegate = self
+//        view.addGestureRecognizer(tapGestureRecognizer)
+//        if self.revealSideMenuOnTop {
+//            view.insertSubview(self.sideMenuShadowView, at: 1)
+//        }
 
         // Side Menu
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -72,22 +73,8 @@ class MainVC: UIViewController {
             self.sideMenuViewController.view.topAnchor.constraint(equalTo: view.topAnchor)
         ])
 
-        // Side Menu Gestures
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
-        panGestureRecognizer.delegate = self
-        view.addGestureRecognizer(panGestureRecognizer)
-
         
     }
-    
-//    func presentOnboardingVC() {
-//        guard let onboardingVC = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") as? OnboardingVC else { return }
-//        
-//        onboardingVC.modalTransitionStyle = .crossDissolve
-//        onboardingVC.modalPresentationStyle = .fullScreen
-//        
-//        self.present(onboardingVC, animated: true)
-//    }
 
     // Keep the state of the side menu (expanded or collapse) in rotation
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -117,14 +104,14 @@ class MainVC: UIViewController {
                 self.isExpanded = true
             }
             // Animate Shadow (Fade In)
-            UIView.animate(withDuration: 0.5) { self.sideMenuShadowView.alpha = 0.6 }
+//            UIView.animate(withDuration: 0.5) { self.sideMenuShadowView.alpha = 0.6 }
         }
         else {
             self.animateSideMenu(targetPosition: self.revealSideMenuOnTop ? (-self.sideMenuRevealWidth - self.paddingForRotation) : 0) { _ in
                 self.isExpanded = false
             }
             // Animate Shadow (Fade Out)
-            UIView.animate(withDuration: 0.5) { self.sideMenuShadowView.alpha = 0.0 }
+  //          UIView.animate(withDuration: 0.5) { self.sideMenuShadowView.alpha = 0.0 }
         }
     }
     
@@ -183,6 +170,7 @@ extension MainVC: SideMenuViewControllerDelegate {
             }
             if self.sideMenuShadowView != nil {
                 vc.view.addSubview(self.sideMenuShadowView)
+                
             }
         }
         vc.didMove(toParent: self)
