@@ -10,3 +10,7 @@ import Foundation
 protocol SendDataDelegate {
     func sendData(testResultCount: Int , category: TestCategory)
 }
+
+protocol OnboardingPresentMainVC {
+    func presentMainVC()
+}

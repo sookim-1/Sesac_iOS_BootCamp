@@ -44,12 +44,13 @@ class OnboardingVC: UIViewController {
     
     @IBAction func nextBtnClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
-            guard let homeNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNC") as? UINavigationController else { return }
+            guard let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as? MainVC else { return }
             
-            homeNC.modalTransitionStyle = .flipHorizontal
-            homeNC.modalPresentationStyle = .fullScreen
+            mainVC.modalTransitionStyle = .flipHorizontal
+            mainVC.modalPresentationStyle = .fullScreen
             
-            self.present(homeNC, animated: true)
+            self.present(mainVC, animated: false)
+            
         }
         else {
             currentPage += 1

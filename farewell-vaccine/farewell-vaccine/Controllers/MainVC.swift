@@ -68,9 +68,30 @@ class MainVC: UIViewController {
         panGestureRecognizer.delegate = self
         view.addGestureRecognizer(panGestureRecognizer)
 
-        // Default Main View Controller
-        showViewController(fileName: "Main", viewController: UINavigationController.self, storyboardId: "HomeNC")
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
+        if firstLaunch.isFirstLaunch {
+            // Default Main View Controller
+            showViewController(fileName: "Onboarding", viewController: OnboardingVC.self, storyboardId: "OnboardingVC")
+        } else {
+            // Default Main View Controller
+            showViewController(fileName: "Main", viewController: UINavigationController.self, storyboardId: "HomeNC")
+        }
+    }
+    
+//    func presentOnboardingVC() {
+//        guard let onboardingVC = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") as? OnboardingVC else { return }
+//        
+//        onboardingVC.modalTransitionStyle = .crossDissolve
+//        onboardingVC.modalPresentationStyle = .fullScreen
+//        
+//        self.present(onboardingVC, animated: true)
+//    }
 
     // Keep the state of the side menu (expanded or collapse) in rotation
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
