@@ -23,7 +23,7 @@ class IntroduceVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.revealViewController()?.gestureEnabled = false
         configureTextView()
         let localRealm = try! Realm()
 
@@ -35,6 +35,11 @@ class IntroduceVC: UIViewController {
         mainTextView.backgroundColor = loadColorFromDocumentDirectory(name: "colors")
         mainTextView.font = loadFontFromDocumentDirectory(fontName: "fonts")
         mainTextView.textColor = loadColorFromDocumentDirectory(name: "textColors")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.revealViewController()?.gestureEnabled = true
     }
     
     func configureNavigationBar() {

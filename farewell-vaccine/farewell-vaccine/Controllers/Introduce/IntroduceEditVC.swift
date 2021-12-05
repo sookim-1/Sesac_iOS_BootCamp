@@ -39,7 +39,7 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.revealViewController()?.gestureEnabled = false
         let localRealm = try! Realm()
 
         try! localRealm.write {
@@ -50,6 +50,11 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
         introduceTextView.backgroundColor = loadColorFromDocumentDirectory(name: "colors")
         introduceTextView.font = loadFontFromDocumentDirectory(fontName: "fonts")
         introduceTextView.textColor = loadColorFromDocumentDirectory(name: "textColors")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.revealViewController()?.gestureEnabled = true
     }
     
     @objc func finishEdit() {

@@ -50,10 +50,10 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
-        if firstLaunch.isFirstLaunch {
-            presentOnboardingVC()
-        }
+//        let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
+//        if firstLaunch.isFirstLaunch {
+//            presentOnboardingVC()
+//        }
     }
     
     func configureNavigationBar() {        
