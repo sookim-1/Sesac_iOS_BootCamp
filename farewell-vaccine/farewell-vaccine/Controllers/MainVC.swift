@@ -16,7 +16,6 @@ class MainVC: UIViewController {
     private var draggingIsEnabled: Bool = false
     private var panBaseLocation: CGFloat = 0.0
     
-    // Expand/Collapse the side menu by changing trailing's constant
     private var sideMenuTrailingConstraint: NSLayoutConstraint!
 
     private var revealSideMenuOnTop: Bool = true
@@ -28,10 +27,8 @@ class MainVC: UIViewController {
         
         let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
         if firstLaunch.isFirstLaunch {
-            // Default Main View Controller
             showViewController(fileName: "Onboarding", viewController: OnboardingVC.self, storyboardId: "OnboardingVC")
         } else {
-            // Default Main View Controller
             showViewController(fileName: "Main", viewController: UINavigationController.self, storyboardId: "HomeNC")
         }
         self.view.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.1294117647, blue: 0.2941176471, alpha: 1)
@@ -186,7 +183,6 @@ extension MainVC: UIGestureRecognizerDelegate {
         }
     }
 
-    // Close side menu when you tap on the shadow background view
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if (touch.view?.isDescendant(of: self.sideMenuViewController.view))! {
             return false
@@ -194,7 +190,6 @@ extension MainVC: UIGestureRecognizerDelegate {
         return true
     }
     
-    // Dragging Side Menu
     @objc private func handlePanGesture(sender: UIPanGestureRecognizer) {
         
         guard gestureEnabled == true else { return }
@@ -205,22 +200,18 @@ extension MainVC: UIGestureRecognizerDelegate {
         switch sender.state {
         case .began:
 
-            // If the user tries to expand the menu more than the reveal width, then cancel the pan gesture
             if velocity > 0, self.isExpanded {
                 sender.state = .cancelled
             }
 
-            // If the user swipes right but the side menu hasn't expanded yet, enable dragging
             if velocity > 0, !self.isExpanded {
                 self.draggingIsEnabled = true
             }
-            // If user swipes left and the side menu is already expanded, enable dragging
             else if velocity < 0, self.isExpanded {
                 self.draggingIsEnabled = true
             }
 
             if self.draggingIsEnabled {
-                // If swipe is fast, Expand/Collapse the side menu with animation instead of dragging
                 let velocityThreshold: CGFloat = 550
                 if abs(velocity) > velocityThreshold {
                     self.sideMenuState(expanded: self.isExpanded ? false : true)
@@ -237,31 +228,25 @@ extension MainVC: UIGestureRecognizerDelegate {
             }
 
         case .changed:
-
-            // Expand/Collapse side menu while dragging
             if self.draggingIsEnabled {
                 if self.revealSideMenuOnTop {
-                    // Show/Hide shadow background view while dragging
                     let xLocation: CGFloat = self.panBaseLocation + position
                     let percentage = (xLocation * 150 / self.sideMenuRevealWidth) / self.sideMenuRevealWidth
 
                     let alpha = percentage >= 0.6 ? 0.6 : percentage
                     self.sideMenuShadowView.alpha = alpha
 
-                    // Move side menu while dragging
                     if xLocation <= self.sideMenuRevealWidth {
                         self.sideMenuTrailingConstraint.constant = xLocation - self.sideMenuRevealWidth
                     }
                 }
                 else {
                     if let recogView = sender.view?.subviews[1] {
-                        // Show/Hide shadow background view while dragging
                         let percentage = (recogView.frame.origin.x * 150 / self.sideMenuRevealWidth) / self.sideMenuRevealWidth
 
                         let alpha = percentage >= 0.6 ? 0.6 : percentage
                         self.sideMenuShadowView.alpha = alpha
 
-                        // Move side menu while dragging
                         if recogView.frame.origin.x <= self.sideMenuRevealWidth, recogView.frame.origin.x >= 0 {
                             recogView.frame.origin.x = recogView.frame.origin.x + position
                             sender.setTranslation(CGPoint.zero, in: view)
@@ -271,7 +256,6 @@ extension MainVC: UIGestureRecognizerDelegate {
             }
         case .ended:
             self.draggingIsEnabled = false
-            // If the side menu is half Open/Close, then Expand/Collapse with animation
             if self.revealSideMenuOnTop {
                 let movedMoreThanHalf = self.sideMenuTrailingConstraint.constant > -(self.sideMenuRevealWidth * 0.5)
                 self.sideMenuState(expanded: movedMoreThanHalf)

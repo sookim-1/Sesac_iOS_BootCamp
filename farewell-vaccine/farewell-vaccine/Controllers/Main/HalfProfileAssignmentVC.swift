@@ -23,7 +23,6 @@ class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         flag = photoAuth()
-        flag = cameraAuth()
         navigationController?.navigationBar.topItem?.title = "뒤로"
         
         createDismissKeyboardTapGesture()
@@ -73,14 +72,14 @@ class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
                 self.authSettingOpen(authString: "앨범")
             }
         }
-        let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
-            self.openCamera()
-        }
+//        let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
+//            self.openCamera()
+//        }
 
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
 
         alert.addAction(library)
-        alert.addAction(camera)
+//        alert.addAction(camera)
         alert.addAction(cancel)
 
         present(alert, animated: true, completion: nil)
