@@ -59,9 +59,12 @@
                             <constraint firstItem="83V-vI-8ch" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="zyw-hd-PLU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Meg-Px-wAg"/>
+                    <navigationItem key="navigationItem" id="Meg-Px-wAg">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="Sj0-Si-nyN"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainTextView" destination="FpQ-4r-El7" id="g3L-7X-ZKx"/>
+                        <outlet property="sideMenuBtn" destination="Sj0-Si-nyN" id="Tlg-lV-NtX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -166,6 +169,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="menu" width="25" height="25"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

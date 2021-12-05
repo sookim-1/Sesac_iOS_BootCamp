@@ -11,11 +11,14 @@ import RealmSwift
 class IntroduceVC: UIViewController {
 
     @IBOutlet weak var mainTextView: UITextView!
+    @IBOutlet var sideMenuBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureNavigationBar()
+        sideMenuBtn.target = revealViewController()
+        sideMenuBtn.action = #selector(revealViewController()?.revealSideMenu)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,16 +39,9 @@ class IntroduceVC: UIViewController {
     
     func configureNavigationBar() {
         self.title = "소개하기"
-        let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
-        menuButton.tintColor = .customPink
-        self.navigationItem.leftBarButtonItem = menuButton
+
     }
     
-    @objc func presentSideMenu() {
-        guard let sideMenuNC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNC") as? SideMenuNC else { return }
-        
-        self.present(sideMenuNC, animated: true)
-    }
     
     func configureTextView() {
         mainTextView.layer.borderWidth = 10

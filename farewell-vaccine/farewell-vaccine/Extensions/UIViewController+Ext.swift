@@ -26,4 +26,21 @@ extension UIViewController {
             self.present(alertVC, animated: true)
         }
     }
+    
+    // With this extension you can access the MainViewController from the child view controllers.
+    func revealViewController() -> MainVC? {
+        var viewController: UIViewController? = self
+        
+        if viewController != nil && viewController is MainVC {
+            return viewController! as? MainVC
+        }
+        while (!(viewController is MainVC) && viewController?.parent != nil) {
+            viewController = viewController?.parent
+        }
+        if viewController is MainVC {
+            return viewController as? MainVC
+        }
+        return nil
+    }
+    
 }

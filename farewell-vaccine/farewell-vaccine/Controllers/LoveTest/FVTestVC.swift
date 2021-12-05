@@ -9,6 +9,7 @@ import UIKit
 
 class FVTestVC: UIViewController {
     @IBOutlet weak var testCategoryPickerView: UIPickerView!
+    @IBOutlet var sideMenuBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +26,10 @@ class FVTestVC: UIViewController {
     func configureNavigationBar() {
         self.title = "테스트하기"
         self.navigationController?.isNavigationBarHidden = false
-        let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
-        menuButton.tintColor = .customPink
-        self.navigationItem.leftBarButtonItem = menuButton
+        sideMenuBtn.target = revealViewController()
+        sideMenuBtn.action = #selector(revealViewController()?.revealSideMenu)
     }
-    
-    @objc func presentSideMenu() {
-        guard let sideMenuNC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNC") as? SideMenuNC else { return }
-        
-        self.present(sideMenuNC, animated: true)
-    }
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let row = self.testCategoryPickerView.selectedRow(inComponent: 0)
