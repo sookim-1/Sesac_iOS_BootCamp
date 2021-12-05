@@ -26,11 +26,11 @@ class SettingVC: UIViewController {
     
     
     @IBAction func clickedOpenSourceBtn(_ sender: UIButton) {
-        openWebsite(urlString: "https://www.notion.so/3b5ae2ca85b342feba1489809c005344")
+        openWebsite(urlString: "https://carnelian-tuba-ea2.notion.site/5abb78bad86a4d27b8401f89abc8378e")
     }
     
     @IBAction func clickedServiceBtn(_ sender: UIButton) {
-        openWebsite(urlString: "https://www.notion.so/3b5ae2ca85b342feba1489809c005344")
+        openWebsite(urlString: "https://carnelian-tuba-ea2.notion.site/5abb78bad86a4d27b8401f89abc8378e")
     }
     
 

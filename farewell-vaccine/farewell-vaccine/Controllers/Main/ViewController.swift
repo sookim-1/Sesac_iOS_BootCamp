@@ -41,11 +41,6 @@ class ViewController: UIViewController {
             }
         }
 
-        print(localRealm.configuration.fileURL!)
-        
-
-
-        
         if let updateImage = loadImageFromDocumentDirectory(imageName: "profileImage.png") {
             
             mainImageView.image = updateImage
@@ -56,7 +51,7 @@ class ViewController: UIViewController {
     }
     
     func configureNavigationBar() {        
-        self.title = "이별백신"
+        self.title = "이별차단"
     }
     
     func configureImageView() {
@@ -66,8 +61,6 @@ class ViewController: UIViewController {
         mainImageView.layer.borderWidth = 10
         mainImageView.layer.borderColor = UIColor.customPink?.cgColor
     }
-    
-
     
     func loadImageFromDocumentDirectory(imageName: String) -> UIImage? {
         let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
