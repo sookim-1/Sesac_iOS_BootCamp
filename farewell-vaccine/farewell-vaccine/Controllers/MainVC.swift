@@ -25,6 +25,15 @@ class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
+        if firstLaunch.isFirstLaunch {
+            // Default Main View Controller
+            showViewController(fileName: "Onboarding", viewController: OnboardingVC.self, storyboardId: "OnboardingVC")
+        } else {
+            // Default Main View Controller
+            showViewController(fileName: "Main", viewController: UINavigationController.self, storyboardId: "HomeNC")
+        }
         self.view.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.1294117647, blue: 0.2941176471, alpha: 1)
 
         // Shadow Background View
@@ -69,19 +78,6 @@ class MainVC: UIViewController {
         view.addGestureRecognizer(panGestureRecognizer)
 
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
-        if firstLaunch.isFirstLaunch {
-            // Default Main View Controller
-            showViewController(fileName: "Onboarding", viewController: OnboardingVC.self, storyboardId: "OnboardingVC")
-        } else {
-            // Default Main View Controller
-            showViewController(fileName: "Main", viewController: UINavigationController.self, storyboardId: "HomeNC")
-        }
     }
     
 //    func presentOnboardingVC() {
