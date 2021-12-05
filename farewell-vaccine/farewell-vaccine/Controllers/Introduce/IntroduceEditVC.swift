@@ -26,7 +26,16 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
         configureToolbar()
         configureTableView()
         introduceTextView.delegate = self
+        
+        tableView.allowsSelection = true
+        tableView.isUserInteractionEnabled = true
+
     }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -183,6 +192,9 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
 }
 
 extension IntroduceEditVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         editItemCategory == .textSize ? sizeItemArray.count : itemArray.count
     }
@@ -197,6 +209,7 @@ extension IntroduceEditVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("abcd")
         switch editItemCategory {
         case .font:
             FontWeight.allCases.forEach {

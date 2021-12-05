@@ -10,7 +10,7 @@ import UIKit
 class LoveAdviceVC: UIViewController {
 
     @IBOutlet weak var adviceLabel: UILabel!
-    
+    @IBOutlet var sideMenuBtn: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,15 +20,8 @@ class LoveAdviceVC: UIViewController {
     
     func configureNavigationBar() {
         self.title = "명언"
-        let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
-        menuButton.tintColor = .customPink
-        self.navigationItem.leftBarButtonItem = menuButton
-    }
-    
-    @objc func presentSideMenu() {
-        guard let sideMenuNC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNC") as? SideMenuNC else { return }
-        
-        self.present(sideMenuNC, animated: true)
+        sideMenuBtn.target = revealViewController()
+        sideMenuBtn.action = #selector(revealViewController()?.revealSideMenu)
     }
     
     private func randomAdvice() {

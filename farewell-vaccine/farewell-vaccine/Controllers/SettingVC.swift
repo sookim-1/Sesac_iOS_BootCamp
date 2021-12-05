@@ -9,7 +9,8 @@ import UIKit
 import SafariServices
 
 class SettingVC: UIViewController {
-
+    @IBOutlet var sideMenuBtn: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,23 +20,10 @@ class SettingVC: UIViewController {
     func configureNavigationBar() {
         
         self.title = "설정"
-        let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
-        menuButton.tintColor = .customPink
-        self.navigationItem.leftBarButtonItem = menuButton
-        
+        sideMenuBtn.target = revealViewController()
+        sideMenuBtn.action = #selector(revealViewController()?.revealSideMenu)
     }
     
-    @objc func presentSideMenu() {
-        
-        guard let sideMenuNC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNC") as? SideMenuNC
-        else {
-            presentErrorAlertOnMainThread(title: "사이드메뉴 열 수 없음", message: FarewellError.notOpenSideMenu.rawValue, buttonTitle: "확인")
-            return
-        }
-        
-        self.present(sideMenuNC, animated: true)
-        
-    }
     
     @IBAction func clickedOpenSourceBtn(_ sender: UIButton) {
         openWebsite(urlString: "https://www.notion.so/3b5ae2ca85b342feba1489809c005344")

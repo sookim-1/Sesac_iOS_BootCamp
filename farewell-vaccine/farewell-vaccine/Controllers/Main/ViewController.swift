@@ -14,12 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var settingButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
+    @IBOutlet var sideMenuBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureImageView()
+        sideMenuBtn.target = revealViewController()
+        sideMenuBtn.action = #selector(revealViewController()?.revealSideMenu)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,9 +58,6 @@ class ViewController: UIViewController {
     
     func configureNavigationBar() {        
         self.title = "이별백신"
-        let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
-        menuButton.tintColor = .customPink
-        self.navigationItem.leftBarButtonItem = menuButton
     }
     
     func configureImageView() {
@@ -76,12 +75,6 @@ class ViewController: UIViewController {
         onboardingVC.modalPresentationStyle = .fullScreen
         
         self.present(onboardingVC, animated: true)
-    }
-            
-    @objc func presentSideMenu() {
-        guard let sideMenuNC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNC") as? SideMenuNC else { return }
-        
-        self.present(sideMenuNC, animated: true)
     }
     
     func loadImageFromDocumentDirectory(imageName: String) -> UIImage? {

@@ -23,10 +23,6 @@
 		766F4789274A6A9A00992499 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */; };
 		766F478C274A74B600992499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F478B274A74B600992499 /* Main.storyboard */; };
 		766F478E274A782A00992499 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F478D274A782A00992499 /* FirstLaunch.swift */; };
-		766F4791274A7DA800992499 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 766F4790274A7DA800992499 /* SideMenu */; };
-		766F4793274A7E5300992499 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F4792274A7E5300992499 /* SideMenu.storyboard */; };
-		766F4796274A7E8900992499 /* SideMenuNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4795274A7E8900992499 /* SideMenuNC.swift */; };
-		766F4798274A7EB000992499 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4797274A7EB000992499 /* SideMenuVC.swift */; };
 		766F479B274A951800992499 /* FVTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F479A274A951800992499 /* FVTest.storyboard */; };
 		766F479D274A955400992499 /* FVTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F479C274A955400992499 /* FVTestVC.swift */; };
 		766F47A3274A9BBF00992499 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766F47A2274A9BBF00992499 /* Setting.storyboard */; };
@@ -54,6 +50,10 @@
 		76C6F63C27462BFE00802232 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C6F63A27462BFE00802232 /* Onboarding.storyboard */; };
 		76C6F63E27462C0000802232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76C6F63D27462C0000802232 /* Assets.xcassets */; };
 		76C6F64127462C0000802232 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C6F63F27462C0000802232 /* LaunchScreen.storyboard */; };
+		76ECAD46275B66180057DBB7 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ECAD45275B66180057DBB7 /* MainVC.swift */; };
+		76ECAD48275B66220057DBB7 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ECAD47275B66220057DBB7 /* SideMenuVC.swift */; };
+		76ECAD4B275B670B0057DBB7 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ECAD49275B670B0057DBB7 /* SideMenuCell.swift */; };
+		76ECAD4C275B670B0057DBB7 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76ECAD4A275B670B0057DBB7 /* SideMenuCell.xib */; };
 		76FA025B27584DBC0029A33F /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FA025A27584DBC0029A33F /* UIFont+Ext.swift */; };
 		76FA025D275851990029A33F /* IntroduceTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FA025C275851990029A33F /* IntroduceTextView.swift */; };
 		76FA02642758FED90029A33F /* FarewellError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FA02632758FED90029A33F /* FarewellError.swift */; };
@@ -79,9 +79,6 @@
 		766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		766F478B274A74B600992499 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		766F478D274A782A00992499 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
-		766F4792274A7E5300992499 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
-		766F4795274A7E8900992499 /* SideMenuNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNC.swift; sourceTree = "<group>"; };
-		766F4797274A7EB000992499 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		766F479A274A951800992499 /* FVTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FVTest.storyboard; sourceTree = "<group>"; };
 		766F479C274A955400992499 /* FVTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FVTestVC.swift; sourceTree = "<group>"; };
 		766F47A2274A9BBF00992499 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
@@ -109,6 +106,10 @@
 		76C6F63D27462C0000802232 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76C6F64027462C0000802232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76C6F64227462C0000802232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76ECAD45275B66180057DBB7 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		76ECAD47275B66220057DBB7 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		76ECAD49275B670B0057DBB7 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		76ECAD4A275B670B0057DBB7 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		76FA025A27584DBC0029A33F /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		76FA025C275851990029A33F /* IntroduceTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceTextView.swift; sourceTree = "<group>"; };
 		76FA02632758FED90029A33F /* FarewellError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarewellError.swift; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 				76861AC1274C663A00564D82 /* RealmSwift in Frameworks */,
 				764485A027522A4C00A009A8 /* Alamofire in Frameworks */,
 				76861ABF274C663A00564D82 /* Realm in Frameworks */,
-				766F4791274A7DA800992499 /* SideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,10 +182,11 @@
 				76FA02622758FE4B0029A33F /* Introduce */,
 				76FA02612758FE380029A33F /* Main */,
 				764485AE27524BB900A009A8 /* LoveTest */,
-				766F4794274A7E6C00992499 /* SideMenu */,
 				766F4782274A64BD00992499 /* Onboarding */,
 				766F47A8274A9C4E00992499 /* LoveAdviceVC.swift */,
 				766F47A4274A9BCF00992499 /* SettingVC.swift */,
+				76ECAD45275B66180057DBB7 /* MainVC.swift */,
+				76ECAD47275B66220057DBB7 /* SideMenuVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,22 +205,12 @@
 				76C6F63F27462C0000802232 /* LaunchScreen.storyboard */,
 				76C6F63A27462BFE00802232 /* Onboarding.storyboard */,
 				766F478B274A74B600992499 /* Main.storyboard */,
-				766F4792274A7E5300992499 /* SideMenu.storyboard */,
 				766F47A2274A9BBF00992499 /* Setting.storyboard */,
 				766F47A6274A9C3F00992499 /* LoveAdvice.storyboard */,
 				76861ACC274CFB6F00564D82 /* Introduce.storyboard */,
 				766F479A274A951800992499 /* FVTest.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		766F4794274A7E6C00992499 /* SideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				766F4795274A7E8900992499 /* SideMenuNC.swift */,
-				766F4797274A7EB000992499 /* SideMenuVC.swift */,
-			);
-			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		766F4799274A8D4700992499 /* Support */ = {
@@ -250,6 +241,8 @@
 				76A43691275685E8001F11C7 /* ToolbarTableViewCell.swift */,
 				764485B2275251D700A009A8 /* LoveTestCollecionViewCell.swift */,
 				766F4788274A6A9A00992499 /* OnboardingCollectionViewCell.swift */,
+				76ECAD49275B670B0057DBB7 /* SideMenuCell.swift */,
+				76ECAD4A275B670B0057DBB7 /* SideMenuCell.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -344,7 +337,6 @@
 			);
 			name = "farewell-vaccine";
 			packageProductDependencies = (
-				766F4790274A7DA800992499 /* SideMenu */,
 				76861ABE274C663A00564D82 /* Realm */,
 				76861AC0274C663A00564D82 /* RealmSwift */,
 				7644859F27522A4C00A009A8 /* Alamofire */,
@@ -378,7 +370,6 @@
 			);
 			mainGroup = 76C6F62827462BFE00802232;
 			packageReferences = (
-				766F478F274A7DA800992499 /* XCRemoteSwiftPackageReference "SideMenu" */,
 				76861ABD274C663A00564D82 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				7644859E27522A4C00A009A8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
@@ -397,8 +388,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				76C6F64127462C0000802232 /* LaunchScreen.storyboard in Resources */,
-				766F4793274A7E5300992499 /* SideMenu.storyboard in Resources */,
 				766F478C274A74B600992499 /* Main.storyboard in Resources */,
+				76ECAD4C275B670B0057DBB7 /* SideMenuCell.xib in Resources */,
 				76C6F63E27462C0000802232 /* Assets.xcassets in Resources */,
 				766F479B274A951800992499 /* FVTest.storyboard in Resources */,
 				76861ACD274CFB6F00564D82 /* Introduce.storyboard in Resources */,
@@ -433,21 +424,22 @@
 				76861AC8274CF72300564D82 /* UIColor+Ext.swift in Sources */,
 				76861AC5274C67FE00564D82 /* HalfProfileAssignmentVC.swift in Sources */,
 				76A43692275685E8001F11C7 /* ToolbarTableViewCell.swift in Sources */,
+				76ECAD48275B66220057DBB7 /* SideMenuVC.swift in Sources */,
 				76861AD9274D063100564D82 /* UIEdgeInsets+Ext.swift in Sources */,
 				76FA026A275901D30029A33F /* ErrorBodyLabel.swift in Sources */,
 				76C2B6F8275217F300E74A17 /* TestCategory.swift in Sources */,
+				76ECAD46275B66180057DBB7 /* MainVC.swift in Sources */,
 				766F4784274A64DC00992499 /* OnboardingVC.swift in Sources */,
 				76C6F63527462BFE00802232 /* AppDelegate.swift in Sources */,
-				766F4798274A7EB000992499 /* SideMenuVC.swift in Sources */,
 				766F47A9274A9C4E00992499 /* LoveAdviceVC.swift in Sources */,
 				76C6F63727462BFE00802232 /* SceneDelegate.swift in Sources */,
 				764485B3275251D700A009A8 /* LoveTestCollecionViewCell.swift in Sources */,
 				762B40932754376D00F39A27 /* SendDataDelegate.swift in Sources */,
+				76ECAD4B275B670B0057DBB7 /* SideMenuCell.swift in Sources */,
 				76FA0268275901BE0029A33F /* ErrorTitleLabel.swift in Sources */,
 				76FA026C275901FB0029A33F /* ErrorButton.swift in Sources */,
 				76861AC3274C66C200564D82 /* HalfProfile.swift in Sources */,
 				76FA025D275851990029A33F /* IntroduceTextView.swift in Sources */,
-				766F4796274A7E8900992499 /* SideMenuNC.swift in Sources */,
 				762B409027542B2A00F39A27 /* TestResultVC.swift in Sources */,
 				764485A52752329D00A009A8 /* AlamofireManager.swift in Sources */,
 				76861ADB274D2AA300564D82 /* LoveAdvice.swift in Sources */,
@@ -697,14 +689,6 @@
 				minimumVersion = 5.4.4;
 			};
 		};
-		766F478F274A7DA800992499 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 		76861ABD274C663A00564D82 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
@@ -720,11 +704,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7644859E27522A4C00A009A8 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		766F4790274A7DA800992499 /* SideMenu */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 766F478F274A7DA800992499 /* XCRemoteSwiftPackageReference "SideMenu" */;
-			productName = SideMenu;
 		};
 		76861ABE274C663A00564D82 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
