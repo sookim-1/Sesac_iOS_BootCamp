@@ -47,15 +47,6 @@ class ViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//        let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
-//        if firstLaunch.isFirstLaunch {
-//            presentOnboardingVC()
-//        }
-    }
-    
     func configureNavigationBar() {        
         self.title = "이별백신"
     }
@@ -68,14 +59,7 @@ class ViewController: UIViewController {
         mainImageView.layer.borderColor = UIColor.customPink?.cgColor
     }
     
-    func presentOnboardingVC() {
-        guard let onboardingVC = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") as? OnboardingVC else { return }
-        
-        onboardingVC.modalTransitionStyle = .crossDissolve
-        onboardingVC.modalPresentationStyle = .fullScreen
-        
-        self.present(onboardingVC, animated: true)
-    }
+
     
     func loadImageFromDocumentDirectory(imageName: String) -> UIImage? {
         let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
