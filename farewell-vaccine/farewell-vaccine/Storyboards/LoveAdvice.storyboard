@@ -32,9 +32,12 @@
                             <constraint firstItem="L7d-mA-6nO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="tjt-o5-3ph"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xrA-yR-Ikw"/>
+                    <navigationItem key="navigationItem" id="xrA-yR-Ikw">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="hi9-VX-1z8"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="adviceLabel" destination="L7d-mA-6nO" id="zks-48-Qxs"/>
+                        <outlet property="sideMenuBtn" destination="hi9-VX-1z8" id="DlH-Tg-G0a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -61,6 +64,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="menu" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

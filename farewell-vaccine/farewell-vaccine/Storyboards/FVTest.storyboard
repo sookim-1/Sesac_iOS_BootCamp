@@ -55,8 +55,11 @@
                             <constraint firstItem="ahN-iy-wS6" firstAttribute="bottom" secondItem="3Nx-LS-fTT" secondAttribute="bottom" constant="40" id="uJs-tI-dHJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SaT-eI-p3G"/>
+                    <navigationItem key="navigationItem" id="SaT-eI-p3G">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="41S-Oi-CpF"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="sideMenuBtn" destination="41S-Oi-CpF" id="XJF-hO-9Te"/>
                         <outlet property="testCategoryPickerView" destination="Nrr-pm-lgl" id="XDk-5d-fjf"/>
                     </connections>
                 </viewController>
@@ -267,6 +270,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="menu" width="25" height="25"/>
         <namedColor name="customPink">
             <color red="0.99607843137254903" green="0.41960784313725491" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

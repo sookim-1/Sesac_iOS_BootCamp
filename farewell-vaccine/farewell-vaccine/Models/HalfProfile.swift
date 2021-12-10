@@ -11,7 +11,7 @@ import RealmSwift
 class HalfProfile: Object {
     @Persisted var name: String?
     
-    convenience init(name: String) {
+    convenience init(name: String = "default") {
         self.init()
         self.name = name
     }
