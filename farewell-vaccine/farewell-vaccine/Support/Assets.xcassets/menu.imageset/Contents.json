@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "이별백신-1.png",
+      "filename" : "menu.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "이별백신-2.png",
+      "filename" : "menu@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "이별백신-3.png",
+      "filename" : "menu@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

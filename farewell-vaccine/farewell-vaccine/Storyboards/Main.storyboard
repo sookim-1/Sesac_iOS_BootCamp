@@ -1,14 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v9J-mz-hIm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ap9-SK-yx9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Side MenuVC-->
+        <scene sceneID="X1W-TG-2qL">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuVC" id="mN4-wY-kMK" customClass="SideMenuVC" customModule="farewell_vaccine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dpj-7E-CND">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KqO-zi-Thr">
+                                <rect key="frame" x="0.0" y="112" width="260" height="719.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNA-xN-9e2">
+                                <rect key="frame" x="10" y="839.5" width="240" height="14.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="BzG-7a-3MV">
+                                <rect key="frame" x="16" y="44" width="227" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="l9b-vM-NVA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hkw-9h-QqL"/>
+                        <color key="backgroundColor" name="customPink"/>
+                        <constraints>
+                            <constraint firstItem="MNA-xN-9e2" firstAttribute="leading" secondItem="Hkw-9h-QqL" secondAttribute="leading" constant="10" id="8Pb-3e-QHH"/>
+                            <constraint firstItem="Hkw-9h-QqL" firstAttribute="bottom" secondItem="MNA-xN-9e2" secondAttribute="bottom" constant="8" id="AMd-5U-fpl"/>
+                            <constraint firstItem="Hkw-9h-QqL" firstAttribute="trailing" secondItem="BzG-7a-3MV" secondAttribute="trailing" constant="17" id="G3Z-8B-Tiq"/>
+                            <constraint firstItem="MNA-xN-9e2" firstAttribute="top" secondItem="KqO-zi-Thr" secondAttribute="bottom" constant="8" id="T8g-Y8-4UQ"/>
+                            <constraint firstAttribute="trailing" secondItem="MNA-xN-9e2" secondAttribute="trailing" constant="10" id="gFB-jK-jLd"/>
+                            <constraint firstItem="KqO-zi-Thr" firstAttribute="top" secondItem="BzG-7a-3MV" secondAttribute="bottom" constant="18" id="kZt-eN-3W5"/>
+                            <constraint firstItem="Hkw-9h-QqL" firstAttribute="trailing" secondItem="KqO-zi-Thr" secondAttribute="trailing" id="kgD-b5-3Wy"/>
+                            <constraint firstItem="BzG-7a-3MV" firstAttribute="top" secondItem="Hkw-9h-QqL" secondAttribute="top" id="m7W-vz-O8u"/>
+                            <constraint firstItem="BzG-7a-3MV" firstAttribute="leading" secondItem="Hkw-9h-QqL" secondAttribute="leading" constant="16" id="nuX-gD-yRC"/>
+                            <constraint firstItem="KqO-zi-Thr" firstAttribute="leading" secondItem="Hkw-9h-QqL" secondAttribute="leading" id="oiF-f3-Ey9"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="260" height="896"/>
+                    <connections>
+                        <outlet property="footerLabel" destination="MNA-xN-9e2" id="7yl-Qd-RrQ"/>
+                        <outlet property="headerImageView" destination="BzG-7a-3MV" id="n5z-rK-svc"/>
+                        <outlet property="sideMenuTableView" destination="KqO-zi-Thr" id="Jh0-DI-cGM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vO7-r6-Jud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-604"/>
+        </scene>
+        <!--MainVC-->
+        <scene sceneID="pfI-MM-fcD">
+            <objects>
+                <viewController storyboardIdentifier="MainVC" id="Ap9-SK-yx9" customClass="MainVC" customModule="farewell_vaccine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2bS-My-z6B">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="X0g-QK-TIp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4y-I1-IJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="-604"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -70,12 +137,15 @@
                             <constraint firstItem="efg-cu-0wM" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="wUo-re-h8m"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bT6-0Z-v1e"/>
+                    <navigationItem key="navigationItem" id="bT6-0Z-v1e">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="8Bl-uN-rXN"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionLabel" destination="eby-5G-Ekm" id="NdS-5x-Wcp"/>
                         <outlet property="mainImageView" destination="pIo-Jx-8xA" id="vbT-Yf-2U8"/>
                         <outlet property="nameLabel" destination="r8d-zu-AYV" id="qF7-yl-qog"/>
                         <outlet property="settingButton" destination="efg-cu-0wM" id="ffc-df-j8F"/>
+                        <outlet property="sideMenuBtn" destination="8Bl-uN-rXN" id="raA-Rz-8QE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -175,7 +245,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logo" width="540" height="540"/>
+        <image name="menu" width="25" height="25"/>
         <image name="photo" catalog="system" width="128" height="93"/>
+        <namedColor name="customPink">
+            <color red="0.99607843137254903" green="0.41960784313725491" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

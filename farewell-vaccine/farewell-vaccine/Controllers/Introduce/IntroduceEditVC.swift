@@ -17,7 +17,7 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
     private var itemArray: [String] = []
     private var sizeItemArray: [Int] = []
     private var editItemCategory: EditCategory?
-    
+    let localRealm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,33 +26,66 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
         configureToolbar()
         configureTableView()
         introduceTextView.delegate = self
+        
+        tableView.allowsSelection = true
+        tableView.isUserInteractionEnabled = true
+        
+        let introduces = localRealm.objects(Introduce.self)
+        
+        if !introduces.isEmpty {
+            let introduceUpdate = introduces[0]
+            try! localRealm.write {
+                introduceTextView.text = introduceUpdate.text
+            }
+        }
     }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let localRealm = try! Realm()
-
-        try! localRealm.write {
-            let introduce = localRealm.objects(Introduce.self)
-            introduceTextView.text = introduce.last?.text
-        }
+        self.revealViewController()?.gestureEnabled = false
 
         introduceTextView.backgroundColor = loadColorFromDocumentDirectory(name: "colors")
         introduceTextView.font = loadFontFromDocumentDirectory(fontName: "fonts")
         introduceTextView.textColor = loadColorFromDocumentDirectory(name: "textColors")
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.revealViewController()?.gestureEnabled = true
+    }
+    
     @objc func finishEdit() {
-        saveIntroduceToDocumentDirectory(fonts: introduceTextView.font ?? .systemFont(ofSize: 17), colors: introduceTextView.backgroundColor ?? .systemBackground, textColors: introduceTextView.textColor ?? .systemBackground)
+        saveIntroduceToDocumentDirectory(fonts: introduceTextView.font ?? .systemFont(ofSize: 17), colors: introduceTextView.backgroundColor ?? .systemBackground, textColors: introduceTextView.textColor ?? .label)
         saveText()
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+      if (text == "\n") {
+        textView.resignFirstResponder()
+      } else {
+      }
+      return true
+    }
+    
     func saveText() {
-        let localRealm = try! Realm()
-        let introduce = Introduce(text: introduceTextView.text!)
-        try! localRealm.write {
-            localRealm.add(introduce)
+        let introduce = Introduce(text: introduceTextView.text ?? "")
+        let introduces = localRealm.objects(Introduce.self)
+        
+        if !introduces.isEmpty {
+            let introduceUpdate = introduces[0]
+            try! localRealm.write {
+                introduceUpdate.text = introduceTextView.text ?? ""
+            }
+        }
+        else {
+            try! localRealm.write {
+                 localRealm.add(introduce)
+            }
         }
     }
  
@@ -175,6 +208,9 @@ class IntroduceEditVC: UIViewController, UITextViewDelegate {
 }
 
 extension IntroduceEditVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         editItemCategory == .textSize ? sizeItemArray.count : itemArray.count
     }
@@ -189,6 +225,7 @@ extension IntroduceEditVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("abcd")
         switch editItemCategory {
         case .font:
             FontWeight.allCases.forEach {

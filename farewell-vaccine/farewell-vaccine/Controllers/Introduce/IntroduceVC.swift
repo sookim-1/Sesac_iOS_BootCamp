@@ -11,22 +11,29 @@ import RealmSwift
 class IntroduceVC: UIViewController {
 
     @IBOutlet weak var mainTextView: UITextView!
+    @IBOutlet var sideMenuBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureNavigationBar()
+        sideMenuBtn.target = revealViewController()
+        sideMenuBtn.action = #selector(revealViewController()?.revealSideMenu)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.revealViewController()?.gestureEnabled = false
         configureTextView()
+        
         let localRealm = try! Realm()
-
-        try! localRealm.write {
-            let introduce = localRealm.objects(Introduce.self)
-            mainTextView.text = introduce.last?.text
+        let introduces = localRealm.objects(Introduce.self)
+        
+        if !introduces.isEmpty {
+            let introduceUpdate = introduces[0]
+            try! localRealm.write {
+                mainTextView.text = introduceUpdate.text
+            }
         }
 
         mainTextView.backgroundColor = loadColorFromDocumentDirectory(name: "colors")
@@ -34,18 +41,16 @@ class IntroduceVC: UIViewController {
         mainTextView.textColor = loadColorFromDocumentDirectory(name: "textColors")
     }
     
-    func configureNavigationBar() {
-        self.title = "소개하기"
-        let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(presentSideMenu))
-        menuButton.tintColor = .customPink
-        self.navigationItem.leftBarButtonItem = menuButton
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.revealViewController()?.gestureEnabled = true
     }
     
-    @objc func presentSideMenu() {
-        guard let sideMenuNC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNC") as? SideMenuNC else { return }
-        
-        self.present(sideMenuNC, animated: true)
+    func configureNavigationBar() {
+        self.title = "소개하기"
+
     }
+    
     
     func configureTextView() {
         mainTextView.layer.borderWidth = 10

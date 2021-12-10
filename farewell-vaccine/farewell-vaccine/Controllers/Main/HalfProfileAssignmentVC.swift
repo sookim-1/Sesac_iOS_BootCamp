@@ -7,6 +7,8 @@
 
 import UIKit
 import RealmSwift
+import AVFoundation
+import Photos
 
 class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
     
@@ -15,10 +17,12 @@ class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var profileImageButton: UIButton!
+    var flag = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        flag = photoAuth()
         navigationController?.navigationBar.topItem?.title = "뒤로"
         
         createDismissKeyboardTapGesture()
@@ -60,16 +64,22 @@ class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
         let alert =  UIAlertController(title: "원하는 사진을 선택하세요", message: nil, preferredStyle: .actionSheet)
 
         let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in
-            self.openLibrary()
+
+            if self.photoAuth() {
+                self.openLibrary()
+            }
+            else {
+                self.authSettingOpen(authString: "앨범")
+            }
         }
-        let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
-            self.openCamera()
-        }
+//        let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
+//            self.openCamera()
+//        }
 
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
 
         alert.addAction(library)
-        alert.addAction(camera)
+//        alert.addAction(camera)
         alert.addAction(cancel)
 
         present(alert, animated: true, completion: nil)
@@ -78,23 +88,52 @@ class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func assignmentBtnClicked(_ sender: UIButton) {
         let localRealm = try! Realm()
-        let halfProfile = HalfProfile()
-        
-        halfProfile.name = nameTextField.text!
-        
-        try! localRealm.write {
-            if localRealm.isEmpty {
-                localRealm.add(halfProfile)
-            } else {
-                localRealm.objects(HalfProfile.self)[0].name = nameTextField.text!
+        let halfProfile = HalfProfile(name: nameTextField.text!)
+        let halfProfiles = localRealm.objects(HalfProfile.self)
+        if !halfProfiles.isEmpty {
+            let halfProfileUpdate = halfProfiles[0]
+            try! localRealm.write{
+                halfProfileUpdate.name = nameTextField.text!
             }
         }
+        else {
+            try! localRealm.write {
+                 localRealm.add(halfProfile)
+            }
+        }
+
         
         guard let profileImage = profileImage else {
+            presentErrorAlertOnMainThread(title: "사진을 저장해주세요", message: "", buttonTitle: "확인")
+            guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
+            
+            let imageURL = documentDirectory.appendingPathComponent("profileImage.png")
+            
+            if FileManager.default.fileExists(atPath: imageURL.path) {
+                do {
+                    try FileManager.default.removeItem(at: imageURL)
+                } catch {
+                    print("이미지 삭제 에러")
+                }
+            }
             return
         }
         
-        saveImageToDocumentDirectory(imageName: "profileImage.png", image: profileImage)
+        saveImageToDocumentDirectory(imageName: "profileImage.png", image: fixOrientation(img: profileImage))
+    }
+    
+    func fixOrientation(img: UIImage) -> UIImage {
+        if (img.imageOrientation == .up) {
+            return img
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(img.size, false, img.scale)
+        let rect = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height)
+        img.draw(in: rect)
+        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        return normalizedImage
     }
     
 }
@@ -102,17 +141,85 @@ class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
 extension HalfProfileAssignmentVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     func openLibrary() {
-        picker.sourceType = .photoLibrary
-        present(picker, animated: false, completion: nil)
+
+        self.picker.sourceType = .photoLibrary
+        self.present(self.picker, animated: false, completion: nil)
+
     }
+    
+    func photoAuth() -> Bool {
+        let authorizationStatus = PHPhotoLibrary.authorizationStatus()
+
+        var isAuth = false
+
+        switch authorizationStatus {
+        case .authorized:
+            return true
+        case .denied: break
+        case .limited: break
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { (state) in
+                if state == .authorized {
+                    isAuth = true
+                } else {
+                    isAuth = false
+                }
+            }
+            return isAuth
+        case .restricted: break
+        default: break
+        }
+    
+        return false
+    }
+    
+    
+
 
     func openCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            picker.sourceType = .camera
-            present(picker, animated: false, completion: nil)
-        } else {
-            print("카메라를 이용할 수 없습니다.")
+        AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+            if granted {
+                
+               if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                   self.picker.sourceType = .camera
+                   self.present(self.picker, animated: false, completion: nil)
+               } else {
+                   print("카메라를 이용할 수 없습니다.")
+               }
+            } else {
+                DispatchQueue.main.async {
+                    self.authSettingOpen(authString: "카메라")
+                }
+                print("Camera: 권한 거부")
+            }
+        })
+
+         
+    }
+    
+    func cameraAuth() -> Bool {
+        return AVCaptureDevice.authorizationStatus(for: .video) == AVAuthorizationStatus.authorized
+    }
+    
+    func authSettingOpen(authString: String) {
+        
+        //guard let AppName = Bundle.main.infoDictionary!["CFBundleName"] as? String else { return }
+        let message = "\(authString) 접근 허용되어 있지않습니다. \r\n 설정화면으로 가시겠습니까?"
+        
+        let alert = UIAlertController(title: "설정", message: message, preferredStyle: .alert)
+        let cancle = UIAlertAction(title: "취소", style: .default) { (UIAlertAction) in
+                print("\(String(describing: UIAlertAction.title)) 클릭")
+            }
+            
+        
+        let confirm = UIAlertAction(title: "확인", style: .default) { (UIAlertAction) in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
         }
+
+        alert.addAction(cancle)
+        alert.addAction(confirm)
+
+        self.present(alert, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

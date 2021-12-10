@@ -36,20 +36,21 @@ class OnboardingVC: UIViewController {
         collectionView.dataSource = self
         
         slides = [
-            OnboardingSlide(title: "연애 테스트", description: "결혼, 연애능력, 애착유형테스트를 해보세요!😁", image: UIImage(named: "onboarding-3") ?? .actions),
-            OnboardingSlide(title: "추억간직하기", description: "상대방은 나에게 어떤사람인지 기억할 수 있어요🧑🏻‍💻", image: UIImage(named: "onboarding-2") ?? .actions),
-            OnboardingSlide(title: "연애명언", description: "연애명언을 볼 수 있어요😎", image: UIImage(named: "onboarding-1") ?? .actions)
+            OnboardingSlide(title: "연애 테스트", description: "결혼, 연애능력, 애착유형테스트를 해보세요!😁", image: UIImage(named: "onboarding-2") ?? .actions),
+            OnboardingSlide(title: "추억간직하기", description: "상대방은 나에게 어떤사람인지 기억할 수 있어요🧑🏻‍💻", image: UIImage(named: "onboarding-1") ?? .actions),
+            OnboardingSlide(title: "연애명언", description: "연애명언을 볼 수 있어요😎", image: UIImage(named: "onboarding-3") ?? .actions)
         ]
     }
     
     @IBAction func nextBtnClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
-            guard let homeNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNC") as? UINavigationController else { return }
+            guard let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as? MainVC else { return }
             
-            homeNC.modalTransitionStyle = .flipHorizontal
-            homeNC.modalPresentationStyle = .fullScreen
+            mainVC.modalTransitionStyle = .flipHorizontal
+            mainVC.modalPresentationStyle = .fullScreen
             
-            self.present(homeNC, animated: true)
+            self.present(mainVC, animated: false)
+            
         }
         else {
             currentPage += 1
