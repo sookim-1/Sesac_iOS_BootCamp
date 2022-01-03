@@ -8,11 +8,17 @@
 import UIKit
 
 class SignUpVC: UIViewController {
+    let mainView = SignUpView()
+    
+    override func loadView() {
+        self.view = mainView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemGreen
+        view.backgroundColor = .systemBackground
+        title = "새싹농장 가입하기"
     }
     
 }

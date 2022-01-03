@@ -19,6 +19,7 @@
 		7602A0A52783530300132C79 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7602A0A42783530300132C79 /* SnapKit */; };
 		7645805B2783617300D528F8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645805A2783617300D528F8 /* SignUpVC.swift */; };
 		7645805D2783618E00D528F8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645805C2783618E00D528F8 /* LoginVC.swift */; };
+		76458061278363CE00D528F8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76458060278363CE00D528F8 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		7602A0A1278352AA00132C79 /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
 		7645805A2783617300D528F8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		7645805C2783618E00D528F8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		76458060278363CE00D528F8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				7645805A2783617300D528F8 /* SignUpVC.swift */,
+				76458060278363CE00D528F8 /* SignUpView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				7602A0862782EAF300132C79 /* HomeVC.swift in Sources */,
 				7602A0822782EAF300132C79 /* AppDelegate.swift in Sources */,
 				7602A0A2278352AA00132C79 /* ViewRepresentable.swift in Sources */,
+				76458061278363CE00D528F8 /* SignUpView.swift in Sources */,
 				7645805D2783618E00D528F8 /* LoginVC.swift in Sources */,
 				7602A09F2783527300132C79 /* HomeView.swift in Sources */,
 				7602A09A2783507A00132C79 /* BlogBasicButton.swift in Sources */,
