@@ -22,6 +22,7 @@
 		7602A08A2782EAF400132C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7602A08D2782EAF400132C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7602A08F2782EAF400132C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7602A0962782ED5700132C79 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 				7602A08A2782EAF400132C79 /* Assets.xcassets */,
 				7602A08C2782EAF400132C79 /* LaunchScreen.storyboard */,
 				7602A08F2782EAF400132C79 /* Info.plist */,
+				7602A0962782ED5700132C79 /* .swiftlint.yml */,
 			);
 			path = "SeSAC-Blog";
 			sourceTree = "<group>";
@@ -74,6 +76,7 @@
 				7602A07A2782EAF300132C79 /* Sources */,
 				7602A07B2782EAF300132C79 /* Frameworks */,
 				7602A07C2782EAF300132C79 /* Resources */,
+				7602A0952782EC8100132C79 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -128,6 +131,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7602A0952782EC8100132C79 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7602A07A2782EAF300132C79 /* Sources */ = {
