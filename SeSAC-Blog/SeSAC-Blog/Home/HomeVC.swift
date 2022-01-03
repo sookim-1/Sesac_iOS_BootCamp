@@ -26,7 +26,7 @@ class HomeVC: UIViewController {
         navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.left")
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.left")
 
-        navigationItem.backBarButtonItem = UIBarButtonItem()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = .label
     }
 

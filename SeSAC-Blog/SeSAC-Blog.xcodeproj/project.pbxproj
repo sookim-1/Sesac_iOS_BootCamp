@@ -21,6 +21,8 @@
 		7645805D2783618E00D528F8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645805C2783618E00D528F8 /* LoginVC.swift */; };
 		76458061278363CE00D528F8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76458060278363CE00D528F8 /* SignUpView.swift */; };
 		7645806327836D9400D528F8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645806227836D9300D528F8 /* LoginView.swift */; };
+		76458065278370FE00D528F8 /* PasswordChangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76458064278370FE00D528F8 /* PasswordChangeVC.swift */; };
+		764580672783712200D528F8 /* PasswordChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764580662783712100D528F8 /* PasswordChangeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		7645805C2783618E00D528F8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		76458060278363CE00D528F8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7645806227836D9300D528F8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		76458064278370FE00D528F8 /* PasswordChangeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeVC.swift; sourceTree = "<group>"; };
+		764580662783712100D528F8 /* PasswordChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 			children = (
 				7645805C2783618E00D528F8 /* LoginVC.swift */,
 				7645806227836D9300D528F8 /* LoginView.swift */,
+				76458064278370FE00D528F8 /* PasswordChangeVC.swift */,
+				764580662783712100D528F8 /* PasswordChangeView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -231,11 +237,13 @@
 			files = (
 				7645805B2783617300D528F8 /* SignUpVC.swift in Sources */,
 				7602A09C2783508C00132C79 /* BlogBasicTextField.swift in Sources */,
+				764580672783712200D528F8 /* PasswordChangeView.swift in Sources */,
 				7602A0862782EAF300132C79 /* HomeVC.swift in Sources */,
 				7602A0822782EAF300132C79 /* AppDelegate.swift in Sources */,
 				7602A0A2278352AA00132C79 /* ViewRepresentable.swift in Sources */,
 				76458061278363CE00D528F8 /* SignUpView.swift in Sources */,
 				7645805D2783618E00D528F8 /* LoginVC.swift in Sources */,
+				76458065278370FE00D528F8 /* PasswordChangeVC.swift in Sources */,
 				7602A09F2783527300132C79 /* HomeView.swift in Sources */,
 				7645806327836D9400D528F8 /* LoginView.swift in Sources */,
 				7602A09A2783507A00132C79 /* BlogBasicButton.swift in Sources */,
