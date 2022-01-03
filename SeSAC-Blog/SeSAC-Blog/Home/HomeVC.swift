@@ -18,7 +18,16 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
+        setUpNavigationBar()
         configure()
+    }
+    
+    func setUpNavigationBar() {
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.left")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.left")
+
+        navigationItem.backBarButtonItem = UIBarButtonItem()
+        navigationController?.navigationBar.tintColor = .label
     }
 
     func configure() {
