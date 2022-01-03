@@ -17,6 +17,8 @@
 		7602A09F2783527300132C79 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7602A09E2783527300132C79 /* HomeView.swift */; };
 		7602A0A2278352AA00132C79 /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7602A0A1278352AA00132C79 /* ViewRepresentable.swift */; };
 		7602A0A52783530300132C79 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7602A0A42783530300132C79 /* SnapKit */; };
+		7645805B2783617300D528F8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645805A2783617300D528F8 /* SignUpVC.swift */; };
+		7645805D2783618E00D528F8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645805C2783618E00D528F8 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		7602A09B2783508C00132C79 /* BlogBasicTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogBasicTextField.swift; sourceTree = "<group>"; };
 		7602A09E2783527300132C79 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7602A0A1278352AA00132C79 /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
+		7645805A2783617300D528F8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		7645805C2783618E00D528F8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 		7602A0802782EAF300132C79 /* SeSAC-Blog */ = {
 			isa = PBXGroup;
 			children = (
+				764580592783616200D528F8 /* Login */,
+				764580582783615600D528F8 /* SignUp */,
 				7602A0A02783527800132C79 /* Protocols */,
 				7602A09D2783524200132C79 /* Home */,
 				7602A0982783505C00132C79 /* CustomViews */,
@@ -102,6 +108,22 @@
 				7602A0A1278352AA00132C79 /* ViewRepresentable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		764580582783615600D528F8 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				7645805A2783617300D528F8 /* SignUpVC.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		764580592783616200D528F8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7645805C2783618E00D528F8 /* LoginVC.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,10 +223,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7645805B2783617300D528F8 /* SignUpVC.swift in Sources */,
 				7602A09C2783508C00132C79 /* BlogBasicTextField.swift in Sources */,
 				7602A0862782EAF300132C79 /* HomeVC.swift in Sources */,
 				7602A0822782EAF300132C79 /* AppDelegate.swift in Sources */,
 				7602A0A2278352AA00132C79 /* ViewRepresentable.swift in Sources */,
+				7645805D2783618E00D528F8 /* LoginVC.swift in Sources */,
 				7602A09F2783527300132C79 /* HomeView.swift in Sources */,
 				7602A09A2783507A00132C79 /* BlogBasicButton.swift in Sources */,
 				7602A0842782EAF300132C79 /* SceneDelegate.swift in Sources */,
