@@ -26,6 +26,7 @@
 		764580692783757200D528F8 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764580682783757200D528F8 /* SignUpModel.swift */; };
 		7645806B2783759700D528F8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645806A2783759700D528F8 /* LoginModel.swift */; };
 		7645806D278375EF00D528F8 /* PasswordChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645806C278375EF00D528F8 /* PasswordChangeModel.swift */; };
+		76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CB27846E2B000B99C1 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		764580682783757200D528F8 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		7645806A2783759700D528F8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		7645806C278375EF00D528F8 /* PasswordChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeModel.swift; sourceTree = "<group>"; };
+		76FEA1CB27846E2B000B99C1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		7602A0802782EAF300132C79 /* SeSAC-Blog */ = {
 			isa = PBXGroup;
 			children = (
+				76FEA1CA27846E20000B99C1 /* Error */,
 				764580592783616200D528F8 /* Login */,
 				764580582783615600D528F8 /* SignUp */,
 				7602A0A02783527800132C79 /* Protocols */,
@@ -145,6 +148,14 @@
 				7645806C278375EF00D528F8 /* PasswordChangeModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		76FEA1CA27846E20000B99C1 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				76FEA1CB27846E2B000B99C1 /* NetworkError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */,
 				7645805B2783617300D528F8 /* SignUpVC.swift in Sources */,
 				764580692783757200D528F8 /* SignUpModel.swift in Sources */,
 				7602A09C2783508C00132C79 /* BlogBasicTextField.swift in Sources */,
