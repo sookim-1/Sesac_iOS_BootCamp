@@ -7,9 +7,9 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: BaseVC {
     let mainView = HomeView()
-    
+
     override func loadView() {
         self.view = mainView
     }
@@ -17,11 +17,10 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemBackground
         setUpNavigationBar()
         configure()
     }
-    
+
     func setUpNavigationBar() {
         navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.left")
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.left")
@@ -34,11 +33,11 @@ class HomeVC: UIViewController {
         mainView.loginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
         mainView.signButton.addTarget(self, action: #selector(signButtonClicked), for: .touchUpInside)
     }
-    
+
     @objc func loginButtonClicked() {
         self.navigationController?.pushViewController(LoginVC(), animated: true)
     }
-    
+
     @objc func signButtonClicked() {
         self.navigationController?.pushViewController(SignUpVC(), animated: true)
     }

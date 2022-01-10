@@ -8,13 +8,12 @@
 import UIKit
 import SnapKit
 
-class ModifyVC: UIViewController {
+class ModifyVC: BaseVC {
     let textView = UITextView()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemBackground
         configureTextView()
     }
 
@@ -22,7 +21,7 @@ class ModifyVC: UIViewController {
         view.addSubview(textView)
         textView.layer.borderWidth = 2
         textView.layer.borderColor = UIColor.systemGray4.cgColor
-        
+
         textView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)

@@ -17,7 +17,7 @@ final class HomeView: UIView, ViewRepresentable {
         label.textAlignment = .center
         label.textColor = .label
         label.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return label
     }()
     let bodyLabel: UILabel = {
@@ -28,7 +28,7 @@ final class HomeView: UIView, ViewRepresentable {
         label.textColor = .label
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return label
     }()
     let signButton = BlogBasicButton(backgroundColor: .systemGreen, title: "가입하기")
@@ -41,7 +41,7 @@ final class HomeView: UIView, ViewRepresentable {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     let loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("로그인", for: .normal)
@@ -50,78 +50,78 @@ final class HomeView: UIView, ViewRepresentable {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-        
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         configure()
         setupConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func configure() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(bodyLabel)
         addSubview(signButton)
-        
+
         // MARK: - LoginView만들기
         loginView.addSubview(checkAccountLabel)
         loginView.addSubview(loginButton)
         loginView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(loginView)
     }
-    
+
     func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(self.snp.width).multipliedBy(0.5)
             make.height.equalTo(imageView.snp.width).multipliedBy(1.0 / 1.0)
         }
-        
+
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(imageView.snp.bottom).offset(10)
             make.width.equalTo(self.snp.width).multipliedBy(0.5)
             make.height.equalTo(50)
         }
-        
+
         bodyLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.width.equalTo(self.snp.width).multipliedBy(0.5)
             make.height.equalTo(50)
         }
-        
+
         signButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(self.snp.width).multipliedBy(0.9)
             make.bottom.equalTo(loginView.snp.top)
             make.height.equalTo(50)
         }
-        
+
         loginView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-20)
             make.width.equalTo(signButton.snp.width).multipliedBy(0.5)
             make.height.equalTo(50)
         }
-        
+
         checkAccountLabel.snp.makeConstraints { make in
             make.height.equalTo(loginView.snp.height).multipliedBy(0.5)
             make.center.equalTo(loginView.snp.center)
             make.trailing.equalTo(loginButton.snp.leading)
         }
-        
+
         loginButton.snp.makeConstraints { make in
             make.height.equalTo(loginView.snp.height).multipliedBy(0.5)
             make.centerY.equalTo(loginView.snp.centerY)
         }
-        
+
     }
-    
+
 }

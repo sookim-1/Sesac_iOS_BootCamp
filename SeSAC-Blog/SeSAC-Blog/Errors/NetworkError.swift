@@ -10,7 +10,7 @@ import Foundation
 enum NetworkError: LocalizedError {
     case invalidError
     case customError(errorMessage: String)
-    
+
     var errorDescription: String? {
         switch self {
         case .invalidError:
