@@ -111,21 +111,16 @@
 		7602A0802782EAF300132C79 /* SeSAC-Blog */ = {
 			isa = PBXGroup;
 			children = (
+				7623D9B8278CC3C000B4450D /* Supports */,
+				7623D9B1278CC31200B4450D /* Models */,
+				7623D9B0278CC2E600B4450D /* ViewModels */,
+				7623D9AC278CC27600B4450D /* Views */,
 				7623D99C278C9D8000B4450D /* Extensions */,
-				7623D98E278C99F200B4450D /* Post */,
 				76FEA1CD27846ECE000B99C1 /* NetworkService */,
-				76FEA1CA27846E20000B99C1 /* Error */,
-				764580592783616200D528F8 /* Login */,
-				764580582783615600D528F8 /* SignUp */,
+				76FEA1CA27846E20000B99C1 /* Errors */,
 				7602A0A02783527800132C79 /* Protocols */,
-				7602A09D2783524200132C79 /* Home */,
 				7602A0982783505C00132C79 /* CustomViews */,
-				7602A0812782EAF300132C79 /* AppDelegate.swift */,
-				7602A0832782EAF300132C79 /* SceneDelegate.swift */,
-				7602A08A2782EAF400132C79 /* Assets.xcassets */,
-				7602A08C2782EAF400132C79 /* LaunchScreen.storyboard */,
 				7602A08F2782EAF400132C79 /* Info.plist */,
-				7602A0962782ED5700132C79 /* .swiftlint.yml */,
 			);
 			path = "SeSAC-Blog";
 			sourceTree = "<group>";
@@ -140,34 +135,12 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		7602A09D2783524200132C79 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				7602A0852782EAF300132C79 /* HomeVC.swift */,
-				7602A09E2783527300132C79 /* HomeView.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		7602A0A02783527800132C79 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				7602A0A1278352AA00132C79 /* ViewRepresentable.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		7623D98E278C99F200B4450D /* Post */ = {
-			isa = PBXGroup;
-			children = (
-				7623D9A1278CAF6200B4450D /* Detail */,
-				7623D98F278C9A0C00B4450D /* PostListVC.swift */,
-				7623D991278C9A1F00B4450D /* PostListTableViewCell.swift */,
-				7623D993278C9B3600B4450D /* PostListView.swift */,
-				7623D9A8278CC0E100B4450D /* PostEditVC.swift */,
-				7623D9AA278CC15B00B4450D /* ModifyVC.swift */,
-			);
-			path = Post;
 			sourceTree = "<group>";
 		};
 		7623D99C278C9D8000B4450D /* Extensions */ = {
@@ -178,45 +151,128 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		7623D9A1278CAF6200B4450D /* Detail */ = {
+		7623D9AC278CC27600B4450D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7623D9B2278CC32300B4450D /* Home */,
+				7623D9AE278CC2BB00B4450D /* SignUp */,
+				7623D9AD278CC2B000B4450D /* Login */,
+				7623D9AF278CC2C600B4450D /* PasswordChange */,
+				7623D9B4278CC35000B4450D /* PostList */,
+				7623D9B5278CC36200B4450D /* PostDetail */,
+				7623D9B6278CC39200B4450D /* PostEdit */,
+				7623D9B7278CC39900B4450D /* Modify */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7623D9AD278CC2B000B4450D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7645805C2783618E00D528F8 /* LoginVC.swift */,
+				7645806227836D9300D528F8 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7623D9AE278CC2BB00B4450D /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				7645805A2783617300D528F8 /* SignUpVC.swift */,
+				76458060278363CE00D528F8 /* SignUpView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		7623D9AF278CC2C600B4450D /* PasswordChange */ = {
+			isa = PBXGroup;
+			children = (
+				76458064278370FE00D528F8 /* PasswordChangeVC.swift */,
+				764580662783712100D528F8 /* PasswordChangeView.swift */,
+			);
+			path = PasswordChange;
+			sourceTree = "<group>";
+		};
+		7623D9B0278CC2E600B4450D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7623D9B1278CC31200B4450D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				764580682783757200D528F8 /* SignUpModel.swift */,
+				7645806A2783759700D528F8 /* LoginModel.swift */,
+				7645806C278375EF00D528F8 /* PasswordChangeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7623D9B2278CC32300B4450D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7602A0852782EAF300132C79 /* HomeVC.swift */,
+				7602A09E2783527300132C79 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7623D9B4278CC35000B4450D /* PostList */ = {
+			isa = PBXGroup;
+			children = (
+				7623D98F278C9A0C00B4450D /* PostListVC.swift */,
+				7623D991278C9A1F00B4450D /* PostListTableViewCell.swift */,
+				7623D993278C9B3600B4450D /* PostListView.swift */,
+			);
+			path = PostList;
+			sourceTree = "<group>";
+		};
+		7623D9B5278CC36200B4450D /* PostDetail */ = {
 			isa = PBXGroup;
 			children = (
 				7623D99F278CAF5A00B4450D /* PostDetailVC.swift */,
 				7623D9A2278CAF9A00B4450D /* PostDetailView.swift */,
 				7623D9A6278CBD0C00B4450D /* CommentTableViewCell.swift */,
 			);
-			path = Detail;
+			path = PostDetail;
 			sourceTree = "<group>";
 		};
-		764580582783615600D528F8 /* SignUp */ = {
+		7623D9B6278CC39200B4450D /* PostEdit */ = {
 			isa = PBXGroup;
 			children = (
-				7645805A2783617300D528F8 /* SignUpVC.swift */,
-				76458060278363CE00D528F8 /* SignUpView.swift */,
-				764580682783757200D528F8 /* SignUpModel.swift */,
+				7623D9A8278CC0E100B4450D /* PostEditVC.swift */,
 			);
-			path = SignUp;
+			path = PostEdit;
 			sourceTree = "<group>";
 		};
-		764580592783616200D528F8 /* Login */ = {
+		7623D9B7278CC39900B4450D /* Modify */ = {
 			isa = PBXGroup;
 			children = (
-				7645805C2783618E00D528F8 /* LoginVC.swift */,
-				7645806227836D9300D528F8 /* LoginView.swift */,
-				76458064278370FE00D528F8 /* PasswordChangeVC.swift */,
-				764580662783712100D528F8 /* PasswordChangeView.swift */,
-				7645806A2783759700D528F8 /* LoginModel.swift */,
-				7645806C278375EF00D528F8 /* PasswordChangeModel.swift */,
+				7623D9AA278CC15B00B4450D /* ModifyVC.swift */,
 			);
-			path = Login;
+			path = Modify;
 			sourceTree = "<group>";
 		};
-		76FEA1CA27846E20000B99C1 /* Error */ = {
+		7623D9B8278CC3C000B4450D /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				7602A0812782EAF300132C79 /* AppDelegate.swift */,
+				7602A0832782EAF300132C79 /* SceneDelegate.swift */,
+				7602A08A2782EAF400132C79 /* Assets.xcassets */,
+				7602A08C2782EAF400132C79 /* LaunchScreen.storyboard */,
+				7602A0962782ED5700132C79 /* .swiftlint.yml */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		76FEA1CA27846E20000B99C1 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
 				76FEA1CB27846E2B000B99C1 /* NetworkError.swift */,
 			);
-			path = Error;
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		76FEA1CD27846ECE000B99C1 /* NetworkService */ = {
