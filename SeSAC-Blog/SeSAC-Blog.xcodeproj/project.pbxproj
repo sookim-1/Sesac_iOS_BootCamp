@@ -22,6 +22,10 @@
 		7623D994278C9B3600B4450D /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623D993278C9B3600B4450D /* PostListView.swift */; };
 		7623D997278C9B5100B4450D /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 7623D996278C9B5100B4450D /* JJFloatingActionButton */; };
 		7623D99E278C9D9400B4450D /* CALayer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623D99D278C9D9400B4450D /* CALayer+Ext.swift */; };
+		7623D9A0278CAF5A00B4450D /* PostDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623D99F278CAF5A00B4450D /* PostDetailVC.swift */; };
+		7623D9A3278CAF9A00B4450D /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623D9A2278CAF9A00B4450D /* PostDetailView.swift */; };
+		7623D9A5278CB52B00B4450D /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623D9A4278CB52B00B4450D /* PostView.swift */; };
+		7623D9A7278CBD0C00B4450D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623D9A6278CBD0C00B4450D /* CommentTableViewCell.swift */; };
 		7645805B2783617300D528F8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645805A2783617300D528F8 /* SignUpVC.swift */; };
 		7645805D2783618E00D528F8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645805C2783618E00D528F8 /* LoginVC.swift */; };
 		76458061278363CE00D528F8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76458060278363CE00D528F8 /* SignUpView.swift */; };
@@ -53,6 +57,10 @@
 		7623D991278C9A1F00B4450D /* PostListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListTableViewCell.swift; sourceTree = "<group>"; };
 		7623D993278C9B3600B4450D /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		7623D99D278C9D9400B4450D /* CALayer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Ext.swift"; sourceTree = "<group>"; };
+		7623D99F278CAF5A00B4450D /* PostDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailVC.swift; sourceTree = "<group>"; };
+		7623D9A2278CAF9A00B4450D /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		7623D9A4278CB52B00B4450D /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		7623D9A6278CBD0C00B4450D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		7645805A2783617300D528F8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		7645805C2783618E00D528F8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		76458060278363CE00D528F8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 			children = (
 				7602A0992783507A00132C79 /* BlogBasicButton.swift */,
 				7602A09B2783508C00132C79 /* BlogBasicTextField.swift */,
+				7623D9A4278CB52B00B4450D /* PostView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 		7623D98E278C99F200B4450D /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				7623D9A1278CAF6200B4450D /* Detail */,
 				7623D98F278C9A0C00B4450D /* PostListVC.swift */,
 				7623D991278C9A1F00B4450D /* PostListTableViewCell.swift */,
 				7623D993278C9B3600B4450D /* PostListView.swift */,
@@ -160,6 +170,16 @@
 				7623D99D278C9D9400B4450D /* CALayer+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7623D9A1278CAF6200B4450D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7623D99F278CAF5A00B4450D /* PostDetailVC.swift */,
+				7623D9A2278CAF9A00B4450D /* PostDetailView.swift */,
+				7623D9A6278CBD0C00B4450D /* CommentTableViewCell.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		764580582783615600D528F8 /* SignUp */ = {
@@ -308,6 +328,7 @@
 				7602A09C2783508C00132C79 /* BlogBasicTextField.swift in Sources */,
 				7623D992278C9A1F00B4450D /* PostListTableViewCell.swift in Sources */,
 				76FEA1D1278472AC000B99C1 /* SeSacAPI.swift in Sources */,
+				7623D9A0278CAF5A00B4450D /* PostDetailVC.swift in Sources */,
 				764580672783712200D528F8 /* PasswordChangeView.swift in Sources */,
 				7602A0862782EAF300132C79 /* HomeVC.swift in Sources */,
 				7602A0822782EAF300132C79 /* AppDelegate.swift in Sources */,
@@ -321,8 +342,11 @@
 				7645806327836D9400D528F8 /* LoginView.swift in Sources */,
 				7623D99E278C9D9400B4450D /* CALayer+Ext.swift in Sources */,
 				76FEA1CF27846EF9000B99C1 /* LoginNetworkService.swift in Sources */,
+				7623D9A3278CAF9A00B4450D /* PostDetailView.swift in Sources */,
+				7623D9A7278CBD0C00B4450D /* CommentTableViewCell.swift in Sources */,
 				7602A09A2783507A00132C79 /* BlogBasicButton.swift in Sources */,
 				7645806D278375EF00D528F8 /* PasswordChangeModel.swift in Sources */,
+				7623D9A5278CB52B00B4450D /* PostView.swift in Sources */,
 				7602A0842782EAF300132C79 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
