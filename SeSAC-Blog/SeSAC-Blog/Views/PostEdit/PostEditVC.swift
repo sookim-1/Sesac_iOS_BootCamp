@@ -8,19 +8,18 @@
 import UIKit
 import SnapKit
 
-class PostEditVC: UIViewController {
+class PostEditVC: BaseVC {
     let textView = UITextView()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemBackground
         configureTextView()
     }
 
     func configureTextView() {
         view.addSubview(textView)
-        
+
         textView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.bottom.equalTo(view.safeAreaLayoutGuide)

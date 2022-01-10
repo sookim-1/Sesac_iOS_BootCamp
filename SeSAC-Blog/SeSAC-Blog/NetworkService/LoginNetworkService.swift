@@ -9,7 +9,7 @@ import Foundation
 
 class LoginNetworkService {
     static let shared = LoginNetworkService()
-    
+
     func postSign(completion: @escaping (Result<String, NetworkError>) -> Void) {
         let body = SignUpModel(username: "userna3me", email: "ema3il@naver.com", password: "1234")
 
@@ -17,7 +17,7 @@ class LoginNetworkService {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try? JSONEncoder().encode(body)
-        
+
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let _ = error {
                 completion(.failure(.customError(errorMessage: "error 발생")))
@@ -36,5 +36,5 @@ class LoginNetworkService {
             completion(.success("회원가입 성공"))
         }.resume()
     }
-    
+
 }

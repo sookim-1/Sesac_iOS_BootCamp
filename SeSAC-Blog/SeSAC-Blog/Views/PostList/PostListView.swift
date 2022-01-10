@@ -20,29 +20,29 @@ class PostListView: UIView, ViewRepresentable {
     }()
     let tableView = UITableView()
     let actionButton = JJFloatingActionButton()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         configure()
         setupConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func configure() {
         addSubview(tableView)
         addSubview(titleView)
         titleView.backgroundColor = .systemGray6
         titleView.addSubview(titleLable)
         tableView.register(PostListTableViewCell.self, forCellReuseIdentifier: PostListTableViewCell.identifier)
-        
+
         tableView.separatorStyle = .singleLine
         tableView.showsVerticalScrollIndicator = true
     }
-    
+
     func setupConstraints() {
         titleView.snp.makeConstraints { make in
             make.top.equalTo(self.safeAreaLayoutGuide)
@@ -50,18 +50,18 @@ class PostListView: UIView, ViewRepresentable {
             make.leading.equalToSuperview()
             make.height.equalTo(100)
         }
-        
+
         titleLable.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-        
+
         tableView.snp.makeConstraints { make in
             make.top.equalTo(titleView.snp.bottom)
             make.bottom.equalToSuperview()
             make.trailing.equalToSuperview()
             make.leading.equalToSuperview()
         }
-        
+
         actionButton.display(inView: self)
     }
 

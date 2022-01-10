@@ -18,28 +18,28 @@ class LoginView: UIView, ViewRepresentable {
         button.setTitle("비밀번호 변경하기", for: .normal)
         button.setTitleColor(.systemGray4, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
-        
+
         return button
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         configure()
         setupConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func configure() {
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(loginButton)
         addSubview(passwordChangeButton)
     }
-    
+
     func setupConstraints() {
         emailTextField.snp.makeConstraints { make in
             make.width.equalToSuperview().multipliedBy(0.9)
@@ -47,21 +47,21 @@ class LoginView: UIView, ViewRepresentable {
             make.height.equalTo(50)
             make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
         }
-        
+
         passwordTextField.snp.makeConstraints { make in
             make.width.equalToSuperview().multipliedBy(0.9)
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
             make.top.equalTo(emailTextField.snp.bottom).offset(20)
         }
-        
+
         loginButton.snp.makeConstraints { make in
             make.width.equalToSuperview().multipliedBy(0.9)
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
             make.top.equalTo(passwordTextField.snp.bottom).offset(20)
         }
-        
+
         passwordChangeButton.snp.makeConstraints { make in
             make.width.equalTo(loginButton.snp.width).multipliedBy(0.5)
             make.height.equalTo(50)

@@ -7,10 +7,10 @@
 
 import UIKit
 
-class PasswordChangeVC: UIViewController {
+class PasswordChangeVC: BaseVC {
 
     let mainView = PasswordChangeView()
-    
+
     override func loadView() {
         self.view = mainView
     }
@@ -18,7 +18,6 @@ class PasswordChangeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemBackground
         title = "비밀번호 변경"
     }
 
