@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "JJFloatingActionButton",
+        "repositoryURL": "https://github.com/jjochen/JJFloatingActionButton.git",
+        "state": {
+          "branch": "master",
+          "revision": "60fcde6d01aa33598753214b9438c192f2074900",
+          "version": null
+        }
+      },
+      {
         "package": "SnapKit",
         "repositoryURL": "https://github.com/SnapKit/SnapKit",
         "state": {
