@@ -26,6 +26,8 @@
 		7623D9A3278CAF9A00B4450D /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623D9A2278CAF9A00B4450D /* PostDetailView.swift */; };
 		7623D9A5278CB52B00B4450D /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623D9A4278CB52B00B4450D /* PostView.swift */; };
 		7623D9A7278CBD0C00B4450D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623D9A6278CBD0C00B4450D /* CommentTableViewCell.swift */; };
+		7623D9A9278CC0E100B4450D /* PostEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623D9A8278CC0E100B4450D /* PostEditVC.swift */; };
+		7623D9AB278CC15B00B4450D /* ModifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623D9AA278CC15B00B4450D /* ModifyVC.swift */; };
 		7645805B2783617300D528F8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645805A2783617300D528F8 /* SignUpVC.swift */; };
 		7645805D2783618E00D528F8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645805C2783618E00D528F8 /* LoginVC.swift */; };
 		76458061278363CE00D528F8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76458060278363CE00D528F8 /* SignUpView.swift */; };
@@ -61,6 +63,8 @@
 		7623D9A2278CAF9A00B4450D /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		7623D9A4278CB52B00B4450D /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		7623D9A6278CBD0C00B4450D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		7623D9A8278CC0E100B4450D /* PostEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditVC.swift; sourceTree = "<group>"; };
+		7623D9AA278CC15B00B4450D /* ModifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyVC.swift; sourceTree = "<group>"; };
 		7645805A2783617300D528F8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		7645805C2783618E00D528F8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		76458060278363CE00D528F8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				7623D98F278C9A0C00B4450D /* PostListVC.swift */,
 				7623D991278C9A1F00B4450D /* PostListTableViewCell.swift */,
 				7623D993278C9B3600B4450D /* PostListView.swift */,
+				7623D9A8278CC0E100B4450D /* PostEditVC.swift */,
+				7623D9AA278CC15B00B4450D /* ModifyVC.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -333,10 +339,12 @@
 				7602A0862782EAF300132C79 /* HomeVC.swift in Sources */,
 				7602A0822782EAF300132C79 /* AppDelegate.swift in Sources */,
 				7602A0A2278352AA00132C79 /* ViewRepresentable.swift in Sources */,
+				7623D9AB278CC15B00B4450D /* ModifyVC.swift in Sources */,
 				76458061278363CE00D528F8 /* SignUpView.swift in Sources */,
 				7645805D2783618E00D528F8 /* LoginVC.swift in Sources */,
 				76458065278370FE00D528F8 /* PasswordChangeVC.swift in Sources */,
 				7645806B2783759700D528F8 /* LoginModel.swift in Sources */,
+				7623D9A9278CC0E100B4450D /* PostEditVC.swift in Sources */,
 				7602A09F2783527300132C79 /* HomeView.swift in Sources */,
 				7623D994278C9B3600B4450D /* PostListView.swift in Sources */,
 				7645806327836D9400D528F8 /* LoginView.swift in Sources */,
