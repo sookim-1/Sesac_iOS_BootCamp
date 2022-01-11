@@ -38,6 +38,7 @@
 		764580692783757200D528F8 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764580682783757200D528F8 /* SignUpModel.swift */; };
 		7645806B2783759700D528F8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645806A2783759700D528F8 /* LoginModel.swift */; };
 		7645806D278375EF00D528F8 /* PasswordChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645806C278375EF00D528F8 /* PasswordChangeModel.swift */; };
+		768F006C278E2C8600540D7D /* URLSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F006B278E2C8600540D7D /* URLSession+Ext.swift */; };
 		76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CB27846E2B000B99C1 /* NetworkError.swift */; };
 		76FEA1CF27846EF9000B99C1 /* LoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */; };
 		76FEA1D1278472AC000B99C1 /* SeSacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */; };
@@ -76,6 +77,7 @@
 		764580682783757200D528F8 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		7645806A2783759700D528F8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		7645806C278375EF00D528F8 /* PasswordChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeModel.swift; sourceTree = "<group>"; };
+		768F006B278E2C8600540D7D /* URLSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Ext.swift"; sourceTree = "<group>"; };
 		76FEA1CB27846E2B000B99C1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkService.swift; sourceTree = "<group>"; };
 		76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacAPI.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				7623D99D278C9D9400B4450D /* CALayer+Ext.swift */,
+				768F006B278E2C8600540D7D /* URLSession+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				764580692783757200D528F8 /* SignUpModel.swift in Sources */,
 				7602A09C2783508C00132C79 /* BlogBasicTextField.swift in Sources */,
 				7623D992278C9A1F00B4450D /* PostListTableViewCell.swift in Sources */,
+				768F006C278E2C8600540D7D /* URLSession+Ext.swift in Sources */,
 				76FEA1D1278472AC000B99C1 /* SeSacAPI.swift in Sources */,
 				7623D9A0278CAF5A00B4450D /* PostDetailVC.swift in Sources */,
 				764580672783712200D528F8 /* PasswordChangeView.swift in Sources */,
