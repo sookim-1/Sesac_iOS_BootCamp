@@ -51,6 +51,7 @@
 		768F008B278EDCE100540D7D /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F008A278EDCE100540D7D /* CommentModel.swift */; };
 		768F008D278EDD4C00540D7D /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F008C278EDD4C00540D7D /* PostListViewModel.swift */; };
 		768F008F278EE06000540D7D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F008E278EE06000540D7D /* String+Ext.swift */; };
+		768F0091278EEFD200540D7D /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0090278EEFD200540D7D /* PostDetailViewModel.swift */; };
 		76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CB27846E2B000B99C1 /* NetworkError.swift */; };
 		76FEA1CF27846EF9000B99C1 /* LoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */; };
 		76FEA1D1278472AC000B99C1 /* SeSacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */; };
@@ -102,6 +103,7 @@
 		768F008A278EDCE100540D7D /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		768F008C278EDD4C00540D7D /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostListViewModel.swift; path = "SeSAC-Blog/Models/PostListViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		768F008E278EE06000540D7D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		768F0090278EEFD200540D7D /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostDetailViewModel.swift; path = "SeSAC-Blog/Extensions/PostDetailViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		76FEA1CB27846E2B000B99C1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkService.swift; sourceTree = "<group>"; };
 		76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacAPI.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				768F0078278E3D6F00540D7D /* SingUpViewModel.swift */,
 				768F007E278ED65200540D7D /* LoginViewModel.swift */,
 				768F008C278EDD4C00540D7D /* PostListViewModel.swift */,
+				768F0090278EEFD200540D7D /* PostDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */,
 				7645805B2783617300D528F8 /* SignUpVC.swift in Sources */,
 				764580692783757200D528F8 /* SignUpModel.swift in Sources */,
+				768F0091278EEFD200540D7D /* PostDetailViewModel.swift in Sources */,
 				7602A09C2783508C00132C79 /* BlogBasicTextField.swift in Sources */,
 				7623D992278C9A1F00B4450D /* PostListTableViewCell.swift in Sources */,
 				768F0085278EDAC200540D7D /* ErrorButton.swift in Sources */,
