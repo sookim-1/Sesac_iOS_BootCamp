@@ -26,6 +26,7 @@ class PostDetailVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = ""
         hideKeyboard()
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
@@ -33,6 +34,7 @@ class PostDetailVC: BaseVC {
 
         bindingTextField(viewModel.commentText, self.mainView.commentTextField)
         mainView.commentTextField.addTarget(self, action: #selector(commentTextFieldDidChange(_:)), for: .editingChanged)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(presentMenuOption))
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -53,23 +55,40 @@ class PostDetailVC: BaseVC {
         self.mainView.postView.dateLabel.text = self.dateFormatter.string(from: postData.updatedAt.toDate()!)
         self.mainView.commentTextField.delegate = self
 
-        viewModel.getCommentData(id: postData.id) { result in
+        getCommentData(id: postData.id)
+    }
+
+    func getCommentData(id: Int) {
+        viewModel.getCommentData(id: id) { result in
             switch result {
             case .success(let commentData):
                 self.commentData = commentData
                 self.mainView.tableView.reloadData()
             case .failure(let error):
                 if error.errorTag == 1 {
-                    DispatchQueue.main.async {
-                        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: LoginVC())
-                        windowScene.windows.first?.makeKeyAndVisible()
-                    }
+                    self.presentLoginVC()
                 }
                 print(error.localizedDescription)
                 self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "데이터를 가져오는데 실패하였습니다.", buttonTitle: "확인")
             }
         }
+    }
+
+    @objc func presentMenuOption() {
+        let actionsheetController = UIAlertController(title: "메뉴", message: nil, preferredStyle: .actionSheet)
+        let postModify = UIAlertAction(title: "게시글 수정", style: .default, handler: { _ in
+            guard let postData = self.postData else { return }
+            let modifyVC = ModifyVC()
+            modifyVC.modifyPost(postId: postData.id)
+            self.navigationController?.pushViewController(modifyVC, animated: true)
+        })
+
+        let actionCancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
+
+        actionsheetController.addAction(postModify)
+        actionsheetController.addAction(actionCancel)
+
+        self.present(actionsheetController, animated: true, completion: nil)
     }
 
     @objc func commentTextFieldDidChange(_ textfield: UITextField) {
@@ -110,6 +129,45 @@ extension PostDetailVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let postData = postData else { return }
+        let modifyVC = ModifyVC()
+        modifyVC.isCheckPost = false
+        modifyVC.modifyComment(postId: postData.id, commentId: indexPath.row)
+        self.navigationController?.pushViewController(modifyVC, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "삭제") { (_, _, completionHandler ) in
+            let defaultAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
+                guard let postData = self.postData else { return }
+                self.viewModel.deleteCommentData(id: self.commentData[indexPath.row].id) { result in
+                    switch result {
+                    case .success(_):
+                        self.getCommentData(id: postData.id)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        self.presentErrorAlertOnMainThread(title: "댓글을 삭제할수없습니다.", message: "작성자를 확인하세요", buttonTitle: "확인")
+                    }
+                }
+            }
+
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+
+            let alert = UIAlertController(title: "게시글을 삭제하시겠습니까?",
+                  message: "정말로 삭제하시겠어요?",
+                  preferredStyle: .alert)
+
+            alert.addAction(defaultAction)
+            alert.addAction(cancelAction)
+
+            self.present(alert, animated: true, completion: nil)
+            completionHandler(true)
+        }
+
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+
 }
 
 extension PostDetailVC: UITextFieldDelegate {
@@ -124,11 +182,7 @@ extension PostDetailVC: UITextFieldDelegate {
                 self.view.endEditing(true)
             case .failure(let error):
                 if error.errorTag == 1 {
-                    DispatchQueue.main.async {
-                        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: LoginVC())
-                        windowScene.windows.first?.makeKeyAndVisible()
-                    }
+                    self.presentLoginVC()
                 }
                 print(error.localizedDescription)
                 self.presentErrorAlertOnMainThread(title: "댓글 작성 오류", message: "댓글을 작성할 수 없습니다.", buttonTitle: "확인")

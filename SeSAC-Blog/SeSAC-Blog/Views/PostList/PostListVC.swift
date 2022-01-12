@@ -51,11 +51,7 @@ class PostListVC: BaseVC {
                 self.mainView.tableView.reloadData()
             case .failure(let error):
                 if error.errorTag == 1 {
-                    DispatchQueue.main.async {
-                        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: LoginVC())
-                        windowScene.windows.first?.makeKeyAndVisible()
-                    }
+                    self.presentLoginVC()
                 }
                 print(error.localizedDescription)
                 self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "데이터를 가져오는데 실패하였습니다.", buttonTitle: "확인")
