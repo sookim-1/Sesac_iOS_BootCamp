@@ -17,7 +17,7 @@ enum NetworkError: LocalizedError {
         case .invalidError:
             return "알 수 없는 에러"
         case .tokenExpirationError:
-            return "토큰 만료 401에러"
+            return "401에러"
         case .customError(errorMessage: let errorMessage):
             return "\(errorMessage)"
         }
