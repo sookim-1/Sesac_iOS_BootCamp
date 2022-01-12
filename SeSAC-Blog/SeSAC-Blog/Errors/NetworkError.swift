@@ -12,6 +12,17 @@ enum NetworkError: LocalizedError {
     case customError(errorMessage: String)
     case tokenExpirationError
 
+    var errorTag: Int? {
+        switch self {
+        case .invalidError:
+            return 0
+        case .tokenExpirationError:
+            return 1
+        case .customError(errorMessage: _):
+            return 2
+        }
+    }
+
     var errorDescription: String? {
         switch self {
         case .invalidError:
