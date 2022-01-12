@@ -11,3 +11,14 @@ struct LoginModel: Codable {
     let identifier: String
     let password: String
 }
+
+struct ResponseLoginModel: Codable {
+    let jwt: String
+    let user: LoginUser
+}
+
+struct LoginUser: Codable {
+    let id: Int
+    let username: String
+    let email: String
+}

@@ -11,7 +11,7 @@ import SnapKit
 class SignUpView: UIView, ViewRepresentable {
 
     let emailTextField = BlogBasicTextField(placeholderText: "이메일 주소")
-    let nicknameTextField = BlogBasicTextField(placeholderText: "닉네임")
+    let usernameTextField = BlogBasicTextField(placeholderText: "닉네임")
     let passwordTextField = BlogBasicTextField(placeholderText: "비밀번호")
     let confirmPasswordTextField = BlogBasicTextField(placeholderText: "비밀번호 확인")
     let signButton = BlogBasicButton(backgroundColor: .systemGray4, title: "가입하기")
@@ -29,10 +29,15 @@ class SignUpView: UIView, ViewRepresentable {
 
     func configure() {
         addSubview(emailTextField)
-        addSubview(nicknameTextField)
+        addSubview(usernameTextField)
         addSubview(passwordTextField)
         addSubview(confirmPasswordTextField)
         addSubview(signButton)
+
+        emailTextField.keyboardType = .emailAddress
+        signButton.isEnabled = false
+        passwordTextField.isSecureTextEntry = true
+        confirmPasswordTextField.isSecureTextEntry = true
     }
 
     func setupConstraints() {
@@ -43,7 +48,7 @@ class SignUpView: UIView, ViewRepresentable {
             make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
         }
 
-        nicknameTextField.snp.makeConstraints { make in
+        usernameTextField.snp.makeConstraints { make in
             make.width.equalToSuperview().multipliedBy(0.9)
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
@@ -54,7 +59,7 @@ class SignUpView: UIView, ViewRepresentable {
             make.width.equalToSuperview().multipliedBy(0.9)
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
-            make.top.equalTo(nicknameTextField.snp.bottom).offset(20)
+            make.top.equalTo(usernameTextField.snp.bottom).offset(20)
         }
 
         confirmPasswordTextField.snp.makeConstraints { make in
