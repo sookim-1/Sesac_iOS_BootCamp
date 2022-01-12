@@ -66,13 +66,14 @@ class SignUpVC: BaseVC {
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
+                    self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "회원가입을 실패하였습니다.", buttonTitle: "확인")
                 }
 
             }
         } else if !isValidEmail(text: viewModel.email.value) {
-            print("error")
+            presentErrorAlertOnMainThread(title: "이메일 형식 에러", message: "이메일 형식을 맞춰주세요", buttonTitle: "확인")
         } else if !isCorrectPassword {
-            print("error")
+            presentErrorAlertOnMainThread(title: "비밀번호 에러", message: "비밀번호를 동일하게 입력하세요", buttonTitle: "확인")
         }
 
     }
