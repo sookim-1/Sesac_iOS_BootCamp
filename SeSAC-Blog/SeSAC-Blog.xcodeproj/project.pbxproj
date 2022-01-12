@@ -39,6 +39,10 @@
 		7645806B2783759700D528F8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645806A2783759700D528F8 /* LoginModel.swift */; };
 		7645806D278375EF00D528F8 /* PasswordChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645806C278375EF00D528F8 /* PasswordChangeModel.swift */; };
 		768F006C278E2C8600540D7D /* URLSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F006B278E2C8600540D7D /* URLSession+Ext.swift */; };
+		768F0079278E3D6F00540D7D /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0078278E3D6F00540D7D /* SingUpViewModel.swift */; };
+		768F007B278E3D9300540D7D /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F007A278E3D9300540D7D /* UIViewController+Ext.swift */; };
+		768F007D278E3DB800540D7D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F007C278E3DB800540D7D /* Observable.swift */; };
+		768F007F278ED65200540D7D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F007E278ED65200540D7D /* LoginViewModel.swift */; };
 		76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CB27846E2B000B99C1 /* NetworkError.swift */; };
 		76FEA1CF27846EF9000B99C1 /* LoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */; };
 		76FEA1D1278472AC000B99C1 /* SeSacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */; };
@@ -78,6 +82,10 @@
 		7645806A2783759700D528F8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		7645806C278375EF00D528F8 /* PasswordChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeModel.swift; sourceTree = "<group>"; };
 		768F006B278E2C8600540D7D /* URLSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Ext.swift"; sourceTree = "<group>"; };
+		768F0078278E3D6F00540D7D /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingUpViewModel.swift; path = "SeSAC-Blog/Extensions/SingUpViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		768F007A278E3D9300540D7D /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		768F007C278E3DB800540D7D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = "SeSAC-Blog/Extensions/Observable.swift"; sourceTree = SOURCE_ROOT; };
+		768F007E278ED65200540D7D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = "SeSAC-Blog/Extensions/LoginViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		76FEA1CB27846E2B000B99C1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkService.swift; sourceTree = "<group>"; };
 		76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacAPI.swift; sourceTree = "<group>"; };
@@ -153,6 +161,7 @@
 			children = (
 				7623D99D278C9D9400B4450D /* CALayer+Ext.swift */,
 				768F006B278E2C8600540D7D /* URLSession+Ext.swift */,
+				768F007A278E3D9300540D7D /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,6 +211,9 @@
 		7623D9B0278CC2E600B4450D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				768F007C278E3DB800540D7D /* Observable.swift */,
+				768F0078278E3D6F00540D7D /* SingUpViewModel.swift */,
+				768F007E278ED65200540D7D /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -401,12 +413,16 @@
 				764580672783712200D528F8 /* PasswordChangeView.swift in Sources */,
 				7602A0862782EAF300132C79 /* HomeVC.swift in Sources */,
 				7602A0822782EAF300132C79 /* AppDelegate.swift in Sources */,
+				768F007D278E3DB800540D7D /* Observable.swift in Sources */,
+				768F007F278ED65200540D7D /* LoginViewModel.swift in Sources */,
 				7602A0A2278352AA00132C79 /* ViewRepresentable.swift in Sources */,
 				7623D9AB278CC15B00B4450D /* ModifyVC.swift in Sources */,
+				768F007B278E3D9300540D7D /* UIViewController+Ext.swift in Sources */,
 				76458061278363CE00D528F8 /* SignUpView.swift in Sources */,
 				7645805D2783618E00D528F8 /* LoginVC.swift in Sources */,
 				76458065278370FE00D528F8 /* PasswordChangeVC.swift in Sources */,
 				7645806B2783759700D528F8 /* LoginModel.swift in Sources */,
+				768F0079278E3D6F00540D7D /* SingUpViewModel.swift in Sources */,
 				7623D9A9278CC0E100B4450D /* PostEditVC.swift in Sources */,
 				7602A09F2783527300132C79 /* HomeView.swift in Sources */,
 				7623D9BA278CC42400B4450D /* BaseVC.swift in Sources */,

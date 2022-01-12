@@ -38,6 +38,10 @@ class LoginView: UIView, ViewRepresentable {
         addSubview(passwordTextField)
         addSubview(loginButton)
         addSubview(passwordChangeButton)
+
+        emailTextField.keyboardType = .emailAddress
+        passwordTextField.isSecureTextEntry = true
+        loginButton.isEnabled = false
     }
 
     func setupConstraints() {

@@ -37,7 +37,15 @@ extension URLSession {
                 }
 
                 guard response.statusCode == 200 else {
-                    completion(.failure(.customError(errorMessage: "response상태코드 에러")))
+                    if response.statusCode == 401 {
+                        if let _ = UserDefaults.standard.string(forKey: "token") {
+                            UserDefaults.standard.removeObject(forKey: "token")
+
+                            completion(.failure(.tokenExpirationError))
+                        }
+
+                    }
+                    completion(.failure(.customError(errorMessage: "response상태코드 에러:\(response.statusCode)")))
                     return
                 }
 
