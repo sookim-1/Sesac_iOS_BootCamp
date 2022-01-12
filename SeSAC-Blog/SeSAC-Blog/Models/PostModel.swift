@@ -12,7 +12,7 @@ struct ResponsePost: Codable {
     let text: String
     let user: PostUser
     let createdAt, updatedAt: String
-    let comments: [ResponseComment]
+    let comments: [PostComment]
 
     enum CodingKeys: String, CodingKey {
         case id, text, user

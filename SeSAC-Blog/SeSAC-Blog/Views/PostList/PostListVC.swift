@@ -53,7 +53,7 @@ class PostListVC: BaseVC {
                 if error.errorTag == 1 {
                     DispatchQueue.main.async {
                         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostListVC())
+                        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: LoginVC())
                         windowScene.windows.first?.makeKeyAndVisible()
                     }
                 }
@@ -86,6 +86,13 @@ extension PostListVC: UITableViewDelegate, UITableViewDataSource {
         cell.commentButton.setTitle("댓글 \(postData[indexPath.row].comments.count)", for: .normal)
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let postDetailVC = PostDetailVC()
+
+        postDetailVC.postData = postData[indexPath.row]
+        self.navigationController?.pushViewController(postDetailVC, animated: true)
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
