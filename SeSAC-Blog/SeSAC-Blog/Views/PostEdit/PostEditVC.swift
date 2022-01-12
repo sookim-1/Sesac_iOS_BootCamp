@@ -29,7 +29,7 @@ class PostEditVC: BaseVC {
                 if error.errorTag == 1 {
                     DispatchQueue.main.async {
                         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostListVC())
+                        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: LoginVC())
                         windowScene.windows.first?.makeKeyAndVisible()
                     }
                 }
@@ -45,11 +45,7 @@ class PostEditVC: BaseVC {
         request.httpBody = "text=\(text)".data(using: .utf8, allowLossyConversion: false)
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         guard let token = UserDefaults.standard.string(forKey: "token") else {
-            DispatchQueue.main.async {
-                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostListVC())
-                windowScene.windows.first?.makeKeyAndVisible()
-            }
+            completion(.failure(.tokenExpirationError))
             return
         }
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
