@@ -27,6 +27,15 @@ class CommentTableViewCell: UITableViewCell, ViewRepresentable {
         return label
     }()
 
+    let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 20
+        stackView.alignment = .leading
+        return stackView
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -39,22 +48,28 @@ class CommentTableViewCell: UITableViewCell, ViewRepresentable {
     }
 
     func configure() {
-        addSubview(titleLabel)
-        addSubview(bodyLabel)
+        stackView.addSubview(titleLabel)
+        stackView.addSubview(bodyLabel)
+        addSubview(stackView)
     }
 
     func setupConstraints() {
+
+        stackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
         titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(contentView.snp.leading)
-            make.trailing.equalTo(contentView.snp.trailing)
-            make.top.equalTo(contentView.snp.top)
+            make.leading.equalTo(stackView.snp.leading)
+            make.trailing.equalTo(stackView.snp.trailing)
+            make.top.equalTo(stackView.snp.top)
         }
 
         bodyLabel.snp.makeConstraints { make in
-            make.leading.equalTo(contentView.snp.leading)
-            make.trailing.equalTo(contentView.snp.trailing)
+            make.leading.equalTo(stackView.snp.leading)
+            make.trailing.equalTo(stackView.snp.trailing)
             make.top.equalTo(titleLabel.snp.bottom)
-            make.bottom.equalTo(contentView.snp.bottom)
+            make.bottom.equalTo(stackView.snp.bottom)
         }
     }
 

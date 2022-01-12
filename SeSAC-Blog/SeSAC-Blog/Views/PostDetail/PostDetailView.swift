@@ -17,6 +17,7 @@ class PostDetailView: UIView, ViewRepresentable {
         textField.layer.cornerRadius = 20
         textField.textAlignment = .center
         textField.placeholder = "댓글을 입력해주세요"
+        textField.returnKeyType = .done
 
         return textField
     }()
@@ -58,7 +59,7 @@ class PostDetailView: UIView, ViewRepresentable {
             make.top.equalTo(tableView.snp.bottom)
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
-            make.bottom.equalTo(self.safeAreaLayoutGuide)
+            make.bottom.equalToSuperview().offset(-20)
             make.centerX.equalToSuperview()
             make.height.equalToSuperview().multipliedBy(0.05)
         }

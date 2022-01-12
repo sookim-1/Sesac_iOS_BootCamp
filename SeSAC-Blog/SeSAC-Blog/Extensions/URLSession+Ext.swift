@@ -19,7 +19,7 @@ extension URLSession {
     }
 
     func tokenCodeValidate(httpMethodType: String, statusCode: Int) -> Bool {
-        if httpMethodType != "DELETE" && statusCode == 401 {
+        if (httpMethodType != "DELETE" || httpMethodType != "PUT") && statusCode == 401 {
             if let _ = UserDefaults.standard.string(forKey: "token") {
                 UserDefaults.standard.removeObject(forKey: "token")
 

@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct CommentModel: Codable {
+    let comment: String
+    let post: Int
+}
+
 struct PostComment: Codable {
     let id: Int
     let comment: String
