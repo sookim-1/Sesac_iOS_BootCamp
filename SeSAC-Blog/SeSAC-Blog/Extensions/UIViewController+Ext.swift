@@ -29,7 +29,7 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    
+
     func presentErrorAlertOnMainThread(title: String, message: String, buttonTitle: String) {
         DispatchQueue.main.async {
             let alertVC = ErrorAlertVC(title: title, message: message, buttonTitle: buttonTitle)

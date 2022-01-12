@@ -14,7 +14,7 @@ class ErrorAlertVC: UIViewController {
     let titleLabel = ErrorTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = ErrorBodyLabel(textAlignment: .center)
     let actionButton = ErrorButton(backgroundColor: .systemPink, title: "확인")
-    
+
     var alertTitle: String?
     var message: String?
     var buttonTitle: String?
@@ -27,11 +27,11 @@ class ErrorAlertVC: UIViewController {
         self.message = message
         self.buttonTitle = buttonTitle
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
