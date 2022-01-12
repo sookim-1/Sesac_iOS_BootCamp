@@ -43,6 +43,10 @@
 		768F007B278E3D9300540D7D /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F007A278E3D9300540D7D /* UIViewController+Ext.swift */; };
 		768F007D278E3DB800540D7D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F007C278E3DB800540D7D /* Observable.swift */; };
 		768F007F278ED65200540D7D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F007E278ED65200540D7D /* LoginViewModel.swift */; };
+		768F0081278EDA9200540D7D /* ErrorAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0080278EDA9200540D7D /* ErrorAlertVC.swift */; };
+		768F0083278EDAAF00540D7D /* ErrorBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0082278EDAAF00540D7D /* ErrorBodyLabel.swift */; };
+		768F0085278EDAC200540D7D /* ErrorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0084278EDAC200540D7D /* ErrorButton.swift */; };
+		768F0087278EDAD600540D7D /* ErrorTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0086278EDAD600540D7D /* ErrorTitleLabel.swift */; };
 		76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CB27846E2B000B99C1 /* NetworkError.swift */; };
 		76FEA1CF27846EF9000B99C1 /* LoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */; };
 		76FEA1D1278472AC000B99C1 /* SeSacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */; };
@@ -86,6 +90,10 @@
 		768F007A278E3D9300540D7D /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		768F007C278E3DB800540D7D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = "SeSAC-Blog/Extensions/Observable.swift"; sourceTree = SOURCE_ROOT; };
 		768F007E278ED65200540D7D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = "SeSAC-Blog/Extensions/LoginViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		768F0080278EDA9200540D7D /* ErrorAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertVC.swift; sourceTree = "<group>"; };
+		768F0082278EDAAF00540D7D /* ErrorBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBodyLabel.swift; sourceTree = "<group>"; };
+		768F0084278EDAC200540D7D /* ErrorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorButton.swift; sourceTree = "<group>"; };
+		768F0086278EDAD600540D7D /* ErrorTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTitleLabel.swift; sourceTree = "<group>"; };
 		76FEA1CB27846E2B000B99C1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkService.swift; sourceTree = "<group>"; };
 		76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacAPI.swift; sourceTree = "<group>"; };
@@ -289,6 +297,10 @@
 			isa = PBXGroup;
 			children = (
 				76FEA1CB27846E2B000B99C1 /* NetworkError.swift */,
+				768F0080278EDA9200540D7D /* ErrorAlertVC.swift */,
+				768F0082278EDAAF00540D7D /* ErrorBodyLabel.swift */,
+				768F0084278EDAC200540D7D /* ErrorButton.swift */,
+				768F0086278EDAD600540D7D /* ErrorTitleLabel.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -407,6 +419,7 @@
 				764580692783757200D528F8 /* SignUpModel.swift in Sources */,
 				7602A09C2783508C00132C79 /* BlogBasicTextField.swift in Sources */,
 				7623D992278C9A1F00B4450D /* PostListTableViewCell.swift in Sources */,
+				768F0085278EDAC200540D7D /* ErrorButton.swift in Sources */,
 				768F006C278E2C8600540D7D /* URLSession+Ext.swift in Sources */,
 				76FEA1D1278472AC000B99C1 /* SeSacAPI.swift in Sources */,
 				7623D9A0278CAF5A00B4450D /* PostDetailVC.swift in Sources */,
@@ -425,6 +438,7 @@
 				768F0079278E3D6F00540D7D /* SingUpViewModel.swift in Sources */,
 				7623D9A9278CC0E100B4450D /* PostEditVC.swift in Sources */,
 				7602A09F2783527300132C79 /* HomeView.swift in Sources */,
+				768F0081278EDA9200540D7D /* ErrorAlertVC.swift in Sources */,
 				7623D9BA278CC42400B4450D /* BaseVC.swift in Sources */,
 				7623D994278C9B3600B4450D /* PostListView.swift in Sources */,
 				7645806327836D9400D528F8 /* LoginView.swift in Sources */,
@@ -436,6 +450,8 @@
 				7645806D278375EF00D528F8 /* PasswordChangeModel.swift in Sources */,
 				7623D9A5278CB52B00B4450D /* PostView.swift in Sources */,
 				7602A0842782EAF300132C79 /* SceneDelegate.swift in Sources */,
+				768F0087278EDAD600540D7D /* ErrorTitleLabel.swift in Sources */,
+				768F0083278EDAAF00540D7D /* ErrorBodyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
