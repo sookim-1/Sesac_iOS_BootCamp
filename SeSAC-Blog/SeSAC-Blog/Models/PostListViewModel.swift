@@ -15,15 +15,22 @@ class PostListViewModel {
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         guard let token = UserDefaults.standard.string(forKey: "token") else {
-            DispatchQueue.main.async {
-                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostListVC())
-                windowScene.windows.first?.makeKeyAndVisible()
-            }
+            completion(.failure(.tokenExpirationError))
             return
         }
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         URLSession.request(endpoint: request, completion: completion)
     }
 
+    func deletePostData(id: Int, completion:  @escaping (Result<ResponsePost, NetworkError>) -> Void) {
+        var request = URLRequest(url: SeSacAPI.deletePost(postId: id).url)
+        request.httpMethod = "DELETE"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let token = UserDefaults.standard.string(forKey: "token") else {
+            completion(.failure(.tokenExpirationError))
+            return
+        }
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        URLSession.request(endpoint: request, completion: completion)
+    }
 }

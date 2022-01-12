@@ -31,16 +31,8 @@ class PostListVC: BaseVC {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.actionButton.addTarget(self, action: #selector(presentPostEditVC), for: .touchUpInside)
-        viewModel.getPostData { result in
-            switch result {
-            case .success(let postData):
-                self.postData = postData
-                self.mainView.tableView.reloadData()
-            case .failure(let error):
-                print(error.localizedDescription)
-                self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "데이터를 가져오는데 실패하였습니다.", buttonTitle: "확인")
-            }
-        }
+
+        getData()
     }
 
     func setUpNavigationBar() {
@@ -49,6 +41,26 @@ class PostListVC: BaseVC {
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = .label
+    }
+
+    func getData() {
+        viewModel.getPostData { result in
+            switch result {
+            case .success(let postData):
+                self.postData = postData
+                self.mainView.tableView.reloadData()
+            case .failure(let error):
+                if error.errorTag == 1 {
+                    DispatchQueue.main.async {
+                        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostListVC())
+                        windowScene.windows.first?.makeKeyAndVisible()
+                    }
+                }
+                print(error.localizedDescription)
+                self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "데이터를 가져오는데 실패하였습니다.", buttonTitle: "확인")
+            }
+        }
     }
 
     @objc func presentPostEditVC() {
@@ -74,6 +86,36 @@ extension PostListVC: UITableViewDelegate, UITableViewDataSource {
         cell.commentButton.setTitle("댓글 \(postData[indexPath.row].comments.count)", for: .normal)
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "삭제") { (_, _, completionHandler ) in
+            let defaultAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
+                self.viewModel.deletePostData(id: self.postData[indexPath.row].id) { result in
+                    switch result {
+                    case .success(_):
+                        self.getData()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        self.presentErrorAlertOnMainThread(title: "게시글 삭제할수없습니다.", message: "작성자를 확인하세요", buttonTitle: "확인")
+                    }
+                }
+            }
+
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+
+            let alert = UIAlertController(title: "게시글을 삭제하시겠습니까?",
+                  message: "정말로 삭제하시겠어요?",
+                  preferredStyle: .alert)
+
+            alert.addAction(defaultAction)
+            alert.addAction(cancelAction)
+
+            self.present(alert, animated: true, completion: nil)
+            completionHandler(true)
+        }
+
+        return UISwipeActionsConfiguration(actions: [action])
     }
 
 }

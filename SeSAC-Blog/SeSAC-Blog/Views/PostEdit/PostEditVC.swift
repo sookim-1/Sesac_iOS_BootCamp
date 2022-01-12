@@ -26,6 +26,13 @@ class PostEditVC: BaseVC {
             case .success(_):
                 self.navigationController?.popViewController(animated: true)
             case .failure(let error):
+                if error.errorTag == 1 {
+                    DispatchQueue.main.async {
+                        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostListVC())
+                        windowScene.windows.first?.makeKeyAndVisible()
+                    }
+                }
                 print(error.localizedDescription)
                 self.presentErrorAlertOnMainThread(title: "게시글 작성 오류", message: "게시글을 작성할 수 없습니다.", buttonTitle: "확인")
             }

@@ -18,6 +18,18 @@ extension URLSession {
         return task
     }
 
+    func tokenCodeValidate(httpMethodType: String, statusCode: Int) -> Bool {
+        if httpMethodType != "DELETE" && statusCode == 401 {
+            if let _ = UserDefaults.standard.string(forKey: "token") {
+                UserDefaults.standard.removeObject(forKey: "token")
+
+                return true
+            }
+        }
+
+        return false
+    }
+
     static func request<T: Decodable>(_ session: URLSession = .shared, endpoint: URLRequest, completion: @escaping (Result<T, NetworkError>) -> Void) {
         session.dataTask(endpoint) { data, response, error in
             DispatchQueue.main.async {
@@ -37,15 +49,11 @@ extension URLSession {
                 }
 
                 guard response.statusCode == 200 else {
-                    if response.statusCode == 401 {
-                        if let _ = UserDefaults.standard.string(forKey: "token") {
-                            UserDefaults.standard.removeObject(forKey: "token")
-
-                            completion(.failure(.tokenExpirationError))
-                        }
-
+                    if session.tokenCodeValidate(httpMethodType: endpoint.httpMethod!, statusCode: response.statusCode) {
+                        completion(.failure(.tokenExpirationError))
+                    } else {
+                        completion(.failure(.customError(errorMessage: "response상태코드 에러:\(response.statusCode)")))
                     }
-                    completion(.failure(.customError(errorMessage: "response상태코드 에러:\(response.statusCode)")))
                     return
                 }
 
