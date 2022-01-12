@@ -27,6 +27,7 @@ class PostListVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUpNavigationBar()
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.actionButton.addTarget(self, action: #selector(presentPostEditVC), for: .touchUpInside)
@@ -39,12 +40,19 @@ class PostListVC: BaseVC {
                 print(error.localizedDescription)
                 self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "데이터를 가져오는데 실패하였습니다.", buttonTitle: "확인")
             }
-
         }
     }
 
+    func setUpNavigationBar() {
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.left")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.left")
+
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.tintColor = .label
+    }
+
     @objc func presentPostEditVC() {
-        print("edit")
+        self.navigationController?.pushViewController(PostEditVC(), animated: true)
     }
 
 }

@@ -14,7 +14,39 @@ class PostEditVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "새싹농장 글쓰기"
+        hideKeyboard()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(editFinish))
         configureTextView()
+    }
+
+    @objc func editFinish() {
+        editPostData(text: textView.text) { result in
+            switch result {
+            case .success(_):
+                self.navigationController?.popViewController(animated: true)
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.presentErrorAlertOnMainThread(title: "게시글 작성 오류", message: "게시글을 작성할 수 없습니다.", buttonTitle: "확인")
+            }
+        }
+    }
+
+    func editPostData(text: String, completion:  @escaping (Result<ResponsePost, NetworkError>) -> Void) {
+        var request = URLRequest(url: SeSacAPI.editPost.url)
+        request.httpMethod = "POST"
+        request.httpBody = "text=\(text)".data(using: .utf8, allowLossyConversion: false)
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        guard let token = UserDefaults.standard.string(forKey: "token") else {
+            DispatchQueue.main.async {
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostListVC())
+                windowScene.windows.first?.makeKeyAndVisible()
+            }
+            return
+        }
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        URLSession.request(endpoint: request, completion: completion)
     }
 
     func configureTextView() {
