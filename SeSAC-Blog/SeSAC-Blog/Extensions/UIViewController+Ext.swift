@@ -39,4 +39,12 @@ extension UIViewController {
         }
     }
 
+    func presentLoginVC() {
+        DispatchQueue.main.async {
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+            windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: LoginVC())
+            windowScene.windows.first?.makeKeyAndVisible()
+        }
+    }
+
 }

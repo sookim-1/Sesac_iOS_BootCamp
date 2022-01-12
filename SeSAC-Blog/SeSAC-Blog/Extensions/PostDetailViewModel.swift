@@ -40,4 +40,16 @@ class PostDetailViewModel {
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         URLSession.request(endpoint: request, completion: completion)
     }
+
+    func deleteCommentData(id: Int, completion:  @escaping (Result<[ResponseComment], NetworkError>) -> Void) {
+        var request = URLRequest(url: SeSacAPI.deleteComment(commentId: id).url)
+        request.httpMethod = "DELETE"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let token = UserDefaults.standard.string(forKey: "token") else {
+            completion(.failure(.tokenExpirationError))
+            return
+        }
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        URLSession.request(endpoint: request, completion: completion)
+    }
 }

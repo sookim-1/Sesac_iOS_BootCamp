@@ -52,6 +52,8 @@
 		768F008D278EDD4C00540D7D /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F008C278EDD4C00540D7D /* PostListViewModel.swift */; };
 		768F008F278EE06000540D7D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F008E278EE06000540D7D /* String+Ext.swift */; };
 		768F0091278EEFD200540D7D /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0090278EEFD200540D7D /* PostDetailViewModel.swift */; };
+		768F0093278F5CD200540D7D /* ModifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0092278F5CD200540D7D /* ModifyViewModel.swift */; };
+		768F0095278F634E00540D7D /* ModifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0094278F634E00540D7D /* ModifyModel.swift */; };
 		76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CB27846E2B000B99C1 /* NetworkError.swift */; };
 		76FEA1CF27846EF9000B99C1 /* LoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */; };
 		76FEA1D1278472AC000B99C1 /* SeSacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */; };
@@ -104,6 +106,8 @@
 		768F008C278EDD4C00540D7D /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostListViewModel.swift; path = "SeSAC-Blog/Models/PostListViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		768F008E278EE06000540D7D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		768F0090278EEFD200540D7D /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostDetailViewModel.swift; path = "SeSAC-Blog/Extensions/PostDetailViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		768F0092278F5CD200540D7D /* ModifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModifyViewModel.swift; path = "SeSAC-Blog/Extensions/ModifyViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		768F0094278F634E00540D7D /* ModifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyModel.swift; sourceTree = "<group>"; };
 		76FEA1CB27846E2B000B99C1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkService.swift; sourceTree = "<group>"; };
 		76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacAPI.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 				768F007E278ED65200540D7D /* LoginViewModel.swift */,
 				768F008C278EDD4C00540D7D /* PostListViewModel.swift */,
 				768F0090278EEFD200540D7D /* PostDetailViewModel.swift */,
+				768F0092278F5CD200540D7D /* ModifyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				7645806C278375EF00D528F8 /* PasswordChangeModel.swift */,
 				768F0088278EDC2D00540D7D /* PostModel.swift */,
 				768F008A278EDCE100540D7D /* CommentModel.swift */,
+				768F0094278F634E00540D7D /* ModifyModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -449,6 +455,7 @@
 				768F007F278ED65200540D7D /* LoginViewModel.swift in Sources */,
 				7602A0A2278352AA00132C79 /* ViewRepresentable.swift in Sources */,
 				7623D9AB278CC15B00B4450D /* ModifyVC.swift in Sources */,
+				768F0093278F5CD200540D7D /* ModifyViewModel.swift in Sources */,
 				768F007B278E3D9300540D7D /* UIViewController+Ext.swift in Sources */,
 				76458061278363CE00D528F8 /* SignUpView.swift in Sources */,
 				7645805D2783618E00D528F8 /* LoginVC.swift in Sources */,
@@ -466,6 +473,7 @@
 				7623D9A3278CAF9A00B4450D /* PostDetailView.swift in Sources */,
 				7623D9A7278CBD0C00B4450D /* CommentTableViewCell.swift in Sources */,
 				768F008F278EE06000540D7D /* String+Ext.swift in Sources */,
+				768F0095278F634E00540D7D /* ModifyModel.swift in Sources */,
 				7602A09A2783507A00132C79 /* BlogBasicButton.swift in Sources */,
 				7645806D278375EF00D528F8 /* PasswordChangeModel.swift in Sources */,
 				7623D9A5278CB52B00B4450D /* PostView.swift in Sources */,
