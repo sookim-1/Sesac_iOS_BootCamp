@@ -9,8 +9,13 @@ import Foundation
 import UIKit
 
 class PostListViewModel {
+    var isPaginating = false
 
-    func getPostData(completion:  @escaping (Result<[ResponsePost], NetworkError>) -> Void) {
+    func getPostData(pagination: Bool = false, completion:  @escaping (Result<[ResponsePost], NetworkError>) -> Void) {
+        if pagination {
+            isPaginating = true
+        }
+
         var request = URLRequest(url: SeSacAPI.getPost.url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -20,6 +25,10 @@ class PostListViewModel {
         }
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         URLSession.request(endpoint: request, completion: completion)
+
+        if pagination {
+            self.isPaginating = false
+        }
     }
 
     func deletePostData(id: Int, completion:  @escaping (Result<ResponsePost, NetworkError>) -> Void) {
