@@ -20,6 +20,7 @@ class PostListView: UIView, ViewRepresentable {
     }()
     let tableView = UITableView()
     let actionButton = JJFloatingActionButton()
+    let indicatorView = UIActivityIndicatorView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,6 +42,7 @@ class PostListView: UIView, ViewRepresentable {
 
         tableView.separatorStyle = .singleLine
         tableView.showsVerticalScrollIndicator = true
+        bringSubviewToFront(indicatorView)
     }
 
     func setupConstraints() {

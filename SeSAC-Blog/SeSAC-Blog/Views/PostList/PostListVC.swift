@@ -33,6 +33,7 @@ class PostListVC: BaseVC {
         mainView.actionButton.addTarget(self, action: #selector(presentPostEditVC), for: .touchUpInside)
 
         getData()
+        mainView.indicatorView.startAnimating()
     }
 
     func setUpNavigationBar() {
@@ -49,6 +50,7 @@ class PostListVC: BaseVC {
             case .success(let postData):
                 self.postData = postData
                 self.mainView.tableView.reloadData()
+                self.mainView.indicatorView.stopAnimating()
             case .failure(let error):
                 if error.errorTag == 1 {
                     self.presentLoginVC()
