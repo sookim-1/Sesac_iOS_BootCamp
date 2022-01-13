@@ -83,9 +83,14 @@ class PostDetailVC: BaseVC {
             self.navigationController?.pushViewController(modifyVC, animated: true)
         })
 
+        let passwordChange = UIAlertAction(title: "비밀번호 변경하기", style: .default, handler: { _ in
+            self.navigationController?.pushViewController(PasswordChangeVC(), animated: true)
+        })
+
         let actionCancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
 
         actionsheetController.addAction(postModify)
+        actionsheetController.addAction(passwordChange)
         actionsheetController.addAction(actionCancel)
 
         self.present(actionsheetController, animated: true, completion: nil)
@@ -154,7 +159,7 @@ extension PostDetailVC: UITableViewDelegate, UITableViewDataSource {
 
             let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
 
-            let alert = UIAlertController(title: "게시글을 삭제하시겠습니까?",
+            let alert = UIAlertController(title: "댓글을 삭제하시겠습니까?",
                   message: "정말로 삭제하시겠어요?",
                   preferredStyle: .alert)
 

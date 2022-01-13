@@ -41,7 +41,6 @@ class LoginVC: BaseVC {
         mainView.emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange(_:)), for: .editingChanged)
         mainView.passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
         mainView.loginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
-        mainView.passwordChangeButton.addTarget(self, action: #selector(passwordChangeButtonClicked), for: .touchUpInside)
     }
 
     @objc func emailTextFieldDidChange(_ textfield: UITextField) {
@@ -56,7 +55,7 @@ class LoginVC: BaseVC {
 
     @objc func loginButtonClicked() {
         if isValidEmail(text: viewModel.email.value) {
-            viewModel.Login(model: LoginModel(identifier: viewModel.email.value, password: viewModel.password.value)) { result in
+            viewModel.login(model: LoginModel(identifier: viewModel.email.value, password: viewModel.password.value)) { result in
                 switch result {
                 case .success(let userData):
                     UserDefaults.standard.set(userData.jwt, forKey: "token")
@@ -75,7 +74,4 @@ class LoginVC: BaseVC {
         }
     }
 
-    @objc func passwordChangeButtonClicked() {
-        self.navigationController?.pushViewController(PasswordChangeVC(), animated: true)
-    }
 }

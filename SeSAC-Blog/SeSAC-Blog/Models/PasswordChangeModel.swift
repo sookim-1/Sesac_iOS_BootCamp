@@ -12,3 +12,7 @@ struct PasswordChangeModel: Codable {
     let newPassword: String
     let confirmNewPassword: String
 }
+
+struct ResponseChangeModel: Codable {
+    let id: Int
+}

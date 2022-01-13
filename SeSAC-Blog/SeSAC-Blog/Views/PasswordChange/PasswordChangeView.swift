@@ -31,6 +31,11 @@ class PasswordChangeView: UIView, ViewRepresentable {
         addSubview(newPasswordTextField)
         addSubview(confirmNewPasswordTextField)
         addSubview(changeButton)
+
+        [currentPasswordTextField, newPasswordTextField, confirmNewPasswordTextField].forEach { textField in
+            textField.isSecureTextEntry = true
+        }
+        changeButton.isEnabled = false
     }
 
     func setupConstraints() {
