@@ -66,7 +66,7 @@ class LoginVC: BaseVC {
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
-                    self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "회원가입을 실패하였습니다.", buttonTitle: "확인")
+                    self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "로그인을 실패하였습니다.", buttonTitle: "확인")
                 }
             }
         } else {

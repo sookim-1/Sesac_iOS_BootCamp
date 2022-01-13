@@ -29,7 +29,6 @@ class LoginView: UIView, ViewRepresentable {
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(loginButton)
-        addSubview(passwordChangeButton)
 
         emailTextField.keyboardType = .emailAddress
         passwordTextField.isSecureTextEntry = true
