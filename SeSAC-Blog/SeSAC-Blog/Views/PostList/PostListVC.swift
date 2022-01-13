@@ -124,3 +124,35 @@ extension PostListVC: UITableViewDelegate, UITableViewDataSource {
     }
 
 }
+
+extension PostListVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("called")
+        let position = scrollView.contentOffset.y
+        if position > (mainView.tableView.contentSize.height-100-scrollView.frame.size.height) {
+
+            guard !viewModel.isPaginating else {
+                return
+            }
+            mainView.tableView.tableFooterView = mainView.createSpinerFooter()
+
+            viewModel.getPostData(pagination: true) { result in
+                DispatchQueue.main.async {
+                    self.mainView.tableView.tableFooterView = nil
+                }
+                switch result {
+                case .success(let postData):
+                    self.postData.append(contentsOf: postData)
+                    self.mainView.tableView.reloadData()
+                case .failure(let error):
+                    if error.errorTag == 1 {
+                        self.presentLoginVC()
+                    }
+                    print(error.localizedDescription)
+                    self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "데이터를 가져오는데 실패하였습니다.", buttonTitle: "확인")
+                }
+            }
+
+        }
+    }
+}

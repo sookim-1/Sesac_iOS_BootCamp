@@ -67,4 +67,15 @@ class PostListView: UIView, ViewRepresentable {
         actionButton.display(inView: self)
     }
 
+    func createSpinerFooter() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: 100))
+
+        let spinner = UIActivityIndicatorView()
+        spinner.center = footerView.center
+        footerView.addSubview(spinner)
+        spinner.startAnimating()
+
+        return footerView
+    }
+
 }
