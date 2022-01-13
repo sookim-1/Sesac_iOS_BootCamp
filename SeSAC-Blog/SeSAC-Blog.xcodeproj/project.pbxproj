@@ -54,6 +54,7 @@
 		768F0091278EEFD200540D7D /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0090278EEFD200540D7D /* PostDetailViewModel.swift */; };
 		768F0093278F5CD200540D7D /* ModifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0092278F5CD200540D7D /* ModifyViewModel.swift */; };
 		768F0095278F634E00540D7D /* ModifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0094278F634E00540D7D /* ModifyModel.swift */; };
+		76B603ED279003CB00155733 /* PasswordChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B603EC279003CB00155733 /* PasswordChangeViewModel.swift */; };
 		76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CB27846E2B000B99C1 /* NetworkError.swift */; };
 		76FEA1CF27846EF9000B99C1 /* LoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */; };
 		76FEA1D1278472AC000B99C1 /* SeSacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */; };
@@ -108,6 +109,7 @@
 		768F0090278EEFD200540D7D /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostDetailViewModel.swift; path = "SeSAC-Blog/Extensions/PostDetailViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		768F0092278F5CD200540D7D /* ModifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModifyViewModel.swift; path = "SeSAC-Blog/Extensions/ModifyViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		768F0094278F634E00540D7D /* ModifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyModel.swift; sourceTree = "<group>"; };
+		76B603EC279003CB00155733 /* PasswordChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordChangeViewModel.swift; path = "SeSAC-Blog/Protocols/PasswordChangeViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		76FEA1CB27846E2B000B99C1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkService.swift; sourceTree = "<group>"; };
 		76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacAPI.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				768F008C278EDD4C00540D7D /* PostListViewModel.swift */,
 				768F0090278EEFD200540D7D /* PostDetailViewModel.swift */,
 				768F0092278F5CD200540D7D /* ModifyViewModel.swift */,
+				76B603EC279003CB00155733 /* PasswordChangeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				7623D990278C9A0C00B4450D /* PostListVC.swift in Sources */,
 				768F0089278EDC2D00540D7D /* PostModel.swift in Sources */,
 				76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */,
+				76B603ED279003CB00155733 /* PasswordChangeViewModel.swift in Sources */,
 				7645805B2783617300D528F8 /* SignUpVC.swift in Sources */,
 				764580692783757200D528F8 /* SignUpModel.swift in Sources */,
 				768F0091278EEFD200540D7D /* PostDetailViewModel.swift in Sources */,
@@ -626,6 +630,7 @@
 				INFOPLIST_FILE = "SeSAC-Blog/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -638,7 +643,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -655,6 +660,7 @@
 				INFOPLIST_FILE = "SeSAC-Blog/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -667,7 +673,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
