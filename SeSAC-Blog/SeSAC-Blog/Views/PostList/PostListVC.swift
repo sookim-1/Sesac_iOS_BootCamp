@@ -13,6 +13,8 @@ class PostListVC: BaseVC {
     let mainView = PostListView()
     let viewModel = PostListViewModel()
     var postData: [ResponsePost] = []
+    var entirePostCount: Int = 0
+    var pageCount = 50
     var dateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -45,6 +47,20 @@ class PostListVC: BaseVC {
     }
 
     func getData() {
+        viewModel.getEntirePostCount { result in
+            switch result {
+            case .success(let postCount):
+                print(postCount)
+                self.entirePostCount = postCount
+            case .failure(let error):
+                if error.errorTag == 1 {
+                    self.presentLoginVC()
+                }
+                print(error.localizedDescription)
+                self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "게시글 갯수를 가져오는데 실패하였습니다.", buttonTitle: "확인")
+            }
+        }
+
         viewModel.getPostData { result in
             switch result {
             case .success(let postData):
@@ -127,30 +143,41 @@ extension PostListVC: UITableViewDelegate, UITableViewDataSource {
 
 extension PostListVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("called")
-        let position = scrollView.contentOffset.y
-        if position > (mainView.tableView.contentSize.height-100-scrollView.frame.size.height) {
 
-            guard !viewModel.isPaginating else {
-                return
-            }
+        let position = scrollView.contentOffset.y
+
+        if position > (mainView.tableView.contentSize.height - 100 - scrollView.frame.size.height) {
+
+            guard !viewModel.isPaginating  else { return }
+
             mainView.tableView.tableFooterView = mainView.createSpinerFooter()
 
-            viewModel.getPostData(pagination: true) { result in
+            if pageCount <= entirePostCount {
+
+                viewModel.getPostPageData(pagination: true, start: pageCount) { result in
+                    DispatchQueue.main.async {
+                        self.mainView.tableView.tableFooterView = nil
+                    }
+                    switch result {
+                    case .success(let postData):
+                        self.postData.append(contentsOf: postData)
+                        self.pageCount += 50
+                        self.viewModel.isPaginating = false
+                        self.mainView.tableView.reloadData()
+                    case .failure(let error):
+                        if error.errorTag == 1 {
+                            self.presentLoginVC()
+                        }
+                        print(error.localizedDescription)
+                        self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "데이터를 가져오는데 실패하였습니다.", buttonTitle: "확인")
+                    }
+                }
+
+            } else {
                 DispatchQueue.main.async {
                     self.mainView.tableView.tableFooterView = nil
                 }
-                switch result {
-                case .success(let postData):
-                    self.postData.append(contentsOf: postData)
-                    self.mainView.tableView.reloadData()
-                case .failure(let error):
-                    if error.errorTag == 1 {
-                        self.presentLoginVC()
-                    }
-                    print(error.localizedDescription)
-                    self.presentErrorAlertOnMainThread(title: "네트워크 에러", message: "데이터를 가져오는데 실패하였습니다.", buttonTitle: "확인")
-                }
+                return
             }
 
         }
