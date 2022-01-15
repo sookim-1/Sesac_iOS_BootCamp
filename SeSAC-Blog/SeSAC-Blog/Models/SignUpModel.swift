@@ -12,14 +12,3 @@ struct SignUpModel: Codable {
     let email: String
     let password: String
 }
-
-struct ResponseSignUpModel: Codable {
-    let jwt: String
-    let user: SignUpUser
-}
-
-struct SignUpUser: Codable {
-    let id: Int
-    let username: String
-    let email: String
-}

@@ -55,6 +55,8 @@
 		768F0093278F5CD200540D7D /* ModifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0092278F5CD200540D7D /* ModifyViewModel.swift */; };
 		768F0095278F634E00540D7D /* ModifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F0094278F634E00540D7D /* ModifyModel.swift */; };
 		76B603ED279003CB00155733 /* PasswordChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B603EC279003CB00155733 /* PasswordChangeViewModel.swift */; };
+		76F7003227932AFA00E8E82E /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7003127932AFA00E8E82E /* Validate.swift */; };
+		76F7003427932EFC00E8E82E /* Result+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7003327932EFC00E8E82E /* Result+Ext.swift */; };
 		76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CB27846E2B000B99C1 /* NetworkError.swift */; };
 		76FEA1CF27846EF9000B99C1 /* LoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */; };
 		76FEA1D1278472AC000B99C1 /* SeSacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */; };
@@ -110,6 +112,8 @@
 		768F0092278F5CD200540D7D /* ModifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModifyViewModel.swift; path = "SeSAC-Blog/Extensions/ModifyViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		768F0094278F634E00540D7D /* ModifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyModel.swift; sourceTree = "<group>"; };
 		76B603EC279003CB00155733 /* PasswordChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordChangeViewModel.swift; path = "SeSAC-Blog/Protocols/PasswordChangeViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		76F7003127932AFA00E8E82E /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
+		76F7003327932EFC00E8E82E /* Result+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Ext.swift"; sourceTree = "<group>"; };
 		76FEA1CB27846E2B000B99C1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		76FEA1CE27846EF9000B99C1 /* LoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkService.swift; sourceTree = "<group>"; };
 		76FEA1D0278472AC000B99C1 /* SeSacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacAPI.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 		7602A0802782EAF300132C79 /* SeSAC-Blog */ = {
 			isa = PBXGroup;
 			children = (
+				76F7003027932AF000E8E82E /* Enum */,
 				7623D9B8278CC3C000B4450D /* Supports */,
 				7623D9B1278CC31200B4450D /* Models */,
 				7623D9B0278CC2E600B4450D /* ViewModels */,
@@ -187,6 +192,7 @@
 				768F006B278E2C8600540D7D /* URLSession+Ext.swift */,
 				768F007A278E3D9300540D7D /* UIViewController+Ext.swift */,
 				768F008E278EE06000540D7D /* String+Ext.swift */,
+				76F7003327932EFC00E8E82E /* Result+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,6 +323,14 @@
 			path = Supports;
 			sourceTree = "<group>";
 		};
+		76F7003027932AF000E8E82E /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				76F7003127932AFA00E8E82E /* Validate.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		76FEA1CA27846E20000B99C1 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +454,7 @@
 				7623D990278C9A0C00B4450D /* PostListVC.swift in Sources */,
 				768F0089278EDC2D00540D7D /* PostModel.swift in Sources */,
 				76FEA1CC27846E2B000B99C1 /* NetworkError.swift in Sources */,
+				76F7003227932AFA00E8E82E /* Validate.swift in Sources */,
 				76B603ED279003CB00155733 /* PasswordChangeViewModel.swift in Sources */,
 				7645805B2783617300D528F8 /* SignUpVC.swift in Sources */,
 				764580692783757200D528F8 /* SignUpModel.swift in Sources */,
@@ -460,6 +475,7 @@
 				7602A0A2278352AA00132C79 /* ViewRepresentable.swift in Sources */,
 				7623D9AB278CC15B00B4450D /* ModifyVC.swift in Sources */,
 				768F0093278F5CD200540D7D /* ModifyViewModel.swift in Sources */,
+				76F7003427932EFC00E8E82E /* Result+Ext.swift in Sources */,
 				768F007B278E3D9300540D7D /* UIViewController+Ext.swift in Sources */,
 				76458061278363CE00D528F8 /* SignUpView.swift in Sources */,
 				7645805D2783618E00D528F8 /* LoginVC.swift in Sources */,

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class LoginView: UIView, ViewRepresentable {
+final class LoginView: UIView, ViewRepresentable {
 
     let emailTextField = BlogBasicTextField(placeholderText: "이메일 주소")
     let passwordTextField = BlogBasicTextField(placeholderText: "비밀번호")
@@ -58,4 +58,5 @@ class LoginView: UIView, ViewRepresentable {
         }
 
     }
+
 }

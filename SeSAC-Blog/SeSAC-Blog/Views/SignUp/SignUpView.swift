@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SignUpView: UIView, ViewRepresentable {
+final class SignUpView: UIView, ViewRepresentable {
 
     let emailTextField = BlogBasicTextField(placeholderText: "이메일 주소")
     let usernameTextField = BlogBasicTextField(placeholderText: "닉네임")
@@ -76,4 +76,5 @@ class SignUpView: UIView, ViewRepresentable {
             make.top.equalTo(confirmPasswordTextField.snp.bottom).offset(20)
         }
     }
+
 }
