@@ -70,4 +70,29 @@ extension URLSession {
         }
     }
 
+    static func requestNotDecode(_ session: URLSession = .shared, endpoint: URLRequest, completion: @escaping (Result<Void, NetworkError>) -> Void) {
+        session.dataTask(endpoint) { _, response, error in
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    completion(.failure(.customError(errorMessage: "네트워크에러")))
+                    return
+                }
+
+                guard let response = response as? HTTPURLResponse else {
+                    completion(.failure(.customError(errorMessage: "response응답 에러")))
+
+                    return
+                }
+
+                guard response.statusCode == 200 else {
+                    completion(.failure(.customError(errorMessage: "response상태코드 에러:\(response.statusCode)")))
+
+                    return
+                }
+
+                completion(.success())
+            }
+        }
+    }
+
 }

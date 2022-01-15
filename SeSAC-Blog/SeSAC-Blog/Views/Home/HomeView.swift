@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 final class HomeView: UIView, ViewRepresentable {
+
     let imageView = UIImageView(image: UIImage(named: "logo_ssac_clear"))
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -39,15 +40,16 @@ final class HomeView: UIView, ViewRepresentable {
         label.textColor = .systemGray4
         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
+
         return label
     }()
-
     let loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("로그인", for: .normal)
         button.setTitleColor(.systemGreen, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         button.translatesAutoresizingMaskIntoConstraints = false
+
         return button
     }()
 
@@ -68,12 +70,12 @@ final class HomeView: UIView, ViewRepresentable {
         addSubview(titleLabel)
         addSubview(bodyLabel)
         addSubview(signButton)
+        addSubview(loginView)
 
         // MARK: - LoginView만들기
         loginView.addSubview(checkAccountLabel)
         loginView.addSubview(loginButton)
         loginView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(loginView)
     }
 
     func setupConstraints() {
@@ -121,7 +123,6 @@ final class HomeView: UIView, ViewRepresentable {
             make.height.equalTo(loginView.snp.height).multipliedBy(0.5)
             make.centerY.equalTo(loginView.snp.centerY)
         }
-
     }
 
 }
