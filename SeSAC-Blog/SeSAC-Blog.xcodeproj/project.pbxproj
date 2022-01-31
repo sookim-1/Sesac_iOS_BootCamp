@@ -96,22 +96,22 @@
 		7645806A2783759700D528F8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		7645806C278375EF00D528F8 /* PasswordChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeModel.swift; sourceTree = "<group>"; };
 		768F006B278E2C8600540D7D /* URLSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Ext.swift"; sourceTree = "<group>"; };
-		768F0078278E3D6F00540D7D /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingUpViewModel.swift; path = "SeSAC-Blog/Extensions/SingUpViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		768F0078278E3D6F00540D7D /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingUpViewModel.swift; path = "SeSAC-Blog/ViewModel/SingUpViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		768F007A278E3D9300540D7D /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
-		768F007C278E3DB800540D7D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = "SeSAC-Blog/Extensions/Observable.swift"; sourceTree = SOURCE_ROOT; };
-		768F007E278ED65200540D7D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = "SeSAC-Blog/Extensions/LoginViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		768F007C278E3DB800540D7D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = "SeSAC-Blog/ViewModel/Observable.swift"; sourceTree = SOURCE_ROOT; };
+		768F007E278ED65200540D7D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = "SeSAC-Blog/ViewModel/LoginViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		768F0080278EDA9200540D7D /* ErrorAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertVC.swift; sourceTree = "<group>"; };
 		768F0082278EDAAF00540D7D /* ErrorBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBodyLabel.swift; sourceTree = "<group>"; };
 		768F0084278EDAC200540D7D /* ErrorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorButton.swift; sourceTree = "<group>"; };
 		768F0086278EDAD600540D7D /* ErrorTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTitleLabel.swift; sourceTree = "<group>"; };
 		768F0088278EDC2D00540D7D /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		768F008A278EDCE100540D7D /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
-		768F008C278EDD4C00540D7D /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostListViewModel.swift; path = "SeSAC-Blog/Models/PostListViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		768F008C278EDD4C00540D7D /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostListViewModel.swift; path = "SeSAC-Blog/ViewModel/PostListViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		768F008E278EE06000540D7D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
-		768F0090278EEFD200540D7D /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostDetailViewModel.swift; path = "SeSAC-Blog/Extensions/PostDetailViewModel.swift"; sourceTree = SOURCE_ROOT; };
-		768F0092278F5CD200540D7D /* ModifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModifyViewModel.swift; path = "SeSAC-Blog/Extensions/ModifyViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		768F0090278EEFD200540D7D /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostDetailViewModel.swift; path = "SeSAC-Blog/ViewModel/PostDetailViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		768F0092278F5CD200540D7D /* ModifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModifyViewModel.swift; path = "SeSAC-Blog/ViewModel/ModifyViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		768F0094278F634E00540D7D /* ModifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyModel.swift; sourceTree = "<group>"; };
-		76B603EC279003CB00155733 /* PasswordChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordChangeViewModel.swift; path = "SeSAC-Blog/Protocols/PasswordChangeViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		76B603EC279003CB00155733 /* PasswordChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordChangeViewModel.swift; path = "SeSAC-Blog/ViewModel/PasswordChangeViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		76F7003127932AFA00E8E82E /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
 		76F7003327932EFC00E8E82E /* Result+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Ext.swift"; sourceTree = "<group>"; };
 		76FEA1CB27846E2B000B99C1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -151,10 +151,10 @@
 		7602A0802782EAF300132C79 /* SeSAC-Blog */ = {
 			isa = PBXGroup;
 			children = (
+				763A9BB127A85D39001B04DD /* ViewModel */,
 				76F7003027932AF000E8E82E /* Enum */,
 				7623D9B8278CC3C000B4450D /* Supports */,
 				7623D9B1278CC31200B4450D /* Models */,
-				7623D9B0278CC2E600B4450D /* ViewModels */,
 				7623D9AC278CC27600B4450D /* Views */,
 				7623D99C278C9D8000B4450D /* Extensions */,
 				76FEA1CD27846ECE000B99C1 /* NetworkService */,
@@ -239,20 +239,6 @@
 			path = PasswordChange;
 			sourceTree = "<group>";
 		};
-		7623D9B0278CC2E600B4450D /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				768F007C278E3DB800540D7D /* Observable.swift */,
-				768F0078278E3D6F00540D7D /* SingUpViewModel.swift */,
-				768F007E278ED65200540D7D /* LoginViewModel.swift */,
-				768F008C278EDD4C00540D7D /* PostListViewModel.swift */,
-				768F0090278EEFD200540D7D /* PostDetailViewModel.swift */,
-				768F0092278F5CD200540D7D /* ModifyViewModel.swift */,
-				76B603EC279003CB00155733 /* PasswordChangeViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		7623D9B1278CC31200B4450D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +307,20 @@
 				7602A0962782ED5700132C79 /* .swiftlint.yml */,
 			);
 			path = Supports;
+			sourceTree = "<group>";
+		};
+		763A9BB127A85D39001B04DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				768F007C278E3DB800540D7D /* Observable.swift */,
+				768F0078278E3D6F00540D7D /* SingUpViewModel.swift */,
+				768F007E278ED65200540D7D /* LoginViewModel.swift */,
+				768F008C278EDD4C00540D7D /* PostListViewModel.swift */,
+				768F0090278EEFD200540D7D /* PostDetailViewModel.swift */,
+				768F0092278F5CD200540D7D /* ModifyViewModel.swift */,
+				76B603EC279003CB00155733 /* PasswordChangeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		76F7003027932AF000E8E82E /* Enum */ = {

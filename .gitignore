@@ -18,7 +18,8 @@ Pods/
 # Icon must end with two \r
 Icon
 
-
+# SeSAC-API
+SeSAC-Blog/SeSAC-Blog/NetworkService/SeSacAPI.swift
 # Thumbnails
 ._*
 
