@@ -28,7 +28,26 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        configureNavigationBar()
+        self.title = "이별차단"
+
+        if let updateImage = loadImageFromDocumentDirectory(imageName: "profileImage.png") {
+            
+            mainImageView.image = updateImage
+            checkHalfProfileData()
+        } else {
+            mainImageView.image = UIImage(systemName: "photo")
+            checkHalfProfileData()
+        }
+    }
+    
+    func distanceDate(dday: Date) {
+        guard let distance = Calendar.current.dateComponents([.day], from: dday, to: Date()).day else {
+            return
+        }
+        descriptionLabel.text = "❤️ \(distance)일째"
+    }
+    
+    func checkHalfProfileData() {
         let localRealm = try! Realm()
         
         let halfProfiles = localRealm.objects(HalfProfile.self)
@@ -37,21 +56,14 @@ class ViewController: UIViewController {
             
             try! localRealm.write {
                 nameLabel.text = halfProfileUpdate.name
-                descriptionLabel.text = "❤️"
+                guard let dday = halfProfileUpdate.dday else {
+                    descriptionLabel.text = "❤️"
+                    return
+                }
+                distanceDate(dday: dday)
+                
             }
         }
-
-        if let updateImage = loadImageFromDocumentDirectory(imageName: "profileImage.png") {
-            
-            mainImageView.image = updateImage
-            descriptionLabel.text = "❤️"
-        } else {
-            mainImageView.image = UIImage(systemName: "photo")
-        }
-    }
-    
-    func configureNavigationBar() {        
-        self.title = "이별차단"
     }
     
     func configureImageView() {

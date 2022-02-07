@@ -17,6 +17,9 @@ class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var profileImageButton: UIButton!
+    @IBOutlet weak var ddayPicker: UIDatePicker!
+    
+    @IBOutlet weak var ddaySwitch: UISwitch!
     var flag = true
     
     override func viewDidLoad() {
@@ -28,6 +31,7 @@ class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
         createDismissKeyboardTapGesture()
         configureTextField()
         picker.delegate = self
+        ddayPicker.isHidden = true
     }
     
     func configureTextField() {
@@ -88,12 +92,34 @@ class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func assignmentBtnClicked(_ sender: UIButton) {
         let localRealm = try! Realm()
-        let halfProfile = HalfProfile(name: nameTextField.text!)
+        let halfProfile: HalfProfile
+        
+        guard let distance = Calendar.current.dateComponents([.day], from: ddayPicker.date, to: Date()).day else {
+            return
+        }
+        if ddaySwitch.isOn && distance > 0 {
+            halfProfile = HalfProfile(name: nameTextField.text!, dday: ddayPicker.date)
+        }
+        else if ddaySwitch.isOn && distance <= 0 {
+            presentErrorAlertOnMainThread(title: "기준일 설정을 다시해주세요", message: "기준일은 현재날짜 이전으로 지정해주세요", buttonTitle: "확인")
+            halfProfile = HalfProfile(name: nameTextField.text!, dday: nil)
+        }
+        else {
+            halfProfile = HalfProfile(name: nameTextField.text!, dday: nil)
+        }
+        
         let halfProfiles = localRealm.objects(HalfProfile.self)
         if !halfProfiles.isEmpty {
             let halfProfileUpdate = halfProfiles[0]
             try! localRealm.write{
                 halfProfileUpdate.name = nameTextField.text!
+                
+                if ddaySwitch.isOn && distance > 0 {
+                    halfProfileUpdate.dday = ddayPicker.date
+                }
+                else {
+                    halfProfileUpdate.dday = nil
+                }
             }
         }
         else {
@@ -134,6 +160,15 @@ class HalfProfileAssignmentVC: UIViewController, UITextFieldDelegate {
         UIGraphicsEndImageContext()
 
         return normalizedImage
+    }
+    
+    @IBAction func clickedDdaySwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            ddayPicker.isHidden = false
+        }
+        else {
+            ddayPicker.isHidden = true
+        }
     }
     
 }

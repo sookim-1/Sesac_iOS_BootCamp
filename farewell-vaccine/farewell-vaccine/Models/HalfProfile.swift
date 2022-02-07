@@ -10,9 +10,11 @@ import RealmSwift
 
 class HalfProfile: Object {
     @Persisted var name: String?
+    @Persisted var dday: Date?
     
-    convenience init(name: String = "default") {
+    convenience init(name: String = "default", dday: Date?) {
         self.init()
         self.name = name
+        self.dday = dday
     }
 }
