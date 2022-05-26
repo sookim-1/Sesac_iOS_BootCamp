@@ -1,9 +1,7 @@
-# 포트폴리오
-https://worried-click-7d5.notion.site/d3e8a5e6c0624458a70301f681cc384b
-
 - [목차](#-------------ver10)
   * [🗒 앱설명 및 개요](#앱-설명-및-개요)
   * [🚀 트러블슈팅](#트러블슈팅)
+  * [🔗 개발규칙](#개발규칙)
   * [🤔 고민한부분](#고민한-부분)
   * [🗓 기능공수산정](#기능공수산정)
     + [이터레이션 1](#이터레이션-1)
@@ -11,23 +9,35 @@ https://worried-click-7d5.notion.site/d3e8a5e6c0624458a70301f681cc384b
     + [이터레이션 3](#이터레이션-3)
     + [이터레이션 4](#이터레이션-4)
   * [👩‍👩‍👧‍👦팀빌딩](#팀빌딩)
-    + [1주차 토론내용](#1주차-토론-내용)
-    + [2주차 토론내용](#2주차-토론-내용)
-    + [3주차 토론내용](#3주차-토론-내용)
-    + [4주차 토론내용](#4주차-토론-내용)
-    + [5주차 토론내용](#5주차-토론-내용)
+    + [1차 토론내용](#1차-토론-내용)
+    + [2차 토론내용](#2차-토론-내용)
+
+
+
 
 ## 앱 설명 및 개요
 
-- 기획한 이유?
-  - 커플들이 이별하는 것을 백신처럼 예방하자는 취지로, 상대방과 좋은 추억들이나 현재상태에 대해서 다시 생각해볼 수 있도록 도움을 주는 서비스
-- 주요 기능
-  - 버킷리스트 - 사용자는 연애 관련 버킷리스트를 추가하고 체크표시를 할 수 있습니다.
-  - 연애테스트 - 사용자는 원하는 항목을 선택하고 연애관련 테스트를 진행할 수 있습니다.
-  - 추억 간직하기 - 사용자는 상대방과 함께한 추억들에 관해 일기처럼 작성할 수 있습니다.
-  - 연애 명언 - 사용자는 연애관련 명언들을 확인할 수 있습니다.
-  - 느린우체통 - 추후 서버구현 후 추가예정
-- Git 규칙
+- **앱스토어링크** : https://apps.apple.com/kr/app/%EC%9D%B4%EB%B3%84%EC%B0%A8%EB%8B%A8/id1596845534
+- **특이 사항** : 현재는 “**이별차단**"으로 서비스 중
+- **한줄 설명** :  연인들의 이별을 예방하는데 도움을 주는 서비스
+- **기간** : 2021.11.15(월) ~ 12.08(수)
+- **역할** : 앱의 전체 UI 및 기능 개발, 앱스토어 배포 및 관리 - 개인프로젝트
+- **Stack** : 
+  - UIKit
+  - 네트워크 통신 - Alamofire
+  - DataBase - Realm
+  - H.I.G
+  - OpenAPI활용
+  - SideMenu 
+- **주요 기능** :
+  - 버킷리스트 : 사용자는 연애 관련 버킷리스트를 추가하고 체크표시를 할 수 있습니다.
+  - 연애테스트 : 사용자는 원하는 항목을 선택하고 연애관련 테스트를 진행할 수 있습니다.
+  - 추억 간직하기 : 사용자는 상대방과 함께한 추억들에 관해 일기처럼 작성할 수 있습니다.
+  - 연애 명언 : 사용자는 연애관련 명언들을 확인할 수 있습니다.
+
+## 개발규칙
+
+- Git규칙
   - main브런치는 프로젝트 배포 시점에 메인으로 머지
   - 각각의 버전별 개발은 ver[버전]-test 브런치에서 진행 후 테스트가 통과하거나 이슈문제가 없다면 ver[버전]으로 머지하는 방식으로 개발
   - 커밋은 issue단위로 나누어 확인하기
@@ -35,48 +45,98 @@ https://worried-click-7d5.notion.site/d3e8a5e6c0624458a70301f681cc384b
 - 요구사항
   - 아이폰용 앱
   - 최소 타겟 iOS 13.0이상 지원
-  - 기본으로는 스토리보드로 UI구현 (필요한 경우 코드로 UI추가)
-- 사용 라이브러리
-  - SideMenu
-- 오픈API
-- 기술스택
-  - UICollectionView
-  - UITextView
-  - 네트워크 통신
-  - DataBase - Realm
-  - H.I.G
-  - SFSymbol
-
 <br><br>
 
 ## 트러블슈팅
 
-1. 네비게이션바에서 UIBarButtonItem을 SFSymbol이미지로 넣었을 때 네비게이션바 틴트색상을 변경해도 색상이변경되지 않는 문제
+### 1. 네비게이션바에서 UIBarButtonItem을 SFSymbol이미지로 넣었을 때 네비게이션바 틴트색상을 변경해도 색상이변경되지 않는 문제
 
    → image로 넣었을 때는 네비게이션바 위에 이미지로 올라갔기 때문에 UIBarButtonItem의 틴트색상을 직접 변경해서 해결
 
    ```swift
-   UIBarButtonItem(barButtonSystemItem: <#T##UIBarButtonItem.SystemItem#>, target: <#T##Any?#>, action: <#T##Selector?#>)
+   UIBarButtonItem(barButtonSystemItem: <UIBarButtonItem.SystemItem>, target: <Any?>, action: <Selector?>)
    
-   let menuButton = UIBarButtonItem(image: <#T##UIImage?#>, style: <#T##UIBarButtonItem.Style#>, target: <#T##Any?#>, action: <#T##Selector?#>)
+   let menuButton = UIBarButtonItem(image: <UIImage?>, style: <UIBarButtonItem.Style>, target: <Any?>, action: <Selector?>)
    menuButton.tintColor = .customPink
    ```
+
+### 2. 서비스 기획문제 - 서버구현
+
+- 서버DB를 사용해서 데이터를 저장하고 읽어오려고 기획을 진행했는데, heroku + Vapor + postgreSQL를 사용하여 구현을 진행했지만, 서버관리비용과 개인정보 보안 문제로 인해 추후 진행 예정
+    - 최소한의 보안(비밀번호 단방향 인코딩, 비밀번호 찾기,변경기능)이 적용되어야 하는 부분을 알게 되었습니다.
+    - heroku 무료플랜의 경우 cold기능이 있어 일정 기간동안 서버통신이 없으면 서버가 잠들어 버리는 기능이 있다는 부분을 알게 되었습니다.
+
+### 3. 리젝 사유 : 앱 이름 문제
+
+![1](https://user-images.githubusercontent.com/55218398/170468711-45af329d-7858-4021-8f17-e7fed9c1256f.png)
+
+
+- 전반적인 앱의 제목 및 이미지 이름을 이별백신으로 사용했는데 코로나로 인해서, 의료쪽 관련 서비스는 개인을 승인시킬 수 없다고 했습니다
+    - 이별백신 → 이별차단으로 변경
+    
+
+### 4. 리젝사유 : 사진앨범에 접근권한을 요청할 때 왜 요청하는지 구체적으로 작성하기
+
+
+<img width="1176" alt="2" src="https://user-images.githubusercontent.com/55218398/170468977-5434c977-862e-499c-87ce-5e51c1d81bf5.png">
+
+<img width="560" alt="2" src="https://user-images.githubusercontent.com/55218398/170468946-72a710e6-3923-4be1-91f4-4bd6680b559e.png">
+
+
+
+### 5. async~await구문 사용하는 경우 TestFlight 앱 충돌문제
+
+- 테스트플라이트를 통해서 실기기에서 앱을 테스트를 진행하였는데 async~await구문을 사용할 때, 프로젝트의 최소버전 타겟이 iOS15.0이거나 Xcode버전이 13.2 이하인 경우에 테스트플라이트앱이 충돌이 되면서 종료되는 이슈가 있었습니다.
+    - Build Phases에서 Library Concurrency를 옵셔널로 처리하기 (버전타겟 15.0이하 Xcode13.2이하인 경우 임시해결방법)
 
 <br><br>
 
 ## 고민한 부분
+### 1. 온보딩 화면, 연애테스트화면에서 UIPageViewController를 사용할지? UICollectionView를 사용할지?
 
-1. 처음 온보딩페이지를 UIPageViewController를 사용하는 것과 UICollectionView를 사용하는 것의 장단점이 무엇일까?
-   <img width="200" alt="스크린샷 2021-11-17 오전 11 37 52" src="https://user-images.githubusercontent.com/55218398/143671016-ff203275-0149-474a-ae7a-b0feca39a98b.png">
-2. 연애 관련 명언들을 나타내는 API가 없어서 직접 JSON을 작성한 후 사용하려는 경우 어떤 방법이 적절할지?
+- 온보딩 화면과 연애테스트화면은 다음(Skip)버튼을 클릭시 화면에 표시된 정보들을 변경해줘야 했습니다.
+- 이 기능을 구현하기 위해서 UIPageViewController기능을 사용하여 여러 뷰컨트롤러를 생성하는 방법과 UICollectionView를 사용해서 CollectionViewCell을 넘겨주는 방법이 있었습니다.
+    
 
-   - ObjectMapper라이브러리 및 직접 JSON형식 만들기
-   - 서버DB올려서 사용하기 - 서버나 파이어베이스를 사용해야하지만 추가 수정에 용이할 것 같다.
-   - DataAsset에 추가해서 사용하기 - 추가 수정이 많은 경우에는 불편할 수 있지만 깔끔하게 사용가능 한 것 같다.
+<img width="560" alt="2" src="https://user-images.githubusercontent.com/55218398/170469307-7c405a6e-1f3d-4786-b81e-adb88dd09125.png">
+<img width="560" alt="2" src="https://user-images.githubusercontent.com/55218398/170469333-50c91c9f-19dc-48cd-833e-e5c78d647e56.png">
 
-3. 사이드메뉴 라이브러리를 사용하는 경우 모달뷰 방식 및 네비게이션방식 중 어느 방식으로 화면전환을 해야하는 지?
+    - 아이템 마다 컬렉션뷰의 높이와 너비를 지정
+    - Scrollview.frame.width = collection view.frame.width 와 동일합니다.
+    - contentOffset.x 을 사용하여 스크롤을 했을 때 x좌표를 이동시킵니다.
+    
 
-   - 모달뷰는 화면위에 계속 겹치기 때문에 네비게이션방식이 더 적절한 것 같지만 네비게이션방식도 화면간의 연관성이 없는 것이 적절하지는 않은 것 같다.
+> **해결방법**
+> 
+
+저의 상황에서는 단순히 이미지와 텍스트만 변경해주고 전체적인 화면 UI가 바뀌지 않는다고 생각해서 여러 뷰컨트롤러를 만드는 방법보다 컬렉션뷰를 사용하면 메모리를 좀 더 효율적으로 사용할 수 있어서 컬렉션뷰를 사용해서 진행했습니다.
+
+### 2. 사이드메뉴 라이브러리를 사용했을 때, 스토리보드를 여러파일로 나눠서 진행한 경우 모달방식을 사용했을 때 화면전환을 할 때마다 뷰가 사라지지 않고 쌓이는 문제
+
+- 사이드메뉴 라이브러리를 사용해서 전반적인 앱의 화면전환을 진행하려고 했는데 스토리보드를 여러파일로 나눠서 진행해서 Segue를 사용할 수 없었고, 모달을 사용하면 뷰가 쌓이는 문제가 있었고, 네비게이션컨트롤러를 이용한 화면전환방식은 연관성이 없는 화면간의 전환인데 맞지 않다고 생각했습니다.
+- 일단 사이드메뉴 라이브러리가 어떻게 구현되어있는지 확인하고 부모뷰컨트롤러를 두고 보이는 화면을 자식뷰로 설정한 후 상황에 맞게 자식뷰를 제거하고 변경하는 방식으로 해결했습니다.
+
+<img width="560" alt="2" src="https://user-images.githubusercontent.com/55218398/170469354-ffc96102-ce98-4d68-85d1-fe0a82e8c7aa.png">
+<img width="560" alt="2" src="https://user-images.githubusercontent.com/55218398/170469366-99b0f15f-b5fe-4559-aa96-6a13ad984db1.png">
+
+
+> **해결방법**
+> 
+- 사이드메뉴가 될 UITableViewController, MainVC(ParentVC)가 될 뷰컨트롤러 생성
+- 첫 화면은 홈화면으로 MainVC의 자식뷰컨트롤러로 설정
+- 사이드메뉴버튼 클릭한 경우 타겟을 MainVC로 지정한 후 MainVC에서 SideMenu를 띄어줍니다.
+- 사이드메뉴의 셀이 클릭되었을 때 델리게이트패턴을 사용해서 MainVC가 뷰를 띄어줍니다.
+
+## 3. 직접 만든 연애 명언 JSON을 활용하는 방법 선택하기
+
+1. Encodable 프로토콜을 사용하여 직접 JSON을 작성하는 방법
+2. 서버 DB에 저장한후 네트워크 통신으로 사용하기
+3. DataAsset에 JSON파일 추가해서 사용하기
+
+> **해결방법**
+> 
+
+저의 상황에서는 Encodable프로토콜을 사용하면  Swift파일을 생성하고 직접 텍스트로 작성하면 파일이 많아 지는 것을 예방하고 싶어서 제외했고, 서버DB를 사용한다면 추가 및 수정을 할 경우에 유용할 것 같았지만 서버구현을 직접해야하는 문제가 있었고, DataAsset을 사용하면 추가 및 수정에는 단점이 있지만 파일만 추가한 후 디코딩하는 방법이 깔끔해서 DataAsset을 사용했습니다.
 
 <br><br>
 
@@ -123,8 +183,6 @@ https://worried-click-7d5.notion.site/d3e8a5e6c0624458a70301f681cc384b
 <11.29(월) ~ 12.5(일)>
 
 - 코드 리팩토링
-- MVVM 적용
-- UnitTest 작성
 - 에러 처리
 - 앱 출시
 - 리젝 대응하기
@@ -138,9 +196,7 @@ https://worried-click-7d5.notion.site/d3e8a5e6c0624458a70301f681cc384b
 
 <br><br>
 
-### 1주차 토론 내용
-
-<11.15(월) ~ 11.21(일)>
+### 1차 토론 내용
 
 1. 카카오톡모바일에서 사진전송할 때 사진목록 보여주는 방식 - PhotoKit과 관련있지 않을까? 컬렉션뷰로 보여주는 건가?
 2. MVVM-C란?
@@ -158,9 +214,7 @@ https://worried-click-7d5.notion.site/d3e8a5e6c0624458a70301f681cc384b
 
 <br><br>
 
-### 2주차 토론 내용
-
-<11.22(월) ~ 11.28(일)>
+### 2차 토론 내용
 
 1. 서버 관련 피드백
    - 실제 서비스를 하는 경우, 개인정보를 직접 받아야한다면 비밀번호 단방향 인코딩, 비번 찾기, 변경 등이 적용되야 하고 보안사고가 생겼을 때 최소한의 가이드에 맞춰 적용되지 않으면 형사처벌이 될 수 있습니다.
